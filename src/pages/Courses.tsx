@@ -1,14 +1,14 @@
 import { motion } from 'motion/react';
-import { ChevronRight, Play, Users, Calendar } from 'lucide-react';
+import { ChevronRight, Play, Users, Calendar, MapPin } from 'lucide-react';
 import { SectionTitle } from '../components/Shared';
 
 export const Courses = () => {
   return (
     <div className="pt-24">
-      {/* --- Courses Section (Bento Wall) --- */}
+      {/* --- Nos Cours Section --- */}
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6">
-          <SectionTitle eyebrow="Nos Disciplines" title="Explorez vos Capacités" centered />
+          <SectionTitle eyebrow="Nos Services" title="Nos Cours" centered />
           
           <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-auto md:h-[700px]">
             {/* Pole Dance - Large */}
@@ -76,8 +76,57 @@ export const Courses = () => {
         </div>
       </section>
 
-      {/* --- Workshop Section --- */}
+      {/* --- Événements Section (Location) --- */}
       <section className="py-16 md:py-24 bg-brand-muted/20">
+        <div className="max-w-7xl mx-auto px-6">
+          <SectionTitle eyebrow="Événements" title="Louez Notre Salle" centered />
+          
+          <div className="max-w-4xl mx-auto mt-10 md:mt-14">
+            <motion.div 
+              whileHover={{ y: -5 }}
+              className="bg-white rounded-[24px] md:rounded-[32px] overflow-hidden shadow-sm border border-brand-primary/5"
+            >
+              <div className="grid md:grid-cols-2">
+                <div className="aspect-video md:aspect-auto">
+                  <img 
+                    src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=1000" 
+                    alt="Location salle" 
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <div className="p-6 md:p-8 flex flex-col justify-center">
+                  <h3 className="text-xl md:text-2xl font-serif text-brand-primary mb-3">Un espace pour vos événements</h3>
+                  <p className="text-brand-primary/60 text-sm md:text-base mb-6">
+                    Vous organisez un événement privé (anniversaire, entersement, shooting photo, workshop...) ? 
+                    Louez notre salle équipés pour créer un moment inoubliable.
+                  </p>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-center gap-2 text-brand-primary/70 text-sm">
+                      <MapPin size={16} className="text-brand-secondary" />
+                      Situé à Abidjan, Riviera Palmeraie
+                    </li>
+                    <li className="flex items-center gap-2 text-brand-primary/70 text-sm">
+                      <Users size={16} className="text-brand-secondary" />
+                      Capacité adaptée à vos besoins
+                    </li>
+                    <li className="flex items-center gap-2 text-brand-primary/70 text-sm">
+                      <Calendar size={16} className="text-brand-secondary" />
+                      Horaires flexibles
+                    </li>
+                  </ul>
+                  <button className="bg-brand-primary text-brand-bg px-6 py-3 rounded-full font-medium hover:bg-brand-secondary transition-all inline-flex items-center justify-center gap-2 w-fit">
+                    Demander un devis <ChevronRight size={18} />
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- Workshop Section --- */}
+      <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6 md:gap-8">
             <div className="max-w-xl">

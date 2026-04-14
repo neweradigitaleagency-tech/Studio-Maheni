@@ -23,7 +23,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Accueil', href: '/' },
-    { name: 'Cours', href: '/courses' },
+    { name: 'Nos Services', href: '/courses' },
     { name: 'Tarifs', href: '/pricing' },
     { name: 'Galerie', href: '/gallery' },
     { name: 'FAQ', href: '/faq' },
@@ -34,7 +34,7 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-brand-bg/90 backdrop-blur-md py-3 md:py-4 shadow-sm' : 'bg-transparent py-4 md:py-6'}`}>
       <div className="max-w-7xl mx-auto px-4 md:px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center group">
-          <img src={Logo} alt="Studio Maheni" className="h-18 md:h-24 object-contain group-hover:scale-105 transition-transform duration-500" />
+          <img src={Logo} alt="Studio Maheni" className="h-24 md:h-32 object-contain group-hover:scale-105 transition-transform duration-500" />
         </Link>
 
         {/* Desktop Nav */}
@@ -109,7 +109,7 @@ const Footer = () => (
   <footer className="py-12 bg-brand-primary text-brand-bg/40 border-t border-brand-bg/5 mt-auto">
     <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
       <Link to="/" className="flex items-center group">
-        <img src={Logo} alt="Studio Maheni" className="h-24 md:h-32 object-contain group-hover:scale-105 transition-transform duration-500 brightness-0 invert" />
+        <img src={Logo} alt="Studio Maheni" className="h-32 md:h-40 object-contain group-hover:scale-105 transition-transform duration-500 brightness-0 invert" />
       </Link>
       <div className="text-sm font-medium">
         &copy; {new Date().getFullYear()} Studio Maheni. Tous droits réservés.

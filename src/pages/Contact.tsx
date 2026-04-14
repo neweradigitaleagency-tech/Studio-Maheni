@@ -9,10 +9,33 @@ export const Contact = () => {
       <section className="py-16 md:py-24 bg-brand-muted/30">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <SectionTitle eyebrow="Contact" title="Parlons de votre projet" centered />
-          <p className="text-brand-primary/60 text-base md:text-lg mb-12 md:mb-16 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-brand-primary/60 text-base md:text-lg mb-8 md:mb-12 max-w-2xl mx-auto leading-relaxed">
             Une question sur nos cours, nos tarifs ou nos événements ? <br className="hidden md:block" />
             N'hésitez pas à nous contacter par le moyen qui vous convient le mieux.
           </p>
+
+          {/* Email Input */}
+          <div className="max-w-md mx-auto mb-12 md:mb-16">
+            <form 
+              action="mailto:studio.maheni@gmail.com" 
+              method="post" 
+              encType="text/plain"
+              className="flex gap-2"
+            >
+              <input
+                type="email"
+                placeholder="Votre email..."
+                required
+                className="flex-1 px-4 py-3 rounded-full border border-brand-primary/20 bg-white text-brand-primary placeholder:text-brand-primary/40 focus:outline-none focus:border-brand-secondary transition-colors text-sm"
+              />
+              <button 
+                type="submit"
+                className="px-6 py-3 bg-brand-primary text-brand-bg rounded-full font-medium hover:bg-brand-secondary transition-colors text-sm"
+              >
+                Envoyer
+              </button>
+            </form>
+          </div>
 
           <div className="relative max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12 md:gap-8 lg:gap-24">
             
