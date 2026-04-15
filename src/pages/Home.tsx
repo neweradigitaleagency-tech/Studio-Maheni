@@ -92,9 +92,9 @@ export const Home = () => {
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16 max-w-5xl mx-auto">
             {[
-              { num: "01", title: "Choisir une formule", desc: "Sélectionnez l'offre qui vous convient parmi nos tarifs" },
-              { num: "02", title: "Réserver votre séance", desc: "Choisissez la date et l'horaire qui vous arrangent" },
-              { num: "03", title: "Venez pratiquer !", desc: "Venez avec votre tenue de sport, nous fournissons les talons" }
+              { num: "01", title: "Choisissez votre créneau", desc: "Sélectionnez le jour et l'horaire disponibles en cliquant sur le lien de réservation, puis remplissez vos informations personnelles." },
+              { num: "02", title: "Vérifiez votre confirmation", desc: "Après votre inscription, vous recevrez un email de confirmation contenant tous les détails du cours. Si vous ne recevez pas cet email, veuillez nous contacter." },
+              { num: "03", title: "Confirmez votre réservation", desc: "Pour valider définitivement votre place, envoyez une capture d'écran de votre paiement, votre nom et prénom. Sans confirmation de paiement, votre réservation ne sera pas prise en compte." }
             ].map((step, index) => (
               <motion.div
                 key={index}
@@ -161,16 +161,16 @@ export const Home = () => {
             <div>
               <SectionTitle eyebrow="Le Studio" title="C'est quoi le Studio Maheni ?" />
               <p className="text-brand-primary/70 text-base md:text-lg leading-relaxed mt-6">
-                Studio Maheni est un espace dédié à la danse et au bien-être situé à Abidjan.
-                Nous proposons des cours de Pole Dance, Kompa et Kizomba dans une ambiance
-                chaleureuse et professionnelle. Notre studio c'est :
+                Studio Maheni est un espace dédié à la danse et au bien-être situé à Abidjan, où les femmes viennent se reconnecter à leur corps, gagner en confiance et s'exprimer librement à travers la pole dance.
+                Nous proposons des cours de Pole Dance, Kompa et Kizomba dans une ambiance chaleureuse, professionnelle et bienveillante.
               </p>
-              <ul className="mt-6 space-y-3">
+              <p className="text-brand-primary font-medium mt-6">Notre studio, c'est :</p>
+              <ul className="mt-4 space-y-3">
                 {[
                   "Une communauté de +200 élèves",
-                  "Des coaches certifiés et passionnés",
-                  "Un espace équipé pour votre confort",
-                  "Une énergie unique et bienveillante"
+                  "Des coaches passionnés et engagés dans votre progression",
+                  "Un espace entièrement équipé pour votre confort",
+                  "Une énergie unique, centrée sur la confiance, l'expression et le bien-être"
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-brand-primary/80">
                     <div className="w-2 h-2 rounded-full bg-brand-secondary" />
