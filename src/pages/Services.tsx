@@ -104,7 +104,7 @@ export const Services = () => {
                 <div className="flex items-center gap-2 text-brand-secondary text-xs font-bold uppercase tracking-widest mb-3">
                   <MapPin size={14} /> Location
                 </div>
-                <h3 className="text-xl md:text-2xl font-serif text-brand-primary mb-3">Cours collectifs & privés</h3>
+                <h3 className="text-xl md:text-2xl font-serif text-brand-primary mb-3">New Gym Abidjan</h3>
                 <p className="text-brand-primary/60 text-sm md:text-base">
                   Découvrez nos formules adaptées à toutes. Débutez ou progressez selon votre niveau.
                 </p>
