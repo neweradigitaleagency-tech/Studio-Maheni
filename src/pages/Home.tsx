@@ -185,7 +185,7 @@ export const Home = () => {
                   controls
                   preload="metadata"
                 >
-                  <source src="/Instagram(4).mp4" type="video/mp4" />
+                  <source src="/videos/Instagram(4).mp4" type="video/mp4" />
                   Votre navigateur ne supporte pas la vidéo.
                 </video>
               </div>

@@ -1,7 +1,15 @@
 import { motion } from 'motion/react';
 import { Check, CreditCard, Clock } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { SectionTitle } from '../components/Shared';
+
+const WHATSAPP_NUMBER = '2250717616343';
+
+const getWhatsAppMessage = (service: string, price: string) => {
+  const message = encodeURIComponent(
+    `Coucou ! 👋🏾\n\nJe suis intéressé(e) par vos services et je voudrais réserver :\n\n📌 Service : ${service}\n💰 Prix : ${price}\n\nMerci de me donner plus d'informations sur les disponibilités et la marche à suivre pour réserver ! 😊`
+  );
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+};
 
 export const Pricing = () => {
   return (
@@ -143,12 +151,12 @@ export const Pricing = () => {
                   <span>Matériel fourni au studio</span>
                 </div>
               </div>
-              <a href="https://calendly.com/reservations-cours/decouverte-pole-dance" target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-2xl border border-brand-primary/10 text-brand-primary font-bold text-xs tracking-widest uppercase text-center hover:bg-brand-muted transition-all block">
+              <a href={getWhatsAppMessage('Séance à l\'unité Pole Dance', '15 000 FCFA')} target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-2xl border border-brand-primary/10 text-brand-primary font-bold text-xs tracking-widest uppercase text-center hover:bg-brand-muted transition-all block">
                 Réserver
               </a>
             </motion.div>
 
-            {/* Carte 4 séances */}
+            {/* carte 4 séances */}
             <motion.div 
               whileHover={{ y: -10 }}
               className="bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-sm border border-brand-primary/5 flex flex-col"
@@ -171,12 +179,12 @@ export const Pricing = () => {
                   <span>Valable 1 mois</span>
                 </div>
               </div>
-              <a href="https://calendly.com/reservations-cours/decouverte-pole-dance" target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-2xl border border-brand-primary/10 text-brand-primary font-bold text-xs tracking-widest uppercase text-center hover:bg-brand-muted transition-all block">
+              <a href={getWhatsAppMessage('Carte 4 séances Pole Dance', '50 000 FCFA')} target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-2xl border border-brand-primary/10 text-brand-primary font-bold text-xs tracking-widest uppercase text-center hover:bg-brand-muted transition-all block">
                 Réserver
               </a>
             </motion.div>
 
-            {/* Carte 8 séances */}
+            {/* carte 8 séances */}
             <motion.div 
               whileHover={{ y: -10 }}
               className="bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-sm border border-brand-primary/5 flex flex-col"
@@ -199,7 +207,7 @@ export const Pricing = () => {
                   <span>Valable 2 mois</span>
                 </div>
               </div>
-              <a href="https://calendly.com/reservations-cours/decouverte-pole-dance" target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-2xl border border-brand-primary/10 text-brand-primary font-bold text-xs tracking-widest uppercase text-center hover:bg-brand-muted transition-all block">
+              <a href={getWhatsAppMessage('Carte 8 séances Pole Dance', '80 000 FCFA')} target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-2xl border border-brand-primary/10 text-brand-primary font-bold text-xs tracking-widest uppercase text-center hover:bg-brand-muted transition-all block">
                 Réserver
               </a>
             </motion.div>
@@ -236,12 +244,12 @@ export const Pricing = () => {
                   <span>Économisez 30 000 CFA</span>
                 </div>
               </div>
-              <a href="https://calendly.com/reservations-cours/decouverte-pole-dance" target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-2xl bg-brand-secondary text-brand-bg font-bold text-xs tracking-widest uppercase text-center hover:bg-brand-accent transition-all block">
+              <a href={getWhatsAppMessage('Carte 12 séances Pole Dance (offre bestseller)', '120 000 FCFA')} target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-2xl bg-brand-secondary text-brand-bg font-bold text-xs tracking-widest uppercase text-center hover:bg-brand-accent transition-all block">
                 S'abonner
               </a>
             </motion.div>
 
-            {/* Salle + Pole */}
+            {/* salle + Pole */}
             <motion.div 
               whileHover={{ y: -10 }}
               className="bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-sm border border-brand-primary/5 flex flex-col"
@@ -268,7 +276,7 @@ export const Pricing = () => {
                   <span>Sans coach</span>
                 </div>
               </div>
-              <a href="https://calendly.com/reservations-cours/decouverte-pole-dance" target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-2xl border border-brand-primary/10 text-brand-primary font-bold text-xs tracking-widest uppercase text-center hover:bg-brand-muted transition-all block">
+              <a href={getWhatsAppMessage('Package Salle + Pole Dance', '80 000 FCFA')} target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-2xl border border-brand-primary/10 text-brand-primary font-bold text-xs tracking-widest uppercase text-center hover:bg-brand-muted transition-all block">
                 Réserver
               </a>
             </motion.div>
@@ -299,9 +307,9 @@ export const Pricing = () => {
                   Contenu personnalisé
                 </li>
               </ul>
-              <Link to="/contact" className="inline-flex items-center gap-2 bg-brand-primary text-brand-bg px-8 py-3 rounded-full font-medium hover:bg-brand-secondary transition-all">
-                Demander un devis <CreditCard size={18} />
-              </Link>
+              <a href={getWhatsAppMessage('Cours Privés Pole Dance (coaching personnalisé)', 'Sur demande')} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-brand-primary text-brand-bg px-8 py-3 rounded-full font-medium hover:bg-brand-secondary transition-all">
+                Demander un devis
+              </a>
             </motion.div>
           </div>
         </div>

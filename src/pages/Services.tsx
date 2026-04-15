@@ -267,7 +267,7 @@ export const Services = () => {
                 controls
                 preload="metadata"
               >
-                <source src="/anniversaire au studio.mp4" type="video/mp4" />
+                <source src="/videos/anniversaire-au-studio.mp4" type="video/mp4" />
                 Votre navigateur ne supporte pas la vidéo.
               </video>
             </div>
