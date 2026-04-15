@@ -11,6 +11,8 @@ import { Pricing } from './pages/Pricing';
 import { Gallery } from './pages/Gallery';
 import { FAQ } from './pages/FAQ';
 import { Contact } from './pages/Contact';
+import { PoleDance } from './pages/PoleDance';
+import { Services } from './pages/Services';
 
 export default function App() {
   return (
@@ -23,6 +25,8 @@ export default function App() {
           <Route path="gallery" element={<Gallery />} />
           <Route path="faq" element={<FAQ />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="pole-dance" element={<PoleDance />} />
+          <Route path="services" element={<Services />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { ChevronRight, Play, Users, Calendar, MapPin } from 'lucide-react';
 import { SectionTitle } from '../components/Shared';
+import { Link } from 'react-router-dom';
 
 export const Courses = () => {
   return (
@@ -28,9 +29,9 @@ export const Courses = () => {
                 <p className="text-brand-bg/70 max-w-sm mb-4 md:mb-6 text-sm md:text-base">
                   Alliez force athlétique et grâce artistique. Un entraînement complet qui sculpte le corps et libère l'esprit.
                 </p>
-                <button className="text-brand-bg font-bold text-xs md:text-sm tracking-widest uppercase flex items-center gap-2 group/btn">
-                  En savoir plus <ChevronRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
-                </button>
+<Link to="/pole-dance" className="text-brand-bg font-bold text-xs md:text-sm tracking-widest uppercase flex items-center gap-2 group/btn">
+                   En savoir plus <ChevronRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+                 </Link>
               </div>
             </motion.div>
 

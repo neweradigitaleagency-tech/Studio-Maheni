@@ -179,13 +179,13 @@ export const Home = () => {
               </ul>
             </div>
             <div className="relative">
-              <div className="aspect-video rounded-[24px] md:rounded-[32px] overflow-hidden bg-brand-primary/10 relative">
+              <div className="aspect-[9/16] max-h-[500px] rounded-[24px] md:rounded-[32px] overflow-hidden bg-brand-primary/10 relative mx-auto">
                 <video 
                   className="w-full h-full object-cover"
                   controls
                   preload="metadata"
                 >
-                  <source src="https://res.cloudinary.com/dhwo0kzbs/video/upload/q_auto/f_auto/v1776025504/6443f4_cafe89a6fc5e4e059d44899fd92f8760_mv2_jtqs4v.mp4" type="video/mp4" />
+                  <source src="/Instagram(4).mp4" type="video/mp4" />
                   Votre navigateur ne supporte pas la vidéo.
                 </video>
               </div>

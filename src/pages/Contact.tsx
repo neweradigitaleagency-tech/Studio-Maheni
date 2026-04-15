@@ -6,7 +6,7 @@ export const Contact = () => {
   return (
     <div className="pt-24 min-h-screen">
       {/* --- Contact Section --- */}
-      <section className="py-16 md:py-24 bg-brand-muted/30">
+      <section id="contact" className="py-16 md:py-24 bg-brand-muted/30">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <SectionTitle eyebrow="Contact" title="Parlons de votre projet" centered />
           <p className="text-brand-primary/60 text-base md:text-lg mb-8 md:mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -63,7 +63,7 @@ export const Contact = () => {
             {/* Center Logo */}
             <div className="relative shrink-0 order-1 md:order-2 mb-4 md:mb-0">
               <div className="w-36 h-36 md:w-48 md:h-48 bg-white rounded-full flex items-center justify-center shadow-2xl shadow-brand-primary/20 relative z-10 p-4">
-                <img src={Logo} alt="Studio Maheni" className="w-full h-full object-contain" />
+                <img src={Logo} alt="Studio Maheni" className="w-full h-full object-contain" style={{filter: "brightness(0) saturate(100%) invert(23%) sepia(24%) saturate(1112%) hue-rotate(347deg) brightness(95%) contrast(88%)"}} />
               </div>
               <div className="absolute -inset-4 border border-brand-primary/10 rounded-full animate-[spin_10s_linear_infinite]" />
               <div className="absolute -inset-8 border border-brand-primary/5 rounded-full animate-[spin_15s_linear_infinite_reverse]" />

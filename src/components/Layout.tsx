@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import Logo from '../../logo.svg';
+import { Chatbot } from './Chatbot';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +24,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Accueil', href: '/' },
-    { name: 'Nos Services', href: '/courses' },
+    { name: 'Nos Services', href: '/services' },
     { name: 'Tarifs', href: '/pricing' },
     { name: 'Galerie', href: '/gallery' },
     { name: 'FAQ', href: '/faq' },
@@ -34,7 +35,7 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-brand-bg/90 backdrop-blur-md py-3 md:py-4 shadow-sm' : 'bg-transparent py-4 md:py-6'}`}>
       <div className="max-w-7xl mx-auto px-4 md:px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center group">
-          <img src={Logo} alt="Studio Maheni" className="h-24 md:h-32 object-contain group-hover:scale-105 transition-transform duration-500" />
+          <img src={Logo} alt="Studio Maheni" className="h-24 md:h-32 object-contain group-hover:scale-105 transition-transform duration-500 [&>*]:fill-brand-primary" style={{filter: "brightness(0) saturate(100%) invert(23%) sepia(24%) saturate(1112%) hue-rotate(347deg) brightness(95%) contrast(88%)"}} />
         </Link>
 
         {/* Desktop Nav */}
@@ -130,6 +131,7 @@ export const Layout = () => {
         <Outlet />
       </main>
       <Footer />
+      <Chatbot />
       {/* WhatsApp Float */}
       <a 
         href="https://wa.me/2250717616343" 
