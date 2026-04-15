@@ -160,16 +160,16 @@ export const Home = () => {
             <div>
               <SectionTitle eyebrow="Le Studio" title="C'est quoi le Studio Maheni ?" />
               <p className="text-brand-primary/70 text-base md:text-lg leading-relaxed mt-6">
-                Studio Maheni est un espace dédié à la danse et au bien-être situé à Abidjan. 
-                Nous proposons des cours de Pole Dance, Kompa et Kizomba dans une ambiance 
-                chaleureuse et professionnelle. Notre studio c'est :
+                Studio Maheni est un espace dédié à la danse et au bien-être situé à Abidjan, où les femmes viennent se reconnecter à leur corps, gagner en confiance et s'exprimer librement à travers la pole dance.
+                Nous proposons des cours de Pole Dance, Kompa et Kizomba dans une ambiance chaleureuse, professionnelle et bienveillante.
               </p>
-              <ul className="mt-6 space-y-3">
+              <p className="text-brand-primary font-medium mt-6">Notre studio, c'est :</p>
+              <ul className="mt-4 space-y-3">
                 {[
                   "Une communauté de +200 élèves",
-                  "Des coaches certifiés et passionnés",
-                  "Un espace équipé pour votre confort",
-                  "Une énergie unique et bienveillante"
+                  "Des coaches passionnés et engagés dans votre progression",
+                  "Un espace entièrement équipé pour votre confort",
+                  "Une énergie unique, centrée sur la confiance, l'expression et le bien-être"
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-brand-primary/80">
                     <div className="w-2 h-2 rounded-full bg-brand-secondary" />
