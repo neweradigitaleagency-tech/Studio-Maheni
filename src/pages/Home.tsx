@@ -91,9 +91,9 @@ export const Home = () => {
           
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16 max-w-5xl mx-auto">
             {[
-              { num: "01", title: "Choisir une formule", desc: "Sélectionnez l'offre qui vous convient parmi nos tarifs" },
-              { num: "02", title: "Réserver votre séance", desc: "Choisissez la date et l'horaire qui vous arrangent" },
-              { num: "03", title: "Venez pratiquer !", desc: "Venez avec votre tenue de sport, nous fournissons les talons" }
+              { num: "01", title: "Choisissez votre créneau", desc: "Sélectionnez le jour et l'horaire disponibles en cliquant sur le lien de réservation, puis remplissez vos informations personnelles." },
+              { num: "02", title: "Vérifiez votre confirmation", desc: "Après votre inscription, vous recevrez un email de confirmation contenant tous les détails du cours. Si vous ne recevez pas cet email, veuillez nous contacter." },
+              { num: "03", title: "Confirmez votre réservation", desc: "Pour valider définitivement votre place, envoyez une capture d'écran de votre paiement, votre nom et prénom. Sans confirmation de paiement, votre réservation ne sera pas prise en compte." }
             ].map((step, index) => (
               <motion.div
                 key={index}
