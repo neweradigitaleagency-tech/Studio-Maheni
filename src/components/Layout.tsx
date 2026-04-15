@@ -56,9 +56,8 @@ const Navbar = () => {
               rel="noopener noreferrer"
               className="bg-brand-primary text-brand-bg px-6 py-2.5 rounded-full text-sm font-medium hover:bg-brand-secondary transition-all"
             >
-              Réserver (Découverte Pole Dance)
+              Réservez
             </a>
-            <span className="text-[8px] text-brand-primary/60 mt-1">Pour plus d'infos, contactez-nous sur WhatsApp</span>
           </div>
         </div>
 
@@ -94,9 +93,8 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   className="bg-brand-primary text-brand-bg px-6 py-3.5 rounded-full text-center font-medium w-full text-sm"
                 >
-                  Réserver (Découverte Pole Dance)
+                  Réservez
                 </a>
-                <span className="text-[10px] text-brand-primary/60 mt-3 text-center">Pour plus d'informations, contactez-nous sur WhatsApp</span>
               </div>
             </div>
           </motion.div>

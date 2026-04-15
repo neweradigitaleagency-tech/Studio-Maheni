@@ -26,18 +26,19 @@ export const Home = () => {
             className="text-center md:text-left mt-8 md:mt-0"
           >
             <span className="text-xs md:text-sm font-bold tracking-[0.3em] text-brand-secondary uppercase mb-4 md:mb-6 block">
-              Bienvenue au
+              Bienvenue au STUDIO MAHENI
             </span>
             <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-8xl font-serif text-brand-primary leading-[0.9] mb-6 md:mb-8">
-              Studio  <br />
-              <span className="italic text-brand-secondary">Maheni</span>
+              Découvre la pole dance  <br />
+              <span className="italic text-brand-secondary">à Abidjan</span>
             </h1>
             <p className="text-base md:text-lg text-brand-primary/70 max-w-md mx-auto md:mx-0 mb-8 md:mb-10 leading-relaxed">
-              Pole Dance, Kompa, Kizomba
+              Déjà fait ton cours de découverte ? On te guide sur WhatsApp
+              pour tes prochaines séances
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center md:justify-start">
               <Link to="/courses" className="bg-brand-primary text-brand-bg px-6 md:px-8 py-4 rounded-full font-medium hover:bg-brand-secondary transition-all flex items-center justify-center gap-2">
-                Découvrir nos cours <ChevronRight size={18} />
+                Réserve ton premier cours <ChevronRight size={18} />
               </Link>
               <Link to="/contact" className="border border-brand-primary/20 text-brand-primary px-6 md:px-8 py-4 rounded-full font-medium hover:bg-brand-muted transition-all text-center">
                 Nous contacter
@@ -88,12 +89,12 @@ export const Home = () => {
       <section className="py-20 md:py-32 bg-brand-muted/30">
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle eyebrow="Guide" title="Mon Premier Cours" centered />
-          
+
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16 max-w-5xl mx-auto">
             {[
-              { num: "01", title: "Choisissez votre créneau", desc: "Sélectionnez le jour et l'horaire disponibles en cliquant sur le lien de réservation, puis remplissez vos informations personnelles." },
-              { num: "02", title: "Vérifiez votre confirmation", desc: "Après votre inscription, vous recevrez un email de confirmation contenant tous les détails du cours. Si vous ne recevez pas cet email, veuillez nous contacter." },
-              { num: "03", title: "Confirmez votre réservation", desc: "Pour valider définitivement votre place, envoyez une capture d'écran de votre paiement, votre nom et prénom. Sans confirmation de paiement, votre réservation ne sera pas prise en compte." }
+              { num: "01", title: "Choisir une formule", desc: "Sélectionnez l'offre qui vous convient parmi nos tarifs" },
+              { num: "02", title: "Réserver votre séance", desc: "Choisissez la date et l'horaire qui vous arrangent" },
+              { num: "03", title: "Venez pratiquer !", desc: "Venez avec votre tenue de sport, nous fournissons les talons" }
             ].map((step, index) => (
               <motion.div
                 key={index}
@@ -124,7 +125,7 @@ export const Home = () => {
       <section className="py-16 md:py-24">
         <div className="max-w-5xl mx-auto px-6">
           <SectionTitle eyebrow="Aide" title="Questions Fréquentes" centered />
-          
+
           <div className="mt-10 md:mt-14 space-y-4 md:space-y-6">
             {[
               { q: "Quelle tenue porter pour le premier cours ?", a: "Venez avec une tenue confortable (leggings, top sportif). Nous fournissons les talons aiguilles sur place !" },
@@ -160,16 +161,16 @@ export const Home = () => {
             <div>
               <SectionTitle eyebrow="Le Studio" title="C'est quoi le Studio Maheni ?" />
               <p className="text-brand-primary/70 text-base md:text-lg leading-relaxed mt-6">
-                Studio Maheni est un espace dédié à la danse et au bien-être situé à Abidjan, où les femmes viennent se reconnecter à leur corps, gagner en confiance et s'exprimer librement à travers la pole dance.
-                Nous proposons des cours de Pole Dance, Kompa et Kizomba dans une ambiance chaleureuse, professionnelle et bienveillante.
+                Studio Maheni est un espace dédié à la danse et au bien-être situé à Abidjan.
+                Nous proposons des cours de Pole Dance, Kompa et Kizomba dans une ambiance
+                chaleureuse et professionnelle. Notre studio c'est :
               </p>
-              <p className="text-brand-primary font-medium mt-6">Notre studio, c'est :</p>
-              <ul className="mt-4 space-y-3">
+              <ul className="mt-6 space-y-3">
                 {[
                   "Une communauté de +200 élèves",
-                  "Des coaches passionnés et engagés dans votre progression",
-                  "Un espace entièrement équipé pour votre confort",
-                  "Une énergie unique, centrée sur la confiance, l'expression et le bien-être"
+                  "Des coaches certifiés et passionnés",
+                  "Un espace équipé pour votre confort",
+                  "Une énergie unique et bienveillante"
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-brand-primary/80">
                     <div className="w-2 h-2 rounded-full bg-brand-secondary" />
@@ -180,7 +181,7 @@ export const Home = () => {
             </div>
             <div className="relative">
               <div className="aspect-[9/16] max-h-[500px] rounded-[24px] md:rounded-[32px] overflow-hidden bg-brand-primary/10 relative mx-auto">
-                <video 
+                <video
                   className="w-full h-full object-cover"
                   controls
                   preload="metadata"
@@ -200,20 +201,20 @@ export const Home = () => {
             </h3>
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                { 
-                  title: "Heels & Pole Society - Avec Tracy", 
+                {
+                  title: "Heels & Pole Society - Avec Tracy",
                   date: "05 Oct 2025",
                   desc: "Une expérience artistique intense alliant puissance, féminité et technique.",
                   img: "https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776025504/6443f4_cafe89a6fc5e4e059d44899fd92f8760_mv2_jtqs4v.avif"
                 },
-                { 
-                  title: "Workshop Spécial Kompa", 
+                {
+                  title: "Workshop Spécial Kompa",
                   date: "27 Sept 2025",
                   desc: "Premier workshop de Kompa à Abidjan avec le coach Aquaman.",
                   img: "https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776025504/6443f4_8af9396729bd4589894bb38389e8863d_mv2_zevt9a.avif"
                 }
               ].map((workshop, i) => (
-                <motion.div 
+                <motion.div
                   key={i}
                   whileHover={{ y: -5 }}
                   className="bg-white rounded-[20px] overflow-hidden shadow-sm border border-brand-primary/5 flex"
@@ -245,12 +246,12 @@ export const Home = () => {
           <div className="bg-brand-muted/30 rounded-[24px] md:rounded-[32px] p-8 md:p-12">
             <p className="text-brand-secondary font-bold text-lg mb-6">Réponse plus rapide via WhatsApp</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="https://wa.me/2250717616343" 
+              <a
+                href="https://wa.me/2250717616343"
                 className="bg-brand-primary text-brand-bg px-8 py-4 rounded-full font-medium hover:bg-brand-secondary transition-all inline-flex items-center gap-3"
               >
                 <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
                 +225 07 17 61 63 43
               </a>

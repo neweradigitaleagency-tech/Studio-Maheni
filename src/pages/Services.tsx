@@ -31,9 +31,9 @@ export const Services = () => {
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             <Link to="#pole-dance" className="group">
               <div className="overflow-hidden rounded-lg mb-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?auto=format&fit=crop&q=80&w=600" 
-                  alt="Pole Dance" 
+                <img
+                  src="https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?auto=format&fit=crop&q=80&w=600"
+                  alt="Pole Dance"
                   className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
@@ -45,9 +45,9 @@ export const Services = () => {
 
             <Link to="#workshops" className="group">
               <div className="overflow-hidden rounded-lg mb-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&q=80&w=600" 
-                  alt="Workshop" 
+                <img
+                  src="https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&q=80&w=600"
+                  alt="Workshop"
                   className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
@@ -59,9 +59,9 @@ export const Services = () => {
 
             <Link to="#evenements" className="group">
               <div className="overflow-hidden rounded-lg mb-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80&w=600" 
-                  alt="Événements Privés" 
+                <img
+                  src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80&w=600"
+                  alt="Événements Privés"
                   className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
@@ -80,13 +80,13 @@ export const Services = () => {
           <SectionTitle eyebrow="Cours" title="Pole Dance" centered />
 
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-            <motion.div 
+            <motion.div
               whileHover={{ y: -5 }}
               className="bg-brand-primary rounded-[24px] md:rounded-[32px] overflow-hidden relative group min-h-[400px] md:min-h-[500px]"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?auto=format&fit=crop&q=80&w=1000" 
-                alt="Pole Dance" 
+              <img
+                src="https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?auto=format&fit=crop&q=80&w=1000"
+                alt="Pole Dance"
                 className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
@@ -123,14 +123,14 @@ export const Services = () => {
           </div>
 
           <div className="mt-10 md:mt-14 flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
+            <button
               onClick={scrollToContact}
               className="bg-brand-primary text-brand-bg px-8 py-4 rounded-full font-medium hover:bg-brand-secondary transition-all inline-flex items-center justify-center gap-2 cursor-pointer"
             >
               Réserver un cours <ChevronRight size={18} />
             </button>
-            <Link 
-              to="/faq" 
+            <Link
+              to="/faq"
               className="bg-white border border-brand-primary/20 text-brand-primary px-8 py-4 rounded-full font-medium hover:bg-brand-primary/5 transition-all inline-flex items-center justify-center gap-2"
             >
               En savoir plus sur la pole dance
@@ -146,7 +146,7 @@ export const Services = () => {
             <div className="max-w-xl">
               <SectionTitle eyebrow="Événements" title="Nos Workshops" />
               <p className="text-brand-primary/60 text-base md:text-lg">
-                Kompa, Kizomba, Heels et plus encore. Proposés de temps en temps. Pour connaître les dates et horaires, suivez-nous sur nos réseaux sociaux ou la communauté WhatsApp Studio Maheni pour rester informé de nos actualités.
+                Nos workshops sont proposés de temps en temps. Pour connaître les dates et horaires, suivez-nous sur nos réseaux sociaux ou la communauté WhatsApp Studio Maheni pour rester informé de nos actualités.
               </p>
             </div>
             <div className="bg-white px-6 py-4 rounded-2xl border border-brand-primary/5 w-full md:w-auto">
@@ -155,13 +155,13 @@ export const Services = () => {
             </div>
           </div>
 
-          <motion.div 
+          <motion.div
             whileHover={{ y: -5 }}
             className="bg-brand-primary rounded-[24px] md:rounded-[32px] overflow-hidden relative group"
           >
-            <img 
-              src="https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&q=80&w=1000" 
-              alt="Workshop" 
+            <img
+              src="https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&q=80&w=1000"
+              alt="Workshop"
               className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700"
               referrerPolicy="no-referrer"
             />
@@ -181,20 +181,20 @@ export const Services = () => {
             </h3>
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                { 
-                  title: "Heels & Pole Society - Avec Tracy", 
+                {
+                  title: "Heels & Pole Society - Avec Tracy",
                   date: "05 Oct 2025",
                   desc: "Une expérience artistique intense alliant puissance, féminité et technique.",
                   img: "https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776025504/6443f4_cafe89a6fc5e4e059d44899fd92f8760_mv2_jtqs4v.avif"
                 },
-                { 
-                  title: "Workshop Spécial Kompa", 
+                {
+                  title: "Workshop Spécial Kompa",
                   date: "27 Sept 2025",
                   desc: "Premier workshop de Kompa à Abidjan avec le coach Aquaman.",
                   img: "https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776025504/6443f4_8af9396729bd4589894bb38389e8863d_mv2_zevt9a.avif"
                 }
               ].map((workshop, i) => (
-                <motion.div 
+                <motion.div
                   key={i}
                   whileHover={{ y: -5 }}
                   className="bg-white rounded-[20px] overflow-hidden shadow-sm border border-brand-primary/5 flex"
@@ -220,7 +220,7 @@ export const Services = () => {
           <SectionTitle eyebrow="Événements" title="Événements Privés" centered />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <motion.div 
+            <motion.div
               whileHover={{ y: -5 }}
               className="bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-sm border border-brand-primary/5"
             >
@@ -233,7 +233,7 @@ export const Services = () => {
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               whileHover={{ y: -5 }}
               className="bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-sm border border-brand-primary/5"
             >
@@ -246,7 +246,7 @@ export const Services = () => {
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               whileHover={{ y: -5 }}
               className="bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-sm border border-brand-primary/5"
             >
@@ -262,7 +262,7 @@ export const Services = () => {
 
           <div className="mt-8 flex justify-center">
             <div className="aspect-[9/16] max-h-[400px] rounded-[24px] md:rounded-[32px] overflow-hidden bg-brand-primary/10">
-              <video 
+              <video
                 className="w-full h-full object-cover"
                 controls
                 preload="metadata"
@@ -274,7 +274,7 @@ export const Services = () => {
           </div>
 
           <div className="mt-10 md:mt-14 text-center">
-            <button 
+            <button
               onClick={scrollToContact}
               className="bg-brand-primary text-brand-bg px-8 py-4 rounded-full font-medium hover:bg-brand-secondary transition-all inline-flex items-center justify-center gap-2 cursor-pointer"
             >
@@ -291,7 +291,7 @@ export const Services = () => {
           <p className="text-brand-bg/70 text-lg mb-8 md:mb-10">
             Commence par un cours découverte ✨
           </p>
-          <button 
+          <button
             onClick={scrollToContact}
             className="bg-brand-bg text-brand-primary px-10 py-4 rounded-full font-medium hover:bg-brand-secondary hover:text-brand-bg transition-all inline-flex items-center justify-center gap-2 cursor-pointer"
           >
