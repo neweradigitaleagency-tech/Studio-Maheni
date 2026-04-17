@@ -108,7 +108,7 @@ const Footer = () => (
   <footer className="py-12 bg-brand-primary text-brand-bg/40 border-t border-brand-bg/5 mt-auto">
     <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
       <Link to="/" className="flex items-center group">
-        <img src={Logo} alt="Studio Maheni" className="h-32 md:h-40 object-contain group-hover:scale-105 transition-transform duration-500 brightness-0 invert" />
+        <img src={Logo} alt="Studio Maheni" className="h-14 md:h-18 object-contain group-hover:scale-105 transition-transform duration-500 brightness-0 invert" />
       </Link>
       <div className="text-sm font-medium">
         &copy; {new Date().getFullYear()} Studio Maheni. Tous droits réservés.
