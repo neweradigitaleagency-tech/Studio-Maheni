@@ -24,8 +24,9 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Accueil', href: '/' },
-    { name: 'Nos Services', href: '/services' },
+    { name: 'Cours', href: '/services' },
     { name: 'Tarifs', href: '/pricing' },
+    { name: 'Workshop', href: '/services' },
     { name: 'Galerie', href: '/gallery' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },

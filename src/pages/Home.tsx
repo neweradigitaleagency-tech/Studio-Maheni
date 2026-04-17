@@ -37,45 +37,52 @@ const FAQCard = ({ question, answer, color }: { question: string, answer: string
 export const Home = () => {
   return (
     <>
-      {/* --- Home Section --- */}
-      <section className="relative py-12 md:py-16 flex items-center overflow-hidden bg-brand-bg">
-        <div className="max-w-[80%] mx-auto px-6 grid md:grid-cols-2 gap-12 lg:gap-12 items-center">
+      {/* --- Hero Section --- */}
+      <section className="relative py-20 md:py-24 flex items-center overflow-hidden bg-brand-bg">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left Side - Text */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center md:text-left mt-8 md:mt-0"
+            className="text-center md:text-left"
           >
-            <span className="text-[11px] md:text-xs font-bold tracking-[0.2em] uppercase mb-4 block text-brand-primary/50">
-              STUDIO MAHENI
-            </span>
-            <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-serif italic text-brand-primary leading-[0.95] mb-4 md:mb-6">
+            <div className="mb-3">
+              <span className="text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase text-brand-primary/60">
+                STUDIO MAHENI
+              </span>
+            </div>
+            <p className="text-xs md:text-sm font-medium tracking-wider uppercase text-brand-primary/50 mb-6 md:mb-8">
+              Confiance - Féminité - Communauté
+            </p>
+            <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-serif italic text-brand-tan leading-[0.95] mb-6 md:mb-8">
               Become that girl
             </h1>
-            <p className="text-base md:text-lg font-medium text-brand-primary/70 mb-8 md:mb-10">
-              Confiance · Féminité · Communauté
-            </p>
-            <p className="text-base md:text-lg text-brand-primary/70 max-w-md mx-auto md:mx-0 mb-8 md:mb-10 leading-relaxed hidden md:block">
+            <p className="text-base md:text-lg text-brand-primary/60 mb-8 md:mb-10 max-w-sm mx-auto md:mx-0">
               Découvre la pole dance à Abidjan
             </p>
-            <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center md:justify-start">
-              <Link to="/courses" className="bg-brand-primary text-white px-6 md:px-8 py-4 rounded-full font-semibold hover:opacity-85 hover:-translate-y-px transition-all flex items-center justify-center gap-2">
-                Réserve ton premier cours <ChevronRight size={18} />
+            <div>
+              <Link 
+                to="/courses" 
+                className="inline-block bg-brand-primary text-white px-8 md:px-10 py-4 rounded-full font-semibold hover:opacity-85 hover:-translate-y-px transition-all"
+              >
+                Réserve ton premier cours
               </Link>
             </div>
           </motion.div>
 
+          {/* Right Side - Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative mt-8 md:mt-0"
+            className="flex justify-center md:justify-end"
           >
-            <div className="rounded-[20px] overflow-hidden shadow-xl inline-block">
+            <div className="rounded-[24px] overflow-hidden shadow-2xl w-full max-w-[280px] md:max-w-[320px]">
               <img
                 src="https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776450703/IMG_7877_fv3mlh.heic"
                 alt="Pole Dance Studio"
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover aspect-[3/4]"
                 referrerPolicy="no-referrer"
               />
             </div>
