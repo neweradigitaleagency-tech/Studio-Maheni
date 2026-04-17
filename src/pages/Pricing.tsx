@@ -6,7 +6,7 @@ const WHATSAPP_NUMBER = '2250717616343';
 
 const getWhatsAppMessage = (service: string, price: string) => {
   const message = encodeURIComponent(
-    `Coucou ! 👋🏾\n\nJe suis intéressé(e) par vos services et je voudrais réserver :\n\n📌 Service : ${service}\n💰 Prix : ${price}\n\nMerci de me donner plus d'informations sur les disponibilités et la marche à suivre pour réserver ! 😊`
+    `Coucou ! 👋🏾\n\nJe suis intéressé(e) par ${service} au prix de ${price}.\n\nMerci de me donner les disponibilités et la marche à suivre pour réserver ! 😊`
   );
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
 };
@@ -14,152 +14,182 @@ const getWhatsAppMessage = (service: string, price: string) => {
 export const Pricing = () => {
   return (
     <div className="pt-24">
-      {/* --- Pricing Section - New 3 Cards Layout --- */}
-      <section className="py-12 md:py-16">
+      {/* --- Pricing Section - 4 Cards --- */}
+      <section className="py-12 md:py-16 bg-[#F5F0E8]">
         <div className="max-w-[80%] mx-auto px-6">
           <SectionTitle title="Nos Tarifs" centered />
-          <p className="text-center text-brand-primary/70 mb-12 max-w-2xl mx-auto text-sm md:text-base">
+          <p className="text-center text-[#5D4E44] mb-12 max-w-2xl mx-auto text-base">
             Les cours de Kōmpa et Kizomba sont disponibles sur demande.
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16">
-            {/* Card 1: Starter */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+            {/* Card 1: Starter - White with border */}
             <motion.div 
-              whileHover={{ y: -10 }}
-              className="bg-white border border-brand-primary/10 rounded-[20px] p-6 flex flex-col"
+              whileHover={{ y: -5 }}
+              className="bg-white border border-[#3E2723]/10 rounded-[20px] p-6 flex flex-col"
             >
               <div className="mb-6">
-                <h3 className="text-xl font-serif font-bold text-brand-primary mb-2">Starter</h3>
-                <p className="text-brand-primary/50 text-sm">Pour découvrir et débutants</p>
+                <h3 className="text-xl font-bold text-[#3E2723] mb-1">Starter</h3>
+                <p className="text-[#8D7B68] text-sm">Pour découvrir</p>
               </div>
-              <div className="space-y-3 mb-6">
+              <div className="space-y-4 mb-6">
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-brand-primary/70">Découverte</span>
-                  <span className="text-lg font-bold font-serif text-brand-primary">10 000 FCA</span>
+                  <span className="text-sm text-[#5D4E44]">Découverte</span>
+                  <span className="text-lg font-bold text-[#3E2723]">10 000 FCA</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-brand-primary/70">Unité</span>
-                  <span className="text-lg font-bold font-serif text-brand-primary">15 000 FCA</span>
+                  <span className="text-sm text-[#5D4E44]">Unité</span>
+                  <span className="text-lg font-bold text-[#3E2723]">15 000 FCA</span>
                 </div>
               </div>
-              <div className="space-y-3 mb-6 flex-grow">
-                <div className="flex items-start gap-2 text-sm text-brand-primary/70">
-                  <Check size={16} className="text-brand-secondary shrink-0 mt-0.5" />
-                  <span>Accès à tous les cours collectifs</span>
-                </div>
-                <div className="flex items-start gap-2 text-sm text-brand-primary/70">
-                  <Check size={16} className="text-brand-secondary shrink-0 mt-0.5" />
-                  <span>Matériel fourni au studio</span>
-                </div>
-                <div className="flex items-start gap-2 text-sm text-brand-primary/70">
-                  <Check size={16} className="text-brand-secondary shrink-0 mt-0.5" />
-                  <span>Valable pour 1 séance</span>
-                </div>
-              </div>
-              <div className="text-center">
-                <a href="https://calendly.com/reservations-cours/decouverte-pole-dance" target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-full border border-brand-primary text-brand-primary font-semibold text-sm uppercase text-center hover:bg-brand-primary hover:text-white transition-all block">
-                  Réserver ( Découverte )
+              <div className="mt-auto pt-4">
+                <a 
+                  href={getWhatsAppMessage('Cours Découverte', '10 000 FCA')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-3 text-center rounded-full border border-[#3E2723] text-[#3E2723] font-semibold text-sm hover:bg-[#3E2723] hover:text-white transition-all"
+                >
+                  Réserver
                 </a>
-                <span className="text-xs text-brand-primary/40 mt-2 block">Pour plus d'infos, WhatsApp</span>
               </div>
             </motion.div>
 
-            {/* Card 2: Performance - Featured (Dark, Taller) */}
+            {/* Card 2 - Light beige/tan */}
             <motion.div 
-              whileHover={{ y: -10 }}
-              className="bg-brand-primary rounded-[20px] p-6 flex flex-col relative md:-mt-4 md:mb-4"
+              whileHover={{ y: -5 }}
+              className="bg-[#E6D5C3] rounded-[20px] p-6 flex flex-col"
             >
-              <div className="absolute top-4 right-4 bg-brand-tan text-brand-primary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
-                Plus Populaire
+              <div className="mb-6">
+                <h3 className="text-xl font-bold text-[#3E2723] mb-1">Unit</h3>
+                <p className="text-[#8D7B68] text-sm">Séance unique</p>
+              </div>
+              <div className="mb-6">
+                <span className="text-2xl font-bold text-[#3E2723]">15 000 FCA</span>
+              </div>
+              <div className="space-y-2 mb-6">
+                <div className="flex items-center gap-2 text-sm text-[#5D4E44]">
+                  <Check size={16} className="text-[#3E2723]" />
+                  <span>Accès à tous les cours</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-[#5D4E44]">
+                  <Check size={16} className="text-[#3E2723]" />
+                  <span>Matériel fourni</span>
+                </div>
+              </div>
+              <div className="mt-auto pt-4">
+                <a 
+                  href={getWhatsAppMessage('Séance Unité', '15 000 FCA')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-3 text-center rounded-full bg-[#3E2723] text-white font-semibold text-sm hover:opacity-85 transition-all"
+                >
+                  Réserver
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Card 3: Performance - Featured (Dark, Bestseller) */}
+            <motion.div 
+              whileHover={{ y: -5 }}
+              className="bg-[#3E2723] rounded-[20px] p-6 flex flex-col relative"
+            >
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#F5F0E8] text-[#3E2723] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
+                Bestsellers
               </div>
               <div className="mb-6 mt-2">
-                <h3 className="text-xl font-serif font-bold text-white mb-2">Performance</h3>
-                <p className="text-white/60 text-sm">Progression régulière</p>
+                <h3 className="text-xl font-bold text-white mb-1">Performance</h3>
+                <p className="text-[#E6D5C3] text-sm">Progression régulière</p>
               </div>
               <div className="space-y-4 mb-6">
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-white/70">4 Séances</span>
-                  <span className="text-lg font-bold font-serif text-white">50 000 FCA</span>
+                  <span className="text-base font-bold text-white">50 000 FCA</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-white/70">8 Séances</span>
-                  <span className="text-lg font-bold font-serif text-white">80 000 FCA</span>
+                  <span className="text-base font-bold text-white">80 000 FCA</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-white/70">12 Séances</span>
-                  <span className="text-lg font-bold font-serif text-white">120 000 FCA</span>
+                  <span className="text-sm text-white font-bold">12 Séances</span>
+                  <span className="text-lg font-bold text-white">120 000 FCA</span>
                 </div>
               </div>
-              <div className="space-y-3 mb-6 flex-grow">
-                <div className="flex items-start gap-2 text-sm text-white/70">
-                  <Check size={16} className="text-brand-tan shrink-0 mt-0.5" />
-                  <span>Tarif préférentiel par séance</span>
-                </div>
-                <div className="flex items-start gap-2 text-sm text-white/70">
-                  <Check size={16} className="text-brand-tan shrink-0 mt-0.5" />
-                  <span>Accès prioritaire aux réservations</span>
-                </div>
-                <div className="flex items-start gap-2 text-sm text-white/70">
-                  <Check size={16} className="text-brand-tan shrink-0 mt-0.5" />
-                  <span>Validité 2 à 3 mois</span>
-                </div>
-                <div className="flex items-start gap-2 text-sm text-white/70">
-                  <Check size={16} className="text-brand-tan shrink-0 mt-0.5" />
-                  <span>+2 Self Practice offerts (Carte 12)</span>
+              <div className="space-y-2 mb-2">
+                <div className="flex items-center gap-2 text-xs text-[#E6D5C3]">
+                  <Check size={14} className="text-[#E6D5C3]" />
+                  <span>+2 Self Practice offerts</span>
                 </div>
               </div>
-              <div className="text-center">
-                <a href={getWhatsAppMessage('Performance Pole Dance', '120 000')} target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-full bg-brand-tan text-brand-primary font-semibold text-sm uppercase text-center hover:opacity-85 transition-all block">
+              <div className="mt-auto pt-4">
+                <a 
+                  href={getWhatsAppMessage('Abonnement Performance', '120 000 FCA')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-3 text-center rounded-full bg-[#E6D5C3] text-[#3E2723] font-semibold text-sm hover:opacity-85 transition-all"
+                >
                   S'abonner
                 </a>
-                <span className="text-xs text-white/50 mt-2 block">Pour plus d'infos, WhatsApp</span>
               </div>
             </motion.div>
 
-            {/* Card 3: Elite */}
+            {/* Card 4: Elite */}
             <motion.div 
-              whileHover={{ y: -10 }}
-              className="bg-white border border-brand-primary/10 rounded-[20px] p-6 flex flex-col"
+              whileHover={{ y: -5 }}
+              className="bg-[#8D7B68] rounded-[20px] p-6 flex flex-col"
             >
               <div className="mb-6">
-                <h3 className="text-xl font-serif font-bold text-brand-primary mb-2">Elite</h3>
-                <p className="text-brand-primary/50 text-sm">Expérience sur-mesure</p>
+                <h3 className="text-xl font-bold text-white mb-1">Elite</h3>
+                <p className="text-[#E6D5C3] text-sm">Sport + Pole</p>
               </div>
-              <div className="space-y-3 mb-6">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-brand-primary/70">Sport + Pole</span>
-                  <span className="text-lg font-bold font-serif text-brand-primary">80 000 FCA</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-brand-primary/70">Cours Privé</span>
-                  <span className="text-lg font-serif italic text-brand-primary">Sur demande</span>
-                </div>
+              <div className="mb-6">
+                <span className="text-2xl font-bold text-white">80 000 FCA</span>
+                <span className="text-xs text-white/60 ml-2">(1 mois)</span>
               </div>
-              <div className="space-y-3 mb-6 flex-grow">
-                <div className="flex items-start gap-2 text-sm text-brand-primary/70">
-                  <Check size={16} className="text-brand-secondary shrink-0 mt-0.5" />
-                  <span>Accès illimité salle de sport</span>
+              <div className="space-y-2 mb-6">
+                <div className="flex items-center gap-2 text-sm text-white/80">
+                  <Check size={16} className="text-[#E6D5C3]" />
+                  <span>Accès illimité salle</span>
                 </div>
-                <div className="flex items-start gap-2 text-sm text-brand-primary/70">
-                  <Check size={16} className="text-brand-secondary shrink-0 mt-0.5" />
-                  <span>4 séances de Pole incluses</span>
+                <div className="flex items-center gap-2 text-sm text-white/80">
+                  <Check size={16} className="text-[#E6D5C3]" />
+                  <span>4 séances Pole incluses</span>
                 </div>
-                <div className="flex items-start gap-2 text-sm text-brand-primary/70">
-                  <Check size={16} className="text-brand-secondary shrink-0 mt-0.5" />
-                  <span>Coaching personnalisé (Privé)</span>
-                </div>
-                <div className="flex items-start gap-2 text-sm text-brand-primary/70">
-                  <Check size={16} className="text-brand-secondary shrink-0 mt-0.5" />
-                  <span>Horaires flexibles</span>
+                <div className="flex items-center gap-2 text-sm text-white/80">
+                  <Check size={16} className="text-[#E6D5C3]" />
+                  <span>Sans coach</span>
                 </div>
               </div>
-              <div className="text-center">
-                <a href={getWhatsAppMessage('Elite Package', 'Sur demande')} target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-full border border-brand-primary text-brand-primary font-semibold text-sm uppercase text-center hover:bg-brand-primary hover:text-white transition-all block">
-                  Nous Contacter
+              <div className="mt-auto pt-4">
+                <a 
+                  href={getWhatsAppMessage('Elite Package', '80 000 FCA')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-3 text-center rounded-full border border-white text-white font-semibold text-sm hover:bg-white hover:text-[#3E2723] transition-all"
+                >
+                  Réserver
                 </a>
-                <span className="text-xs text-brand-primary/40 mt-2 block">Pour plus d'infos, WhatsApp</span>
               </div>
             </motion.div>
+          </div>
+
+          {/* --- Cours Privés Section --- */}
+          <div className="mt-16">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-[#3E2723] mb-3">Cours privés</h2>
+                <p className="text-[#5D4E44]">
+                  Déjà fait ton cours de découverte ? On te guide sur WhatsApp pour tes prochaines séances.
+                </p>
+              </div>
+              <a 
+                href={getWhatsAppMessage('Cours Privés', 'Sur demande')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#3E2723] text-white px-8 py-3 rounded-full font-semibold hover:opacity-85 transition-all shrink-0"
+              >
+                Devis
+              </a>
+            </div>
           </div>
         </div>
       </section>

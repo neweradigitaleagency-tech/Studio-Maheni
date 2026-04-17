@@ -119,7 +119,7 @@ export const Home = () => {
           </div>
 
           <div className="text-center mt-12 md:mt-16">
-            <Link to="/courses" className="inline-flex items-center gap-2 bg-brand-primary text-brand-bg px-8 py-4 rounded-full font-medium hover:bg-brand-secondary transition-all">
+            <Link to="/services" className="inline-flex items-center gap-2 bg-brand-primary text-brand-bg px-8 py-4 rounded-full font-medium hover:bg-brand-secondary transition-all">
               Réserver maintenant <ChevronRight size={18} />
             </Link>
           </div>
@@ -149,7 +149,17 @@ export const Home = () => {
                 color: "bg-brand-tan" 
               }
             ].map((faq, index) => (
-              <FAQCard key={index} question={faq.q} answer={faq.a} color={faq.color} />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className={`${faq.color} rounded-[20px] p-6`}
+              >
+                <span className="text-base font-bold text-brand-primary block mb-3">{faq.q}</span>
+                <p className="text-brand-primary/70 text-sm leading-relaxed">{faq.a}</p>
+              </motion.div>
             ))}
           </div>
 
