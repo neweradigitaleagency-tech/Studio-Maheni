@@ -14,7 +14,7 @@ export const PoleDance = () => {
   return (
     <div className="pt-24">
       {/* --- Cours de Pole Dance --- */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle eyebrow="Cours" title="Pole Dance" centered />
 
@@ -79,7 +79,7 @@ export const PoleDance = () => {
       </section>
 
       {/* --- Workshops --- */}
-      <section className="py-16 md:py-24 bg-brand-muted/20">
+      <section className="py-12 md:py-16 bg-brand-muted/20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6 md:gap-8">
             <div className="max-w-xl">
@@ -116,7 +116,7 @@ export const PoleDance = () => {
       </section>
 
       {/* --- Événements Privés --- */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle eyebrow="Événements" title="Événements Privés" centered />
 
@@ -186,7 +186,7 @@ export const PoleDance = () => {
       </section>
 
       {/* --- CTA Finale --- */}
-      <section className="py-16 md:py-24 bg-brand-primary">
+      <section className="py-12 md:py-16 bg-brand-primary">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-serif text-brand-bg mb-4 md:mb-6">Tu veux tester la pole dance ?</h2>
           <p className="text-brand-bg/70 text-lg mb-8 md:mb-10">

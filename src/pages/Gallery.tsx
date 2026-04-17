@@ -24,7 +24,7 @@ export const Gallery = () => {
   return (
     <div className="pt-24 min-h-screen bg-brand-bg text-brand-primary">
       {/* --- Gallery Section --- */}
-      <section className="py-24">
+      <section className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-6 mb-16">
           <SectionTitle eyebrow="L'univers Maheni" title="Galerie" centered />
           <p className="text-center text-brand-primary/60 max-w-lg mx-auto mt-6">

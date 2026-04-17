@@ -15,7 +15,7 @@ export const Pricing = () => {
   return (
     <div className="pt-24">
       {/* --- Payment & Cancellation Info - BEFORE PRICES --- */}
-      <section className="py-16 md:py-24 bg-brand-muted/20">
+      <section className="py-12 md:py-16 bg-brand-muted/20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12">
             <motion.div 
@@ -91,7 +91,7 @@ export const Pricing = () => {
       </section>
 
       {/* --- Pricing Section - 4 OFFRES EN AVANT --- */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle eyebrow="Investissez en vous" title="Nos Tarifs" centered />
           <p className="text-center text-brand-primary/70 mb-12 max-w-2xl mx-auto text-sm md:text-base">

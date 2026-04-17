@@ -7,7 +7,7 @@ export const Courses = () => {
   return (
     <div className="pt-24">
       {/* --- Nos Cours Section --- */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle eyebrow="Nos Services" title="Nos Cours" centered />
           
@@ -78,7 +78,7 @@ export const Courses = () => {
       </section>
 
       {/* --- Événements Section (Location) --- */}
-      <section className="py-16 md:py-24 bg-brand-muted/20">
+      <section className="py-12 md:py-16 bg-brand-muted/20">
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle eyebrow="Événements" title="Louez Notre Salle" centered />
           
@@ -127,7 +127,7 @@ export const Courses = () => {
       </section>
 
       {/* --- Workshop Section --- */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6 md:gap-8">
             <div className="max-w-xl">

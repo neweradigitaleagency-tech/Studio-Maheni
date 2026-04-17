@@ -4,7 +4,7 @@ export const FAQ = () => {
   return (
     <div className="pt-24 min-h-screen">
       {/* --- FAQ Section --- */}
-      <section className="py-24">
+      <section className="py-12 md:py-16">
         <div className="max-w-3xl mx-auto px-6">
           <SectionTitle eyebrow="Questions Fréquentes" title="Tout ce qu'il faut savoir" centered />
           
