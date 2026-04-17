@@ -69,13 +69,13 @@ export const Home = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative mt-8 md:mt-0"
+            className="relative mt-8 md:mt-0 flex items-center"
           >
-            <div className="aspect-[4/5] rounded-[20px] overflow-hidden shadow-xl relative w-full sm:w-[85%] md:w-[75%] mx-auto md:ml-auto md:mr-0">
+            <div className="rounded-[20px] overflow-hidden shadow-xl w-full max-w-md">
               <img
                 src="https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776450703/IMG_7877_fv3mlh.heic"
                 alt="Pole Dance Studio"
-                className="w-[75%] h-[75%] object-cover mx-auto"
+                className="w-full h-auto object-cover"
                 referrerPolicy="no-referrer"
               />
             </div>
