@@ -71,11 +71,11 @@ export const Home = () => {
             transition={{ duration: 1, delay: 0.2 }}
             className="relative mt-8 md:mt-0"
           >
-            <div className="aspect-[4/5] rounded-[20px] overflow-hidden shadow-xl relative w-full sm:w-[85%] md:w-[56%] mx-auto md:ml-auto md:mr-0">
+            <div className="aspect-[4/5] rounded-[20px] overflow-hidden shadow-xl relative w-full sm:w-[85%] md:w-[75%] mx-auto md:ml-auto md:mr-0">
               <img
                 src="https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776450703/IMG_7877_fv3mlh.heic"
                 alt="Pole Dance Studio"
-                className="w-full h-full object-cover"
+                className="w-[75%] h-[75%] object-cover mx-auto"
                 referrerPolicy="no-referrer"
               />
             </div>
