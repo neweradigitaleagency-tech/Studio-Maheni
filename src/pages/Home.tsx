@@ -63,7 +63,7 @@ export const Home = () => {
             </p>
             <div>
               <Link 
-                to="/courses" 
+                to="/services" 
                 className="inline-block bg-brand-primary text-white px-8 md:px-10 py-4 rounded-full font-semibold hover:opacity-85 hover:-translate-y-px transition-all"
               >
                 Réserve ton premier cours
