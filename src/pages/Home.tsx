@@ -39,7 +39,7 @@ export const Home = () => {
     <>
       {/* --- Home Section --- */}
       <section className="relative py-12 md:py-16 flex items-center overflow-hidden bg-brand-bg">
-        <div className="max-w-[60%] mx-auto px-6 grid md:grid-cols-2 gap-12 lg:gap-12 items-center">
+        <div className="max-w-[80%] mx-auto px-6 grid md:grid-cols-2 gap-12 lg:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -73,7 +73,7 @@ export const Home = () => {
           >
             <div className="aspect-[4/5] rounded-[20px] overflow-hidden shadow-xl relative w-full sm:w-[85%] md:w-[75%] mx-auto md:ml-auto md:mr-0">
               <img
-                src="https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776449341/IMG_6978_ukzjul.heic"
+                src="https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776450703/IMG_7877_fv3mlh.heic"
                 alt="Pole Dance Studio"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -85,7 +85,7 @@ export const Home = () => {
 
       {/* --- Mon Premier Cours Section - 3 ETAPES --- */}
       <section className="py-12 md:py-16 bg-brand-muted/30">
-        <div className="max-w-[60%] mx-auto px-6">
+        <div className="max-w-[80%] mx-auto px-6">
           <SectionTitle title="Mon Premier Cours" centered />
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16 max-w-5xl mx-auto">
@@ -121,7 +121,7 @@ export const Home = () => {
 
       {/* --- Questions Fréquentes Section --- */}
       <section className="py-12 md:py-16 bg-brand-bg">
-        <div className="max-w-[60%] mx-auto px-6">
+        <div className="max-w-[80%] mx-auto px-6">
           <SectionTitle title="Questions Fréquentes" centered />
 
           <div className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -156,7 +156,7 @@ export const Home = () => {
 
       {/* --- C'est quoi le Studio Section --- */}
       <section className="py-12 md:py-16 bg-brand-muted/20">
-        <div className="max-w-[60%] mx-auto px-6">
+        <div className="max-w-[80%] mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div>
               <SectionTitle title="C'est quoi le Studio Maheni ?" />
@@ -236,7 +236,7 @@ export const Home = () => {
 
       {/* --- Contact Section --- */}
       <section className="py-12 md:py-16">
-        <div className="max-w-[60%] mx-auto px-6 text-center">
+        <div className="max-w-[80%] mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-serif text-brand-primary mb-4">
             Vous n'avez pas trouvé la réponse ?
           </h2>

@@ -23,7 +23,7 @@ export const Services = () => {
     <div className="pt-24">
       {/* --- Header --- */}
       <section className="py-12 md:py-16">
-        <div className="max-w-[60%] mx-auto px-6 text-center">
+        <div className="max-w-[80%] mx-auto px-6 text-center">
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-primary/50">
             NOS SERVICES
           </span>
@@ -35,7 +35,7 @@ export const Services = () => {
 
       {/* --- Tab Navigation --- */}
       <section className="pb-12 md:pb-16">
-        <div className="max-w-[60%] mx-auto px-6">
+        <div className="max-w-[80%] mx-auto px-6">
           <div className="flex flex-wrap justify-center gap-4 md:gap-0 md:flex-nowrap md:space-x-6 border-b border-brand-primary/10">
             {tabs.map((tab) => (
               <button
@@ -58,7 +58,7 @@ export const Services = () => {
       {/* --- Tab 1: POLE DANCE --- */}
       {activeTab === 'pole-dance' && (
         <section className="py-12 md:py-16">
-          <div className="max-w-[60%] mx-auto px-6">
+          <div className="max-w-[80%] mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-6 md:gap-8">
               <div className="flex flex-col gap-6">
                 <div className="bg-brand-tan-light rounded-[16px] p-6 md:p-7">
@@ -114,7 +114,7 @@ export const Services = () => {
       {/* --- Tab 2: WORKSHOP --- */}
       {activeTab === 'workshops' && (
         <section className="py-12 md:py-16">
-          <div className="max-w-[60%] mx-auto px-6">
+          <div className="max-w-[80%] mx-auto px-6">
             <h2 className="text-2xl md:text-3xl font-bold text-brand-primary text-center mb-6">WORKSHOP</h2>
             <p className="text-brand-primary/70 text-center max-w-2xl mx-auto mb-12">
               Nos workshops sont proposés de temps en temps. Pour connaître les dates et horaires, suiviez-nous sur nos réseaux sociaux ou la communauté WhatsApp Studio Maheni pour rester informée de nos actualités.
@@ -162,7 +162,7 @@ export const Services = () => {
       {/* --- Tab 3: ÉVÉNEMENTS PRIVÉS --- */}
       {activeTab === 'evenements' && (
         <section className="py-12 md:py-16">
-          <div className="max-w-[60%] mx-auto px-6">
+          <div className="max-w-[80%] mx-auto px-6">
             <h2 className="text-2xl md:text-3xl font-bold text-brand-primary text-center mb-8">ÉVÉNEMENTS PRIVÉS</h2>
             
             <div className="grid md:grid-cols-3 gap-6 mb-12">

@@ -16,7 +16,7 @@ export const Pricing = () => {
     <div className="pt-24">
       {/* --- Pricing Section - New 3 Cards Layout --- */}
       <section className="py-12 md:py-16">
-        <div className="max-w-[60%] mx-auto px-6">
+        <div className="max-w-[80%] mx-auto px-6">
           <SectionTitle title="Nos Tarifs" centered />
           <p className="text-center text-brand-primary/70 mb-12 max-w-2xl mx-auto text-sm md:text-base">
             Les cours de Kōmpa et Kizomba sont disponibles sur demande.
