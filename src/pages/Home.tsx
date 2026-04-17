@@ -7,7 +7,7 @@ export const Home = () => {
   return (
     <>
       {/* --- Home Section --- */}
-      <section className="relative min-h-[70vh] flex items-center pt-24 md:pt-20 overflow-hidden">
+      <section className="relative py-16 md:py-20 flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-brand-bg via-brand-bg/80 to-brand-bg z-10" />
           <img
@@ -63,7 +63,7 @@ export const Home = () => {
       </section>
 
       {/* --- Mon Premier Cours Section - 3 ETAPES --- */}
-      <section className="py-20 md:py-32 min-h-[70vh] bg-brand-muted/30">
+      <section className="py-16 md:py-20 bg-brand-muted/30">
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle eyebrow="Guide" title="Mon Premier Cours" centered />
 
@@ -106,7 +106,7 @@ export const Home = () => {
       </section>
 
       {/* --- Questions Fréquentes Section --- */}
-      <section className="py-16 md:py-24 min-h-[70vh]">
+      <section className="py-16 md:py-20">
         <div className="max-w-5xl mx-auto px-6">
           <SectionTitle eyebrow="Aide" title="Questions Fréquentes" centered />
 
@@ -145,7 +145,7 @@ export const Home = () => {
       </section>
 
       {/* --- C'est quoi le Studio Section --- */}
-      <section className="py-16 md:py-24 min-h-[70vh] bg-brand-muted/20">
+      <section className="py-16 md:py-20 bg-brand-muted/20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div>
@@ -225,7 +225,7 @@ export const Home = () => {
       </section>
 
       {/* --- Contact Section --- */}
-      <section className="py-16 md:py-24 min-h-[70vh]">
+      <section className="py-16 md:py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-serif text-brand-primary mb-4">
             Vous n'avez pas trouvé la réponse ?
