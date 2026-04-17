@@ -35,7 +35,7 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-brand-bg/90 backdrop-blur-md py-3 md:py-4 shadow-sm' : 'bg-transparent py-4 md:py-6'}`}>
       <div className="max-w-7xl mx-auto px-4 md:px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center group">
-          <img src={Logo} alt="Studio Maheni" className="h-18 md:h-24 object-contain group-hover:scale-105 transition-transform duration-500 [&>*]:fill-brand-primary" style={{filter: "brightness(0) saturate(100%) invert(23%) sepia(24%) saturate(1112%) hue-rotate(347deg) brightness(95%) contrast(88%)"}}
+          <img src={Logo} alt="Studio Maheni" className="h-18 md:h-24 object-contain group-hover:scale-105 transition-transform duration-500 [&>*]:fill-brand-primary" style={{filter: "brightness(0) saturate(100%) invert(23%) sepia(24%) saturate(1112%) hue-rotate(347deg) brightness(95%) contrast(88%)"}}/>
         </Link>
 
         {/* Desktop Nav */}
