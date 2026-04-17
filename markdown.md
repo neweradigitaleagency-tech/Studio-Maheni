@@ -76,7 +76,7 @@ Background: #F5F0EA
 
 Right column:
 
-Insert the provided (https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776449341/IMG_6978_ukzjul.heic) photo (dancer/studio image)
+Insert the provided (https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776450703/IMG_7877_fv3mlh.heic) photo (dancer/studio image)
 Shape: large rounded rectangle, border-radius: 20px
 Image fills the card, object-fit cover
 
@@ -224,7 +224,7 @@ Overlay text (bottom):
   [bold h3 white]  Location podium de pole dance
   [small white]    Clip, shooting, event, EVJF etc.
   [outline white pill button]  Demander un devis
-
+put the provided image (https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776451485/1931_wspqun.jpg)
 border-radius: 20px, overflow: hidden
 
 

@@ -1,14 +1,45 @@
-import { motion } from 'motion/react';
-import { ChevronRight, Play, Calendar } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { ChevronRight, Play, Calendar, Plus, Minus } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SectionTitle } from '../components/Shared';
+
+const FAQCard = ({ question, answer, color }: { question: string, answer: string, color: string }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className={`${color} rounded-[16px] p-6 cursor-pointer`}
+      onClick={() => setIsOpen(!isOpen)}
+    >
+      <div className="flex justify-between items-start">
+        <span className="text-base font-bold text-brand-primary block pr-4">{question}</span>
+        {isOpen ? <Minus size={20} className="text-brand-primary shrink-0" /> : <Plus size={20} className="text-brand-primary shrink-0" />}
+      </div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="overflow-hidden"
+          >
+            <p className="pt-4 text-brand-primary/70 leading-relaxed">{answer}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+};
 
 export const Home = () => {
   return (
     <>
       {/* --- Home Section --- */}
       <section className="relative py-12 md:py-16 flex items-center overflow-hidden bg-brand-bg">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 lg:gap-12 items-center">
+        <div className="max-w-[60%] mx-auto px-6 grid md:grid-cols-2 gap-12 lg:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -54,15 +85,8 @@ export const Home = () => {
 
       {/* --- Mon Premier Cours Section - 3 ETAPES --- */}
       <section className="py-12 md:py-16 bg-brand-muted/30">
-        <div className="max-w-7xl mx-auto px-6">
-          <SectionTitle eyebrow="Guide" title="Mon Premier Cours" centered />
-
-          <div className="text-center mt-8">
-            <div className="text-3xl md:text-4xl font-serif text-brand-primary mb-4">10 000 FCA</div>
-            <Link to="/faq" className="text-brand-secondary text-sm underline hover:text-brand-primary transition-colors">
-              Aide · Questions fréquentes
-            </Link>
-          </div>
+        <div className="max-w-[60%] mx-auto px-6">
+          <SectionTitle title="Mon Premier Cours" centered />
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16 max-w-5xl mx-auto">
             {[
@@ -97,19 +121,19 @@ export const Home = () => {
 
       {/* --- Questions Fréquentes Section --- */}
       <section className="py-12 md:py-16 bg-brand-bg">
-        <div className="max-w-5xl mx-auto px-6">
-          <SectionTitle eyebrow="Comment ça se passe ?" title="Questions Fréquentes" centered />
+        <div className="max-w-[60%] mx-auto px-6">
+          <SectionTitle title="Questions Fréquentes" centered />
 
           <div className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { 
                 q: "À quoi ça sert ? C'est du strip-tease ?", 
-                a: "Pas du tout. La pole dance est une discipline sportive et artistique qui mélanger force, grâce et expression corporelle. Chez Studio Maheni, l'objectif est simple : t'aider à te sentir forte, confiante et libre dans ton corps.",
+                a: "Pas du tout. La pole dance est une discipline sportive et artistique qui mélange force, grâce et expression corporelle. Chez Studio Maheni, l'objectif est simple : t'aider à te sentir forte, confiante et libre dans ton corps.",
                 color: "bg-brand-tan" 
               },
               { 
                 q: "Je n'ai pas de force, je peux faire ?", 
-                a: "Oui, et c'est même la meilleure raison de commencer. Tu n'as pas besoin d'être forte avant de venir — tu deviens forte en pratiquer. Chaque cours est adapté pour te faire progresser à ton rythme, sans pression.",
+                a: "Oui, et c'est même la meilleure raison de commencer. Tu n'as pas besoin d'être forte avant de venir — tu deviens forte en pratiquant. Chaque cours est adapté pour te faire progresser à ton rythme, sans pression.",
                 color: "bg-brand-tan" 
               },
               { 
@@ -118,16 +142,7 @@ export const Home = () => {
                 color: "bg-brand-tan" 
               }
             ].map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className={`${faq.color} rounded-[16px] p-6 cursor-pointer`}
-              >
-                <span className="text-base font-bold text-brand-primary block">{faq.q}</span>
-              </motion.div>
+              <FAQCard key={index} question={faq.q} answer={faq.a} color={faq.color} />
             ))}
           </div>
 
@@ -141,10 +156,10 @@ export const Home = () => {
 
       {/* --- C'est quoi le Studio Section --- */}
       <section className="py-12 md:py-16 bg-brand-muted/20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-[60%] mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div>
-              <SectionTitle eyebrow="Le Studio" title="C'est quoi le Studio Maheni ?" />
+              <SectionTitle title="C'est quoi le Studio Maheni ?" />
               <p className="text-brand-primary/70 text-base md:text-lg leading-relaxed mt-6">
                 Studio Maheni est un espace dédié à la danse et au bien-être situé à Abidjan, où les femmes viennent se reconnecter à leur corps, gagner en confiance et s'exprimer librement à travers la pole dance.
                 Nous proposons des cours de Pole Dance, Kompa et Kizomba dans une ambiance chaleureuse, professionnelle et bienveillante.
@@ -221,7 +236,7 @@ export const Home = () => {
 
       {/* --- Contact Section --- */}
       <section className="py-12 md:py-16">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-[60%] mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-serif text-brand-primary mb-4">
             Vous n'avez pas trouvé la réponse ?
           </h2>

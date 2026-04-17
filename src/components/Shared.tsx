@@ -2,16 +2,8 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Plus, Minus } from 'lucide-react';
 
-export const SectionTitle = ({ eyebrow, title, centered = false }: { eyebrow: string, title: string, centered?: boolean }) => (
+export const SectionTitle = ({ title, centered = false }: { title: string, centered?: boolean }) => (
   <div className={`mb-12 ${centered ? 'text-center' : ''}`}>
-    <motion.span 
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="text-xs font-bold tracking-[0.2em] text-brand-secondary uppercase block mb-4"
-    >
-      {eyebrow}
-    </motion.span>
     <motion.h2 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
