@@ -7,58 +7,48 @@ export const Home = () => {
   return (
     <>
       {/* --- Home Section --- */}
-      <section className="relative py-12 md:py-16 flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-bg via-brand-bg/80 to-brand-bg z-10" />
-          <img
-            src="https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&q=80&w=2000"
-            alt="Pole Dance Studio"
-            className="w-full h-full object-cover opacity-20 scale-105"
-            referrerPolicy="no-referrer"
-          />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-6 relative z-20 grid md:grid-cols-2 gap-12 lg:gap-12 items-center pb-12 md:pb-0">
+      <section className="relative py-12 md:py-16 flex items-center overflow-hidden bg-brand-bg">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 lg:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center md:text-left mt-8 md:mt-0"
           >
-            <span className="text-xs md:text-sm font-bold tracking-[0.3em] text-brand-secondary uppercase mb-4 md:mb-6 block">
-              Bienvenue au STUDIO MAHENI
+            <span className="text-[11px] md:text-xs font-bold tracking-[0.2em] uppercase mb-4 block text-brand-primary/50">
+              STUDIO MAHENI
             </span>
-            <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-8xl font-serif text-brand-primary leading-[0.9] mb-6 md:mb-8">
-              Découvre la pole dance  <br />
-              <span className="italic text-brand-secondary">à Abidjan</span>
+            <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-serif italic text-brand-primary leading-[0.95] mb-4 md:mb-6">
+              Become that girl
             </h1>
-            <p className="text-base md:text-lg text-brand-primary/70 max-w-md mx-auto md:mx-0 mb-8 md:mb-10 leading-relaxed">
-              Déjà fait ton cours de découverte ? On te guide sur WhatsApp
-              pour tes prochaines séances
+            <p className="text-base md:text-lg font-medium text-brand-primary/70 mb-8 md:mb-10">
+              Confiance · Féminité · Communauté
+            </p>
+            <p className="text-base md:text-lg text-brand-primary/70 max-w-md mx-auto md:mx-0 mb-8 md:mb-10 leading-relaxed hidden md:block">
+              Découvre la pole dance à Abidjan
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center md:justify-start">
-              <Link to="/courses" className="bg-brand-primary text-brand-bg px-6 md:px-8 py-4 rounded-full font-medium hover:bg-brand-secondary transition-all flex items-center justify-center gap-2">
+              <Link to="/courses" className="bg-brand-primary text-white px-6 md:px-8 py-4 rounded-full font-semibold hover:opacity-85 hover:-translate-y-px transition-all flex items-center justify-center gap-2">
                 Réserve ton premier cours <ChevronRight size={18} />
               </Link>
             </div>
           </motion.div>
 
-<motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="relative mt-8 md:mt-0"
-            >
-              <div className="aspect-[4/5] rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl relative w-full sm:w-[85%] md:w-[75%] mx-auto md:ml-auto md:mr-0">
-                <img
-                  src="https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776002403/_the_blackgravity_bny6zh.jpg"
-                  alt="Maheni Founder"
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-brand-primary/10 mix-blend-multiply" />
-              </div>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="relative mt-8 md:mt-0"
+          >
+            <div className="aspect-[4/5] rounded-[20px] overflow-hidden shadow-xl relative w-full sm:w-[85%] md:w-[75%] mx-auto md:ml-auto md:mr-0">
+              <img
+                src="https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776449341/IMG_6978_ukzjul.heic"
+                alt="Pole Dance Studio"
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -106,39 +96,44 @@ export const Home = () => {
       </section>
 
       {/* --- Questions Fréquentes Section --- */}
-      <section className="py-12 md:py-16">
+      <section className="py-12 md:py-16 bg-brand-bg">
         <div className="max-w-5xl mx-auto px-6">
-          <SectionTitle eyebrow="Aide" title="Questions Fréquentes" centered />
+          <SectionTitle eyebrow="Comment ça se passe ?" title="Questions Fréquentes" centered />
 
-          <div className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { q: "Quelle tenue porter ?", color: "text-brand-secondary" },
-              { q: "Je n'ai pas de force, je peux faire ?", color: "text-brand-accent" },
-              null,
-              null,
-              { q: "A quoi ça sert ?", color: "text-brand-secondary" },
-              { q: "C'est du strip-tease ?", color: "text-brand-accent" }
+              { 
+                q: "À quoi ça sert ? C'est du strip-tease ?", 
+                a: "Pas du tout. La pole dance est une discipline sportive et artistique qui mélanger force, grâce et expression corporelle. Chez Studio Maheni, l'objectif est simple : t'aider à te sentir forte, confiante et libre dans ton corps.",
+                color: "bg-brand-tan" 
+              },
+              { 
+                q: "Je n'ai pas de force, je peux faire ?", 
+                a: "Oui, et c'est même la meilleure raison de commencer. Tu n'as pas besoin d'être forte avant de venir — tu deviens forte en pratiquer. Chaque cours est adapté pour te faire progresser à ton rythme, sans pression.",
+                color: "bg-brand-tan" 
+              },
+              { 
+                q: "Quelle tenue porter ?", 
+                a: "Une tenue confortable qui te permet de bouger librement : short et top de sport sont idéals. Le plus important, c'est que tu te sentes à l'aise et prête à profiter pleinement de l'expérience.",
+                color: "bg-brand-tan" 
+              }
             ].map((faq, index) => (
-              faq ? (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="text-center"
-                >
-                  <span className={`text-xl md:text-2xl font-serif font-medium ${faq.color}`}>{faq.q}</span>
-                </motion.div>
-              ) : (
-                <div key={index} />
-              )
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className={`${faq.color} rounded-[16px] p-6 cursor-pointer`}
+              >
+                <span className="text-base font-bold text-brand-primary block">{faq.q}</span>
+              </motion.div>
             ))}
           </div>
 
           <div className="text-center mt-12">
-            <Link to="/faq" className="inline-flex items-center gap-2 border border-brand-primary/20 text-brand-primary px-8 py-4 rounded-full font-medium hover:bg-brand-muted transition-all">
-              Consulter la FAQ pour en savoir plus sur la pole dance <ChevronRight size={18} />
+            <Link to="/faq" className="text-sm font-medium text-brand-primary hover:opacity-70 transition-colors inline-flex items-center gap-2">
+              Consulter la FAQ pour en savoir plus sur la pole dance <ChevronRight size={16} />
             </Link>
           </div>
         </div>
