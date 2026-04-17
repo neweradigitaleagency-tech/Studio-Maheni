@@ -69,9 +69,9 @@ export const Home = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative mt-8 md:mt-0 flex items-center"
+            className="relative mt-8 md:mt-0"
           >
-            <div className="rounded-[20px] overflow-hidden shadow-xl w-full max-w-md">
+            <div className="rounded-[20px] overflow-hidden shadow-xl inline-block">
               <img
                 src="https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776450703/IMG_7877_fv3mlh.heic"
                 alt="Pole Dance Studio"
