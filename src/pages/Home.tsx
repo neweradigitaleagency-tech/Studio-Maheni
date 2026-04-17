@@ -38,8 +38,8 @@ export const Home = () => {
   return (
     <>
       {/* --- Hero Section --- */}
-      <section className="relative py-20 md:py-24 flex items-center overflow-hidden bg-brand-bg">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <section className="relative py-32 md:py-40 flex items-center overflow-hidden bg-brand-bg">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Left Side - Text */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -78,7 +78,7 @@ export const Home = () => {
             transition={{ duration: 1, delay: 0.2 }}
             className="flex justify-center md:justify-end"
           >
-            <div className="rounded-[24px] overflow-hidden shadow-2xl w-full max-w-[280px] md:max-w-[320px]">
+            <div className="rounded-[24px] overflow-hidden shadow-2xl w-full max-w-[320px] md:max-w-[400px]">
               <img
                 src="https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776450703/IMG_7877_fv3mlh.heic"
                 alt="Pole Dance Studio"
