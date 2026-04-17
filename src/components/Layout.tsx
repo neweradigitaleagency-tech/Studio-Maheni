@@ -5,6 +5,21 @@ import { Menu, X, Phone } from 'lucide-react';
 import Logo from '../../logo.svg';
 import { Chatbot } from './Chatbot';
 
+const WHATSAPP_NUMBER = '2250717616343';
+
+const getWhatsAppMessage = (service: string) => {
+  const messages: Record<string, string> = {
+    '/': `Coucou ! 👋🏾\n\nJe suis intéressé(e) par un cours de découverte de Pole Dance Studio Maheni.\n\nMerci de me donner les disponibilités et la marche à suivre pour réserver ! 😊`,
+    '/services': `Coucou ! 👬🏾\n\nJe suis intéressé(e) par vos cours de Pole Dance.\n\nPouvez-vous me donner plus d'informations sur les différentes formules et disponibilités ?\n\nMerci ! 😊`,
+    '/pricing': `Coucou ! 👬🏾\n\nJe souhaiterais m'abonner à vos cours de Pole Dance.\n\nQuelle formule vous me recommandez et comment procéder ?\n\nMerci d'avance ! 😊`,
+    '/gallery': `Coucou ! 📸\n\nJ'adore vos photos ! Je voulais savoir si vous proposez des séances photo ou shooting.\n\nMerci ! 😊`,
+    '/faq': `Coucou ! 👋🏾\n\nJ'ai une question qui n'est pas dans la FAQ :\n\n[Écrivez votre question ici]\n\nMerci ! 😊`,
+    '/contact': `Coucou ! 👋🏾\n\nJe vous contacte pour :\n\n[Décrivez votre demande]\n\nMerci ! 😊`,
+  };
+  const message = messages[service] || messages['/'];
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+};
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -26,7 +41,6 @@ const Navbar = () => {
     { name: 'Accueil', href: '/' },
     { name: 'Cours', href: '/services' },
     { name: 'Tarifs', href: '/pricing' },
-    { name: 'Workshop', href: '/services' },
     { name: 'Galerie', href: '/gallery' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },
@@ -52,7 +66,7 @@ const Navbar = () => {
           ))}
           <div className="flex flex-col items-end">
             <a 
-              href="https://calendly.com/reservations-cours/decouverte-pole-dance" 
+              href={getWhatsAppMessage(location.pathname)}
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-brand-primary text-brand-bg px-6 py-2.5 rounded-full text-sm font-medium hover:bg-brand-secondary transition-all"
@@ -89,7 +103,7 @@ const Navbar = () => {
               ))}
               <div className="flex flex-col items-center pt-4">
                 <a 
-                  href="https://calendly.com/reservations-cours/decouverte-pole-dance" 
+                  href={getWhatsAppMessage(location.pathname)}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-brand-primary text-brand-bg px-6 py-3.5 rounded-full text-center font-medium w-full text-sm"
