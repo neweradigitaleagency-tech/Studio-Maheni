@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ChevronRight, Users, Play, Calendar } from 'lucide-react';
+import { ChevronRight, Play, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SectionTitle } from '../components/Shared';
 
@@ -7,7 +7,7 @@ export const Home = () => {
   return (
     <>
       {/* --- Home Section --- */}
-      <section className="relative min-h-screen flex items-center pt-24 md:pt-20 overflow-hidden">
+      <section className="relative min-h-[85vh] flex items-center pt-24 md:pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-brand-bg via-brand-bg/80 to-brand-bg z-10" />
           <img
@@ -40,55 +40,39 @@ export const Home = () => {
               <Link to="/courses" className="bg-brand-primary text-brand-bg px-6 md:px-8 py-4 rounded-full font-medium hover:bg-brand-secondary transition-all flex items-center justify-center gap-2">
                 Réserve ton premier cours <ChevronRight size={18} />
               </Link>
-              <Link to="/contact" className="border border-brand-primary/20 text-brand-primary px-6 md:px-8 py-4 rounded-full font-medium hover:bg-brand-muted transition-all text-center">
-                Nous contacter
-              </Link>
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="relative mt-8 md:mt-0"
-          >
-            <div className="aspect-[4/5] rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl relative w-full sm:w-[85%] md:w-[75%] mx-auto md:ml-auto md:mr-0">
-              <img
-                src="https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776002403/_the_blackgravity_bny6zh.jpg"
-                alt="Maheni Founder"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-brand-primary/10 mix-blend-multiply" />
-            </div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 0.6 }}
-              className="absolute -bottom-6 left-1/2 -translate-x-1/2 md:translate-x-0 md:-bottom-8 md:-left-8 bg-white/90 backdrop-blur-xl p-4 md:p-8 rounded-[24px] md:rounded-[32px] shadow-2xl shadow-brand-primary/10 border border-white w-[90%] sm:w-auto flex justify-center md:justify-start"
+<motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative mt-8 md:mt-0"
             >
-              <div className="flex items-center gap-4 md:gap-5">
-                <div className="hidden sm:flex w-12 h-12 md:w-14 md:h-14 bg-brand-primary rounded-2xl items-center justify-center text-brand-bg shadow-lg shadow-brand-primary/20">
-                  <Users size={24} fill="currentColor" className="md:w-7 md:h-7" />
-                </div>
-                <div>
-                  <div className="text-2xl md:text-3xl font-serif font-bold text-brand-primary leading-none mb-1">200+</div>
-                  <div className="text-[9px] md:text-[10px] text-brand-primary/40 uppercase tracking-[0.2em] font-black">Élèves</div>
-                </div>
-                <div className="ml-2 pl-2 md:ml-4 md:pl-4 border-l border-brand-primary/10">
-                  <div className="text-2xl md:text-3xl font-serif font-bold text-brand-primary leading-none mb-1">3</div>
-                  <div className="text-[9px] md:text-[10px] text-brand-primary/40 uppercase tracking-[0.2em] font-black">Disciplines</div>
-                </div>
+              <div className="aspect-[4/5] rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl relative w-full sm:w-[85%] md:w-[75%] mx-auto md:ml-auto md:mr-0">
+                <img
+                  src="https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776002403/_the_blackgravity_bny6zh.jpg"
+                  alt="Maheni Founder"
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-brand-primary/10 mix-blend-multiply" />
               </div>
             </motion.div>
-          </motion.div>
         </div>
       </section>
 
       {/* --- Mon Premier Cours Section - 3 ETAPES --- */}
-      <section className="py-20 md:py-32 bg-brand-muted/30">
+      <section className="py-20 md:py-32 min-h-[85vh] bg-brand-muted/30">
         <div className="max-w-7xl mx-auto px-6">
           <SectionTitle eyebrow="Guide" title="Mon Premier Cours" centered />
+
+          <div className="text-center mt-8">
+            <div className="text-3xl md:text-4xl font-serif text-brand-primary mb-4">10 000 FCA</div>
+            <Link to="/faq" className="text-brand-secondary text-sm underline hover:text-brand-primary transition-colors">
+              Aide · Questions fréquentes
+            </Link>
+          </div>
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16 max-w-5xl mx-auto">
             {[
@@ -114,48 +98,54 @@ export const Home = () => {
           </div>
 
           <div className="text-center mt-12 md:mt-16">
-            <Link to="/pricing" className="inline-flex items-center gap-2 bg-brand-primary text-brand-bg px-8 py-4 rounded-full font-medium hover:bg-brand-secondary transition-all">
-              Voir nos tarifs <ChevronRight size={18} />
+            <Link to="/courses" className="inline-flex items-center gap-2 bg-brand-primary text-brand-bg px-8 py-4 rounded-full font-medium hover:bg-brand-secondary transition-all">
+              Réserver maintenant <ChevronRight size={18} />
             </Link>
           </div>
         </div>
       </section>
 
       {/* --- Questions Fréquentes Section --- */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 min-h-[85vh]">
         <div className="max-w-5xl mx-auto px-6">
           <SectionTitle eyebrow="Aide" title="Questions Fréquentes" centered />
 
-          <div className="mt-10 md:mt-14 space-y-4 md:space-y-6">
+          <div className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {[
-              { q: "Quelle tenue porter pour le premier cours ?", a: "Venez avec une tenue confortable (leggings, top sportif). Nous fournissons les talons aiguilles sur place !" },
-              { q: "Puis-je venir sans partenaire ?", a: "Absolument ! Tous nos cours sont ouverts aux individuelles. Vous serez intégrée dans le groupe." },
-              { q: "Que faire si je n'ai jamais dansé ?", a: "Notre cours de découverte est spécialement conçu pour les débutantes absolue. Vous seront guidées pas à pas !" }
+              { q: "Quelle tenue porter ?", color: "text-brand-secondary" },
+              { q: "Je n'ai pas de force, je peux faire ?", color: "text-brand-accent" },
+              null,
+              null,
+              { q: "A quoi ça sert ?", color: "text-brand-secondary" },
+              { q: "C'est du strip-tease ?", color: "text-brand-accent" }
             ].map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-[16px] md:rounded-[20px] p-5 md:p-6 border border-brand-primary/5"
-              >
-                <h4 className="text-base md:text-lg font-medium text-brand-primary mb-2">{faq.q}</h4>
-                <p className="text-sm md:text-base text-brand-primary/60">{faq.a}</p>
-              </motion.div>
+              faq ? (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="text-center"
+                >
+                  <span className={`text-xl md:text-2xl font-serif font-medium ${faq.color}`}>{faq.q}</span>
+                </motion.div>
+              ) : (
+                <div key={index} />
+              )
             ))}
           </div>
 
-          <div className="text-center mt-10">
-            <Link to="/faq" className="inline-flex items-center gap-2 text-brand-secondary font-bold uppercase tracking-widest hover:text-brand-primary transition-colors text-sm">
-              Voir toutes les questions <ChevronRight size={18} />
+          <div className="text-center mt-12">
+            <Link to="/faq" className="inline-flex items-center gap-2 border border-brand-primary/20 text-brand-primary px-8 py-4 rounded-full font-medium hover:bg-brand-muted transition-all">
+              Consulter la FAQ pour en savoir plus sur la pole dance <ChevronRight size={18} />
             </Link>
           </div>
         </div>
       </section>
 
       {/* --- C'est quoi le Studio Section --- */}
-      <section className="py-16 md:py-24 bg-brand-muted/20">
+      <section className="py-16 md:py-24 min-h-[85vh] bg-brand-muted/20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div>
@@ -235,7 +225,7 @@ export const Home = () => {
       </section>
 
       {/* --- Contact Section --- */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 min-h-[85vh]">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-serif text-brand-primary mb-4">
             Vous n'avez pas trouvé la réponse ?
