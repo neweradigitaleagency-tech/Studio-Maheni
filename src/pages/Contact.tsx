@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, Mail, MapPin, MessageSquare, Instagram, Music2, CheckCircle, AlertCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageSquare, CheckCircle, AlertCircle } from 'lucide-react';
 import { SectionTitle } from '../components/Shared';
 
 export const Contact = () => {

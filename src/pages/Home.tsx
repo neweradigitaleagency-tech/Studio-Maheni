@@ -330,17 +330,17 @@ export const Home = () => {
                 </div>
               )}
 
-              <form className="space-y-4" onSubmit={(e) => {
+              <form className="space-y-4" action="mailto:studio.maheni@gmail.com" method="post" encType="text/plain" onSubmit={(e) => {
                 const form = e.currentTarget;
                 const email = (form.elements.namedItem('email') as HTMLInputElement).value;
                 if (!email || !email.includes('@')) {
                   e.preventDefault();
                   setEmailError(true);
                   setTimeout(() => setEmailError(false), 3000);
-                  return;
+                } else {
+                  setEmailSent(true);
+                  setTimeout(() => setEmailSent(false), 5000);
                 }
-                setEmailSent(true);
-                setTimeout(() => setEmailSent(false), 5000);
               }}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
