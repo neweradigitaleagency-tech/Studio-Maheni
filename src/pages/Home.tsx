@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronRight, Play, Calendar, Plus, Minus, Phone, Mail, MapPin } from 'lucide-react';
+import { ChevronRight, Play, Calendar, Plus, Minus, Phone, Mail, MapPin, MessageSquare, CheckCircle, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SectionTitle } from '../components/Shared';
 
@@ -35,6 +35,9 @@ const FAQCard = ({ question, answer, color }: { question: string, answer: string
 };
 
 export const Home = () => {
+  const [emailSent, setEmailSent] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+
   return (
     <>
       {/* --- Hero Section --- */}
@@ -293,35 +296,101 @@ export const Home = () => {
                   <span className="font-medium">New Gym, Abidjan</span>
                 </div>
               </div>
-              <div className="flex gap-4 pt-2">
+<div className="flex gap-4 pt-2">
                 <a href="https://chat.whatsapp.com/CUt3PyGxD4u3Fl293fJsIy" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-[#25D430] rounded-full flex items-center justify-center hover:scale-110 transition-all">
-                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.197-.148-.846-.577-1.607-.822-.877-.282-1.585-.252-2.142.084-.558.338-1.588.558-2.875.558-.099 0-.245-.015-.36-.015-.121 0-.323.025-.464.149-.14.124-.539.487-.539 1.125 0 .639.539 1.125.539 1.125.149 0 .273.149.399.298.149.149.398.298.598.448.099.099.198.149.298.149.073 0 .149-.025.218-.025.07 0 .174-.025.273-.124.099-.099.422-.487.576-.687.149-.199.174-.347.174-.497 0-.124-.099-.249-.149-.348-.149-.298-.597-.523-1.124-.746-.527-.223-1.627-.423-2.002-.423-.099 0-.248.025-.348.074-.099.049-.174.074-.273.074-.073 0-.173-.025-.248-.074-.099-.074-.495-.223-.846-.322-.351-.099-.693-.149-1.002-.149-.099 0-.273.025-.398.074-.124.049-.223.124-.298.223-.173.223-.174.527-.174.722v.472c0 .546.523 1.164.797 1.611.298.447 1.055 1.761 1.607 2.384.527.597 1.055.868 1.408 1.063.349.199.567.272.794.272.124 0 .322-.025.472-.099.149-.074.547-.37.723-.622.173-.249.225-.423.298-.647.074-.223.074-.42.025-.647-.074-.223-.523-1.055-1.607-1.761-.548-.358-1.054-.546-1.458-.597-.398-.049-1.055-.025-1.607-.025-.099 0-.527.025-1.28.397-.225.124-.546.298-.82.473-.273.174-.473.199-.596.199-.124 0-.347-.025.523-.025 1.055 0 1.832-.397 2.454-1.607.622-1.21.622-2.003.622-2.003 0-.546-.025-1.28-.074-1.833-.074-.546-.124-1.055-.174-1.28-.049-.223.025-.473.124-.647zM12.71 22.088c-.596 0-1.19-.099-1.733-.297-.994-.358-1.756-.922-2.328-1.607-.572-.685-.922-1.459-1.055-2.28-.074-.447-.025-.87.149-1.28.173-.41.447-.821.771-1.158.298-.323.746-.596 1.28-.796.994-.373 1.977-.447 2.877-.199.898.248 1.658.773 2.229 1.533.571.76.848 1.607.922 2.454.025.273 0 .596-.074.87-.074.273-.247.596-.546.796-.124.099-.249.223-.348.298-.099.074-.173.149-.249.223-.074.074-.099.173-.099.273v.025c0 .124.025.248.074.348l.395.646c.124.199.174.422.174.596 0 .596-.298 1.158-.796 1.607-.497.447-1.055.771-1.682.922-.324.074-.646.124-.92.124zm4.826-3.958c-1.055 0-2.003-.37-2.875-1.084-.872-.713-1.458-1.607-1.78-2.454-.322-.846-.473-1.607-.473-2.28 0-.672.173-1.28.596-1.832.422-.547.992-.994 1.755-1.31.761-.322 1.508-.473 2.28-.473.795 0 1.533.173 2.254.546.721.372 1.331.896 1.831 1.58.499.684.771 1.459.771 2.328 0 .87-.272 1.733-.771 2.454-.499.721-1.11 1.208-1.831 1.58-.72.372-1.459.546-2.254.546h-.023zm-1.607-3.958c.645-.099 1.159-.323 1.53-.671.372-.349.546-.772.546-1.28 0-.508-.174-.932-.546-1.28-.372-.349-.885-.572-1.53-.671-.645-.099-1.281-.099-1.927 0-.645.099-1.159.322-1.53.671-.372.349-.546.772-.546 1.28 0 .508.174.932.546 1.28.372.349.885.572 1.53.671.645.099 1.281.099 1.927 0z"/></svg>
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="white"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.03-.966-.263-.099-.473-.15-.673.15-.299.297-.94.964-.94 1.162v.05c0 .299.649.448.997.597.35.149.597.149.796.298.099.05.05.148.025.298-.05.15-.15.398-.199.498-.099.149-.199.397-.299.596-.049.1-.147.198-.397.099-.35-.15-1.596-.747-3.037-1.898-1.397-1.123-2.345-2.533-2.64-2.966-.298-.433-.596-.597-.796-.597-.099 0-.249-.025-.349.025-.099.05-.397.198-.497.198s-.399-.025-.548-.099c-.149-.099-.597-.348-1.643-1.023-1.1-.711-1.827-1.595-2.118-1.865-.148-.149-.249-.199-.373.099-.124.299-.624 1.073-.682 1.154-.099.124-.05.248.025.348.099.149.249.348.398.497.299.298.498.398.846.647.349.248.896.1 1.196.05.298-.05.995-.348 1.895-.647.897-.298 1.545-.498 1.844-.748.298-.248.397-.248.547-.397l.848-.547c.099-.099.248-.148.299-.248.148-.15.05-.348-.025-.497l-.399-1.048c-.05-.15-.05-.348.05-.497.149-.149.199-.248.299-.348.149-.099.248-.099.348-.149.049 0 .099 0 .124-.025l.624-.299c.249-.124.373-.198.447-.397.124-.299.099-.597-.025-.846-.124-.198-.846-.447-1.156-.596-.311-.15-.597-.198-.796-.198-.199 0-.497-.05-.647.124-.15.174-.349.298-.348.398-.025.099.124.199.199.298zM20.156 4.883c1.297-1.56 2.155-3.545 1.997-4.883-1.497.074-3.136 1.072-4.16 2.38-1.025 1.308-1.74 3.322-1.642 4.826 1.646-.05 3.271-.672 4.805-1.323zm-5.227 3.89c.396-.05.787-.124 1.136-.248-.349-1.397-.992-2.685-1.867-3.53-.875-.846-2.155-1.373-3.538-1.422.074.198.148.422.247.646 1.223 2.453 2.828 4.554 5.022 4.554zm.647-6.59c.347.025.672.074.994.124-.272-1.082-.806-2.043-1.54-2.706-.735-.663-1.783-1.113-2.876-1.172.099.173.198.347.272.522 1.025 1.647 2.206 3.322 4.15 3.232z"/></svg>
                 </a>
-                <a href="https://www.instagram.com/studio.maheni?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-brand-primary/10 rounded-full flex items-center justify-center hover:bg-brand-secondary hover:text-white transition-all">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069-3.204 0-3.584-.012-4.849-.069-3.225-.149-4.771-1.664-4.919-4.919-.058-1.265-.069-1.644-.069-4.849 0-3.204.012-3.584.069-4.849.149-3.226 1.673-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg>
+                <a href="https://www.instagram.com/studio.maheni/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-brand-primary/10 rounded-full flex items-center justify-center hover:bg-brand-secondary hover:text-white transition-all">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069-3.204 0-3.584-.012-4.849-.069-3.225-.149-4.771-1.664-4.919-4.919-.058-1.265-.069-1.644-.069-4.849 0-3.204.012-3.584.069-4.849.149-3.226 1.673-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                 </a>
-                <a href="https://www.tiktok.com/@studio.maheni?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-brand-primary/10 rounded-full flex items-center justify-center hover:bg-brand-secondary hover:text-white transition-all">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v6.21c0 .61-.31 1.16-.79 1.47-1.06.69-2.47.54-3.46-.38-1.04-.94-1.14-2.47-.22-3.58.42-.51 1.11-.91 1.88-1.16v4.41c-.64-.26-1.31-.47-2.02-.54-.71-.07-1.41.17-2.01.68-.65.55-1.01 1.42-.98 2.34v3.47c.01.88.44 1.66 1.14 2.17.68.5 1.5.62 2.28.55v4.4c-.99-.09-1.91-.46-2.66-1.03-.74-.56-1.23-1.37-1.38-2.25-.18-.99.24-1.99.93-2.79v-4.54c.74.34 1.54.52 2.35.52 1.65 0 3.15-.88 3.85-2.21.7-1.34.67-3.07.12-4.45-1.02-2.58-3.83-4.01-6.23-3.69-1.55.21-2.91.94-3.83 1.95V.02z" /></svg>
+                <a href="https://www.tiktok.com/@studio.maheni?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-black rounded-full flex items-center justify-center hover:scale-110 transition-all">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v6.26a2.84 2.84 0 0 1-5.62 1.14 2.84 2.84 0 0 1 1.89-2.61 4.78 4.78 0 0 1 3.28 1.65V10.3a3.81 3.81 0 0 0-2.1-.54c-2.74-.13-4.52 1.96-4.73 4.64a4.87 4.87 0 0 0 4.27 4.75c2.35 1.03 4.77-.3 5.42-2.72a5.09 5.09 0 0 0 .64-1.85 3.78 3.78 0 0 0 2.1 2.39c1.17.56 2.5.6 3.57.21a4.84 4.84 0 0 0 3.27-4.09V7.94a5 5 0 0 1-1 .64z"/></svg>
                 </a>
               </div>
             </div>
 
-            {/* Right Column - Email Box Redesigned */}
-            <div className="bg-white rounded-[20px] p-8 shadow-lg shadow-brand-primary/5 flex flex-col justify-center min-h-[280px]">
-              <h3 className="text-xl font-bold text-brand-primary mb-2">Une question ?</h3>
-              <p className="text-brand-primary/60 text-sm mb-6">Contactez-nous par email</p>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <input
-                  type="email"
-                  placeholder="Votre email..."
-                  className="w-full px-5 py-4 rounded-[12px] border border-brand-primary/15 bg-brand-bg/50 focus:border-brand-primary focus:outline-none text-sm transition-colors"
-                />
-                <textarea
-                  placeholder="Votre message..."
-                  rows={3}
-                  className="w-full px-5 py-4 rounded-[12px] border border-brand-primary/15 bg-brand-bg/50 focus:border-brand-primary focus:outline-none text-sm resize-none transition-colors"
-                ></textarea>
-                <button type="submit" className="w-full bg-brand-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-brand-secondary transition-colors">
+            {/* Right Column - Email Box Redesigned (20% smaller) */}
+            <div className="bg-white rounded-[20px] p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-left flex flex-col justify-center min-h-[240px]">
+              <div className="flex items-center gap-3 mb-6">
+                <MessageSquare className="text-brand-primary/80" size={20} strokeWidth={1.5} />
+                <h3 className="text-lg md:text-xl font-medium text-brand-primary">Envoyez-nous un message</h3>
+              </div>
+
+              {emailSent && (
+                <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-[12px] flex items-center gap-2 text-green-700 text-sm">
+                  <CheckCircle size={16} />
+                  Message envoyé ! Vérifiez votre boîte mail pour le suivi.
+                </div>
+              )}
+
+              {emailError && (
+                <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-[12px] flex items-center gap-2 text-red-700 text-sm">
+                  <AlertCircle size={16} />
+                  Veuillez entrer un email valide.
+                </div>
+              )}
+
+              <form className="space-y-4" onSubmit={(e) => {
+                const form = e.currentTarget;
+                const email = (form.elements.namedItem('email') as HTMLInputElement).value;
+                if (!email || !email.includes('@')) {
+                  e.preventDefault();
+                  setEmailError(true);
+                  setTimeout(() => setEmailError(false), 3000);
+                  return;
+                }
+                setEmailSent(true);
+                setTimeout(() => setEmailSent(false), 5000);
+              }}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-[10px] sm:text-xs font-bold text-brand-primary/40 uppercase tracking-widest pl-1 mb-1 block">Nom</label>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Votre nom"
+                      required
+                      className="w-full px-4 py-3 rounded-[12px] bg-brand-bg/50 focus:border-brand-primary/30 focus:outline-none focus:ring-1 focus:ring-brand-primary/20 text-sm transition-colors border border-transparent placeholder:text-brand-primary/30 text-brand-primary font-medium"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-[10px] sm:text-xs font-bold text-brand-primary/40 uppercase tracking-widest pl-1 mb-1 block">Email *</label>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="votre@email.com"
+                      required
+                      className="w-full px-4 py-3 rounded-[12px] bg-brand-bg/50 focus:border-brand-primary/30 focus:outline-none focus:ring-1 focus:ring-brand-primary/20 text-sm transition-colors border border-transparent placeholder:text-brand-primary/30 text-brand-primary font-medium"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="text-[10px] sm:text-xs font-bold text-brand-primary/40 uppercase tracking-widest pl-1 mb-1 block">Sujet</label>
+                  <input
+                    type="text"
+                    name="subject"
+                    placeholder="Sujet"
+                    required
+                    className="w-full px-4 py-3 rounded-[12px] bg-brand-bg/50 focus:border-brand-primary/30 focus:outline-none focus:ring-1 focus:ring-brand-primary/20 text-sm transition-colors border border-transparent placeholder:text-brand-primary/30 text-brand-primary font-medium"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-[10px] sm:text-xs font-bold text-brand-primary/40 uppercase tracking-widest pl-1 mb-1 block">Message *</label>
+                  <textarea
+                    name="message"
+                    placeholder="Votre message..."
+                    rows={3}
+                    required
+                    className="w-full px-4 py-3 rounded-[12px] bg-brand-bg/50 focus:border-brand-primary/30 focus:outline-none focus:ring-1 focus:ring-brand-primary/20 text-sm resize-none transition-colors border border-transparent placeholder:text-brand-primary/30 text-brand-primary font-medium"
+                  ></textarea>
+                </div>
+                
+                <button
+                  type="submit"
+                  className="w-full bg-brand-primary text-white px-6 py-3 rounded-[12px] font-medium text-sm hover:bg-brand-secondary transition-colors mt-2"
+                >
                   Envoyer
                 </button>
               </form>
