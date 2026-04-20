@@ -102,15 +102,15 @@ export const Pricing = () => {
               </div>
               <div className="space-y-4 mb-6">
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-white/70">4 Séances</span>
+                  <span className="text-sm text-white/70">4 Séances <span className="text-white/50">(1 mois)</span></span>
                   <span className="text-base font-bold text-white">50 000 FCA</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-white/70">8 Séances</span>
+                  <span className="text-sm text-white/70">8 Séances <span className="text-white/50">(2 mois)</span></span>
                   <span className="text-base font-bold text-white">80 000 FCA</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-white font-bold">12 Séances</span>
+                  <span className="text-sm text-white font-bold">12 Séances <span className="text-white/70">(3 mois)</span></span>
                   <span className="text-lg font-bold text-white">120 000 FCA</span>
                 </div>
               </div>
