@@ -172,7 +172,7 @@ export const Chatbot = () => {
                 <Bot size={24} />
               </div>
               <div>
-                <h3 className="font-serif font-bold">Assistant Studio Maheni</h3>
+                <h3 className="font-medium font-bold">Assistant Studio Maheni</h3>
                 <p className="text-xs text-white/70">En ligne</p>
               </div>
             </div>

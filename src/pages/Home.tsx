@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronRight, Play, Calendar, Plus, Minus } from 'lucide-react';
+import { ChevronRight, Play, Calendar, Plus, Minus, Phone, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SectionTitle } from '../components/Shared';
 
@@ -55,15 +55,15 @@ export const Home = () => {
             <p className="text-xs md:text-sm font-medium tracking-wider uppercase text-brand-primary/50 mb-6 md:mb-8">
               Confiance - Féminité - Communauté
             </p>
-            <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-serif italic text-brand-tan leading-[0.95] mb-6 md:mb-8">
+            <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-medium italic text-brand-tan leading-[0.95] mb-6 md:mb-8 font-medium">
               Become that girl
             </h1>
             <p className="text-base md:text-lg text-brand-primary/60 mb-8 md:mb-10 max-w-sm mx-auto md:mx-0">
               Découvre la pole dance à Abidjan
             </p>
             <div>
-              <Link 
-                to="/services" 
+              <Link
+                to="/services"
                 className="inline-block bg-brand-primary text-white px-8 md:px-10 py-4 rounded-full font-semibold hover:opacity-85 hover:-translate-y-px transition-all"
               >
                 Réserve ton premier cours
@@ -109,19 +109,19 @@ export const Home = () => {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white rounded-[24px] md:rounded-[32px] p-8 md:p-10 shadow-sm border border-brand-primary/5 text-center"
               >
-                <span className="text-4xl md:text-5xl font-serif font-bold text-brand-secondary/30 italic mb-4 block">
+                <span className="text-4xl md:text-5xl font-medium font-bold text-brand-secondary/30 italic mb-4 block">
                   {step.num}
                 </span>
-                <h3 className="text-xl md:text-2xl font-serif text-brand-primary mb-3">{step.title}</h3>
+                <h3 className="text-xl md:text-2xl font-medium text-brand-primary mb-3">{step.title}</h3>
                 <p className="text-brand-primary/60 text-sm md:text-base">{step.desc}</p>
               </motion.div>
             ))}
           </div>
 
-          <div className="text-center mt-12 md:mt-16">
-            <Link to="/services" className="inline-flex items-center gap-2 bg-brand-primary text-brand-bg px-8 py-4 rounded-full font-medium hover:bg-brand-secondary transition-all">
-              Réserver maintenant <ChevronRight size={18} />
-            </Link>
+          <div className="text-center mt-12 md:mt-16 bg-white rounded-[16px] py-6 px-8 shadow-sm border border-brand-primary/5 inline-block">
+            <p className="text-brand-primary/80 text-sm md:text-base">
+              Déjà fait ton premier cours ? <span className="font-medium">On te guide sur WhatsApp</span> pour tes prochaines séances.
+            </p>
           </div>
         </div>
       </section>
@@ -133,20 +133,20 @@ export const Home = () => {
 
           <div className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { 
-                q: "À quoi ça sert ? C'est du strip-tease ?", 
+              {
+                q: "À quoi ça sert ? C'est du strip-tease ?",
                 a: "Pas du tout. La pole dance est une discipline sportive et artistique qui mélange force, grâce et expression corporelle. Chez Studio Maheni, l'objectif est simple : t'aider à te sentir forte, confiante et libre dans ton corps.",
-                color: "bg-brand-tan" 
+                color: "bg-brand-tan"
               },
-              { 
-                q: "Je n'ai pas de force, je peux faire ?", 
+              {
+                q: "Je n'ai pas de force, je peux faire ?",
                 a: "Oui, et c'est même la meilleure raison de commencer. Tu n'as pas besoin d'être forte avant de venir — tu deviens forte en pratiquant. Chaque cours est adapté pour te faire progresser à ton rythme, sans pression.",
-                color: "bg-brand-tan" 
+                color: "bg-brand-tan"
               },
-              { 
-                q: "Quelle tenue porter ?", 
+              {
+                q: "Quelle tenue porter ?",
                 a: "Une tenue confortable qui te permet de bouger librement : short et top de sport sont idéals. Le plus important, c'est que tu te sentes à l'aise et prête à profiter pleinement de l'expérience.",
-                color: "bg-brand-tan" 
+                color: "bg-brand-tan"
               }
             ].map((faq, index) => (
               <motion.div
@@ -179,12 +179,12 @@ export const Home = () => {
               <SectionTitle title="C'est quoi le Studio Maheni ?" />
               <p className="text-brand-primary/70 text-base md:text-lg leading-relaxed mt-6">
                 Studio Maheni est un espace dédié à la danse et au bien-être situé à Abidjan, où les femmes viennent se reconnecter à leur corps, gagner en confiance et s'exprimer librement à travers la pole dance.
-                Nous proposons des cours de Pole Dance, Kompa et Kizomba dans une ambiance chaleureuse, professionnelle et bienveillante.
+                Nous proposons des cours de Pole Dance, des workshops Kompa et Kizomba dans une ambiance chaleureuse, professionnelle et bienveillante.
               </p>
               <p className="text-brand-primary font-medium mt-6">Notre studio, c'est :</p>
               <ul className="mt-4 space-y-3">
                 {[
-                  "Une communauté de +200 élèves",
+                  "Une communauté! ",
                   "Des coaches passionnés et engagés dans votre progression",
                   "Un espace entièrement équipé pour votre confort",
                   "Une énergie unique, centrée sur la confiance, l'expression et le bien-être"
@@ -212,7 +212,7 @@ export const Home = () => {
 
           {/* Workshops Passés */}
           <div className="mt-16 md:mt-20">
-            <h3 className="text-xl md:text-2xl font-serif text-brand-primary mb-8 flex items-center gap-3">
+            <h3 className="text-xl md:text-2xl font-medium text-brand-primary mb-8 flex items-center gap-3">
               <div className="w-8 h-px bg-brand-secondary" />
               Nos workshops passés
             </h3>
@@ -241,7 +241,7 @@ export const Home = () => {
                   </div>
                   <div className="p-4 md:p-6 flex flex-col justify-center">
                     <span className="text-brand-secondary text-[10px] font-bold uppercase tracking-widest mb-2">{workshop.date}</span>
-                    <h4 className="text-base md:text-lg font-serif text-brand-primary mb-1">{workshop.title}</h4>
+                    <h4 className="text-base md:text-lg font-medium text-brand-primary mb-1">{workshop.title}</h4>
                     <p className="text-brand-primary/50 text-xs md:text-sm">{workshop.desc}</p>
                   </div>
                 </motion.div>
@@ -255,51 +255,74 @@ export const Home = () => {
       <section className="py-12 md:py-16 bg-brand-muted/20">
         <div className="max-w-[80%] mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-brand-primary mb-2">
-            Vous n'avez pas trouvé la réponse sur notre site,<br/>
+            Vous n'avez pas trouvé la réponse sur notre site,<br />
             y compris dans les FAQ ?
           </h2>
           <p className="text-brand-primary/70 mb-10">
-            Contactez-nous par le moyen qui vous convient...<br/>
+            Contactez-nous par le moyen qui vous convient...<br />
             Réponse plus rapide via WhatsApp.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             {/* Left Column - Contact Info */}
             <div className="space-y-6">
-              <div className="flex items-center gap-3 text-brand-primary">
-                <span className="text-xl">📞</span>
-                <span className="font-medium">TÉLÉPHONE / WHATSAPP: +225 07 17 61 63 43</span>
+              <div className="flex items-center gap-4 text-brand-primary">
+                <div className="w-10 h-10 bg-brand-primary/10 rounded-full flex items-center justify-center shrink-0">
+                  <Phone size={20} className="text-brand-primary" />
+                </div>
+                <div>
+                  <span className="text-[10px] uppercase tracking-wider text-brand-primary/50 block mb-1">Téléphone / WhatsApp</span>
+                  <span className="font-medium">+225 07 17 61 63 43</span>
+                </div>
               </div>
-              <div className="flex items-center gap-3 text-brand-primary">
-                <span className="text-xl">✉️</span>
-                <span className="font-medium">maheni.officialdancer@gmail.com</span>
+              <div className="flex items-center gap-4 text-brand-primary">
+                <div className="w-10 h-10 bg-brand-primary/10 rounded-full flex items-center justify-center shrink-0">
+                  <Mail size={20} className="text-brand-primary" />
+                </div>
+                <div>
+                  <span className="text-[10px] uppercase tracking-wider text-brand-primary/50 block mb-1">Email</span>
+                  <span className="font-medium">studio.maheni@gmail.com</span>
+                </div>
               </div>
-              <div className="flex items-center gap-3 text-brand-primary">
-                <span className="text-xl">📍</span>
-                <span className="font-medium">New Gym, Abidjan</span>
+              <div className="flex items-center gap-4 text-brand-primary">
+                <div className="w-10 h-10 bg-brand-primary/10 rounded-full flex items-center justify-center shrink-0">
+                  <MapPin size={20} className="text-brand-primary" />
+                </div>
+                <div>
+                  <span className="text-[10px] uppercase tracking-wider text-brand-primary/50 block mb-1">Localisation</span>
+                  <span className="font-medium">New Gym, Abidjan</span>
+                </div>
               </div>
-              <div className="flex gap-4 pt-4">
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-brand-primary/10 rounded-full flex items-center justify-center hover:bg-brand-primary/20 transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069-3.204 0-3.584-.012-4.849-.069-3.225-.149-4.771-1.664-4.919-4.919-.058-1.265-.069-1.644-.069-4.849 0-3.204.012-3.584.069-4.849.149-3.226 1.673-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              <div className="flex gap-4 pt-2">
+                <a href="https://chat.whatsapp.com/CUt3PyGxD4u3Fl293fJsIy" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-[#25D430] rounded-full flex items-center justify-center hover:scale-110 transition-all">
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.197-.148-.846-.577-1.607-.822-.877-.282-1.585-.252-2.142.084-.558.338-1.588.558-2.875.558-.099 0-.245-.015-.36-.015-.121 0-.323.025-.464.149-.14.124-.539.487-.539 1.125 0 .639.539 1.125.539 1.125.149 0 .273.149.399.298.149.149.398.298.598.448.099.099.198.149.298.149.073 0 .149-.025.218-.025.07 0 .174-.025.273-.124.099-.099.422-.487.576-.687.149-.199.174-.347.174-.497 0-.124-.099-.249-.149-.348-.149-.298-.597-.523-1.124-.746-.527-.223-1.627-.423-2.002-.423-.099 0-.248.025-.348.074-.099.049-.174.074-.273.074-.073 0-.173-.025-.248-.074-.099-.074-.495-.223-.846-.322-.351-.099-.693-.149-1.002-.149-.099 0-.273.025-.398.074-.124.049-.223.124-.298.223-.173.223-.174.527-.174.722v.472c0 .546.523 1.164.797 1.611.298.447 1.055 1.761 1.607 2.384.527.597 1.055.868 1.408 1.063.349.199.567.272.794.272.124 0 .322-.025.472-.099.149-.074.547-.37.723-.622.173-.249.225-.423.298-.647.074-.223.074-.42.025-.647-.074-.223-.523-1.055-1.607-1.761-.548-.358-1.054-.546-1.458-.597-.398-.049-1.055-.025-1.607-.025-.099 0-.527.025-1.28.397-.225.124-.546.298-.82.473-.273.174-.473.199-.596.199-.124 0-.347-.025.523-.025 1.055 0 1.832-.397 2.454-1.607.622-1.21.622-2.003.622-2.003 0-.546-.025-1.28-.074-1.833-.074-.546-.124-1.055-.174-1.28-.049-.223.025-.473.124-.647zM12.71 22.088c-.596 0-1.19-.099-1.733-.297-.994-.358-1.756-.922-2.328-1.607-.572-.685-.922-1.459-1.055-2.28-.074-.447-.025-.87.149-1.28.173-.41.447-.821.771-1.158.298-.323.746-.596 1.28-.796.994-.373 1.977-.447 2.877-.199.898.248 1.658.773 2.229 1.533.571.76.848 1.607.922 2.454.025.273 0 .596-.074.87-.074.273-.247.596-.546.796-.124.099-.249.223-.348.298-.099.074-.173.149-.249.223-.074.074-.099.173-.099.273v.025c0 .124.025.248.074.348l.395.646c.124.199.174.422.174.596 0 .596-.298 1.158-.796 1.607-.497.447-1.055.771-1.682.922-.324.074-.646.124-.92.124zm4.826-3.958c-1.055 0-2.003-.37-2.875-1.084-.872-.713-1.458-1.607-1.78-2.454-.322-.846-.473-1.607-.473-2.28 0-.672.173-1.28.596-1.832.422-.547.992-.994 1.755-1.31.761-.322 1.508-.473 2.28-.473.795 0 1.533.173 2.254.546.721.372 1.331.896 1.831 1.58.499.684.771 1.459.771 2.328 0 .87-.272 1.733-.771 2.454-.499.721-1.11 1.208-1.831 1.58-.72.372-1.459.546-2.254.546h-.023zm-1.607-3.958c.645-.099 1.159-.323 1.53-.671.372-.349.546-.772.546-1.28 0-.508-.174-.932-.546-1.28-.372-.349-.885-.572-1.53-.671-.645-.099-1.281-.099-1.927 0-.645.099-1.159.322-1.53.671-.372.349-.546.772-.546 1.28 0 .508.174.932.546 1.28.372.349.885.572 1.53.671.645.099 1.281.099 1.927 0z"/></svg>
                 </a>
-                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-brand-primary/10 rounded-full flex items-center justify-center hover:bg-brand-primary/20 transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v6.21c0 .61-.31 1.16-.79 1.47-1.06.69-2.47.54-3.46-.38-1.04-.94-1.14-2.47-.22-3.58.42-.51 1.11-.91 1.88-1.16v4.41c-.64-.26-1.31-.47-2.02-.54-.71-.07-1.41.17-2.01.68-.65.55-1.01 1.42-.98 2.34v3.47c.01.88.44 1.66 1.14 2.17.68.5 1.5.62 2.28.55v4.4c-.99-.09-1.91-.46-2.66-1.03-.74-.56-1.23-1.37-1.38-2.25-.18-.99.24-1.99.93-2.79v-4.54c.74.34 1.54.52 2.35.52 1.65 0 3.15-.88 3.85-2.21.7-1.34.67-3.07.12-4.45-1.02-2.58-3.83-4.01-6.23-3.69-1.55.21-2.91.94-3.83 1.95V.02z"/></svg>
+                <a href="https://www.instagram.com/studio.maheni?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-brand-primary/10 rounded-full flex items-center justify-center hover:bg-brand-secondary hover:text-white transition-all">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069-3.204 0-3.584-.012-4.849-.069-3.225-.149-4.771-1.664-4.919-4.919-.058-1.265-.069-1.644-.069-4.849 0-3.204.012-3.584.069-4.849.149-3.226 1.673-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg>
+                </a>
+                <a href="https://www.tiktok.com/@studio.maheni?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-brand-primary/10 rounded-full flex items-center justify-center hover:bg-brand-secondary hover:text-white transition-all">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v6.21c0 .61-.31 1.16-.79 1.47-1.06.69-2.47.54-3.46-.38-1.04-.94-1.14-2.47-.22-3.58.42-.51 1.11-.91 1.88-1.16v4.41c-.64-.26-1.31-.47-2.02-.54-.71-.07-1.41.17-2.01.68-.65.55-1.01 1.42-.98 2.34v3.47c.01.88.44 1.66 1.14 2.17.68.5 1.5.62 2.28.55v4.4c-.99-.09-1.91-.46-2.66-1.03-.74-.56-1.23-1.37-1.38-2.25-.18-.99.24-1.99.93-2.79v-4.54c.74.34 1.54.52 2.35.52 1.65 0 3.15-.88 3.85-2.21.7-1.34.67-3.07.12-4.45-1.02-2.58-3.83-4.01-6.23-3.69-1.55.21-2.91.94-3.83 1.95V.02z" /></svg>
                 </a>
               </div>
             </div>
 
-            {/* Right Column - Contact Form */}
-            <div className="bg-white rounded-[16px] p-8 shadow-lg shadow-brand-primary/5">
-              <h3 className="text-xl font-bold text-brand-primary mb-6">Envoyez-nous un message</h3>
+            {/* Right Column - Email Box Redesigned */}
+            <div className="bg-white rounded-[20px] p-8 shadow-lg shadow-brand-primary/5 flex flex-col justify-center min-h-[280px]">
+              <h3 className="text-xl font-bold text-brand-primary mb-2">Une question ?</h3>
+              <p className="text-brand-primary/60 text-sm mb-6">Contactez-nous par email</p>
               <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <input type="text" placeholder="Nom" className="w-full px-4 py-3 rounded-[8px] border border-brand-primary/20 focus:border-brand-primary focus:outline-none text-sm" />
-                  <input type="email" placeholder="Email" className="w-full px-4 py-3 rounded-[8px] border border-brand-primary/20 focus:border-brand-primary focus:outline-none text-sm" />
-                </div>
-                <input type="text" placeholder="Sujet" className="w-full px-4 py-3 rounded-[8px] border border-brand-primary/20 focus:border-brand-primary focus:outline-none text-sm" />
-                <textarea placeholder="Message" rows={4} className="w-full px-4 py-3 rounded-[8px] border border-brand-primary/20 focus:border-brand-primary focus:outline-none text-sm resize-none"></textarea>
-                <button type="submit" className="w-full bg-brand-primary text-white px-8 py-4 rounded-full font-semibold hover:opacity-85 transition-all">
-                  ENVOYER LE MESSAGE
+                <input
+                  type="email"
+                  placeholder="Votre email..."
+                  className="w-full px-5 py-4 rounded-[12px] border border-brand-primary/15 bg-brand-bg/50 focus:border-brand-primary focus:outline-none text-sm transition-colors"
+                />
+                <textarea
+                  placeholder="Votre message..."
+                  rows={3}
+                  className="w-full px-5 py-4 rounded-[12px] border border-brand-primary/15 bg-brand-bg/50 focus:border-brand-primary focus:outline-none text-sm resize-none transition-colors"
+                ></textarea>
+                <button type="submit" className="w-full bg-brand-primary text-white px-8 py-4 rounded-full font-semibold hover:bg-brand-secondary transition-colors">
+                  Envoyer
                 </button>
               </form>
             </div>

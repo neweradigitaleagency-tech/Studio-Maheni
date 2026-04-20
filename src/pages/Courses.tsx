@@ -25,7 +25,7 @@ export const Courses = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 p-6 md:p-10">
-                <h3 className="text-3xl md:text-4xl font-serif text-brand-bg mb-3 md:mb-4">Pole Dance</h3>
+                <h3 className="text-3xl md:text-4xl font-medium text-brand-bg mb-3 md:mb-4">Pole Dance</h3>
                 <p className="text-brand-bg/70 max-w-sm mb-4 md:mb-6 text-sm md:text-base">
                   Alliez force athlétique et grâce artistique. Un entraînement complet qui sculpte le corps et libère l'esprit.
                 </p>
@@ -41,7 +41,7 @@ export const Courses = () => {
               className="md:col-span-2 bg-brand-secondary rounded-[24px] md:rounded-[32px] p-6 md:p-8 flex flex-col justify-between relative overflow-hidden group min-h-[250px] md:min-h-0"
             >
               <div className="relative z-10">
-                <h3 className="text-xl md:text-2xl font-serif text-brand-bg mb-2">Kompa</h3>
+                <h3 className="text-xl md:text-2xl font-medium text-brand-bg mb-2">Kompa</h3>
                 <p className="text-brand-bg/80 text-xs md:text-sm max-w-xs">
                   Plongez dans les rythmes envoûtants d'Haïti. Une danse sociale vibrante et pleine d'énergie.
                 </p>
@@ -50,7 +50,7 @@ export const Courses = () => {
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-brand-bg/20 backdrop-blur-md rounded-full flex items-center justify-center text-brand-bg">
                   <Play size={20} />
                 </div>
-                <span className="text-brand-bg/40 font-serif italic text-5xl md:text-6xl">02</span>
+                <span className="text-brand-bg/40 font-medium italic text-5xl md:text-6xl">02</span>
               </div>
               <div className="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none">
                 <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&q=80&w=500" alt="Dance" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
@@ -63,14 +63,14 @@ export const Courses = () => {
               className="md:col-span-2 bg-brand-muted rounded-[24px] md:rounded-[32px] p-6 md:p-8 flex flex-col justify-between group min-h-[200px] md:min-h-0"
             >
               <div>
-                <h3 className="text-xl md:text-2xl font-serif text-brand-primary mb-2">Kizomba</h3>
+                <h3 className="text-xl md:text-2xl font-medium text-brand-primary mb-2">Kizomba</h3>
                 <p className="text-brand-primary/60 text-xs md:text-sm">
                   La fluidité et la connexion. Une danse douce et technique.
                 </p>
               </div>
               <div className="flex justify-between items-end mt-6 md:mt-0">
                 <Users size={24} className="text-brand-secondary" />
-                <span className="text-brand-primary/10 font-serif italic text-4xl md:text-5xl">03</span>
+                <span className="text-brand-primary/10 font-medium italic text-4xl md:text-5xl">03</span>
               </div>
             </motion.div>
           </div>
@@ -97,7 +97,7 @@ export const Courses = () => {
                   />
                 </div>
                 <div className="p-6 md:p-8 flex flex-col justify-center">
-                  <h3 className="text-xl md:text-2xl font-serif text-brand-primary mb-3">Un espace pour vos événements</h3>
+                  <h3 className="text-xl md:text-2xl font-medium text-brand-primary mb-3">Un espace pour vos événements</h3>
                   <p className="text-brand-primary/60 text-sm md:text-base mb-6">
                     Vous organisez un événement privé (anniversaire, entersement, shooting photo, workshop...) ? 
                     Louez notre salle équipés pour créer un moment inoubliable.
@@ -143,7 +143,7 @@ export const Courses = () => {
           </div>
 
           <div className="mb-12">
-            <h3 className="text-xl md:text-2xl font-serif text-brand-primary mb-6 md:mb-8 flex items-center gap-3">
+            <h3 className="text-xl md:text-2xl font-medium text-brand-primary mb-6 md:mb-8 flex items-center gap-3">
               <div className="w-8 h-px bg-brand-secondary" />
               Nos workshop passés
             </h3>
@@ -174,7 +174,7 @@ export const Courses = () => {
                   <div className="sm:w-2/5 h-48 sm:h-auto relative">
                     <img src={event.img} alt={event.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                     <div className="absolute top-4 left-4 bg-brand-bg px-4 py-2 rounded-xl text-center shadow-lg">
-                      <div className="text-lg md:text-xl font-serif font-bold text-brand-primary leading-none">{event.date.split(' ')[0]}</div>
+                      <div className="text-lg md:text-xl font-medium font-bold text-brand-primary leading-none">{event.date.split(' ')[0]}</div>
                       <div className="text-[9px] md:text-[10px] font-bold text-brand-secondary uppercase tracking-tighter">{event.date.split(' ')[1]}</div>
                     </div>
                   </div>
@@ -182,7 +182,7 @@ export const Courses = () => {
                     <div className="flex items-center gap-2 text-brand-secondary text-[10px] md:text-xs font-bold uppercase tracking-widest mb-2 md:mb-3">
                       <Calendar size={14} /> {event.time} | New Gym
                     </div>
-                    <h3 className="text-lg md:text-xl font-serif text-brand-primary mb-2 md:mb-3">{event.title}</h3>
+                    <h3 className="text-lg md:text-xl font-medium text-brand-primary mb-2 md:mb-3">{event.title}</h3>
                     <p className="text-brand-primary/60 text-xs md:text-sm mb-4 leading-relaxed line-clamp-3">
                       {event.desc}
                     </p>

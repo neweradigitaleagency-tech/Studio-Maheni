@@ -39,7 +39,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Accueil', href: '/' },
-    { name: 'Cours', href: '/services' },
+    { name: 'Nos services', href: '/services' },
     { name: 'Tarifs', href: '/pricing' },
     { name: 'Galerie', href: '/gallery' },
     { name: 'FAQ', href: '/faq' },
@@ -56,13 +56,14 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center space-x-8">
           {navLinks.map((link) => (
-            <Link 
-              key={link.name} 
-              to={link.href} 
-              className={`text-sm font-medium transition-colors ${location.pathname === link.href ? 'text-brand-secondary' : 'text-brand-primary/80 hover:text-brand-secondary'}`}
-            >
-              {link.name}
-            </Link>
+            <motion.div key={link.name} whileHover={{ y: -2 }} transition={{ type: 'spring', stiffness: 400, damping: 17 }}>
+              <Link 
+                to={link.href} 
+                className={`text-sm font-medium block transition-colors ${location.pathname === link.href ? 'text-brand-secondary' : 'text-brand-primary/80 hover:text-brand-secondary'}`}
+              >
+                {link.name}
+              </Link>
+            </motion.div>
           ))}
           <div className="flex flex-col items-end">
             <a 
@@ -93,13 +94,14 @@ const Navbar = () => {
           >
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
-                <Link 
-                  key={link.name} 
-                  to={link.href} 
-                  className={`text-lg font-medium py-2 border-b border-brand-primary/5 ${location.pathname === link.href ? 'text-brand-secondary' : 'text-brand-primary'}`}
-                >
-                  {link.name}
-                </Link>
+                <motion.div key={link.name} whileTap={{ scale: 0.98 }}>
+                  <Link 
+                    to={link.href} 
+                    className={`text-lg font-medium py-2 border-b border-brand-primary/5 block ${location.pathname === link.href ? 'text-brand-secondary' : 'text-brand-primary'}`}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
               ))}
               <div className="flex flex-col items-center pt-4">
                 <a 

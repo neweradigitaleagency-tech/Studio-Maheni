@@ -31,7 +31,7 @@ export const PoleDance = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 p-6 md:p-10">
-                <h3 className="text-3xl md:text-4xl font-serif text-brand-bg mb-3 md:mb-4">Cours de Pole Dance</h3>
+                <h3 className="text-3xl md:text-4xl font-medium text-brand-bg mb-3 md:mb-4">Cours de Pole Dance</h3>
                 <p className="text-brand-bg/70 max-w-sm mb-4 md:mb-6 text-sm md:text-base">
                   Des cours pour niveau débutant/inter à toutes pour développer force, confiance et féminité.
                 </p>
@@ -43,7 +43,7 @@ export const PoleDance = () => {
                 <div className="flex items-center gap-2 text-brand-secondary text-xs font-bold uppercase tracking-widest mb-3">
                   <MapPin size={14} /> Location
                 </div>
-                <h3 className="text-xl md:text-2xl font-serif text-brand-primary mb-3">Cours collectifs & privés</h3>
+                <h3 className="text-xl md:text-2xl font-medium text-brand-primary mb-3">Cours collectifs & privés</h3>
                 <p className="text-brand-primary/60 text-sm md:text-base">
                   Découvrez nos formules adaptées à toutes. Débutez ou progressez selon votre niveau.
                 </p>
@@ -53,7 +53,7 @@ export const PoleDance = () => {
                 <div className="flex items-center gap-2 text-brand-secondary text-xs font-bold uppercase tracking-widest mb-3">
                   <Users size={14} /> Pratiquez
                 </div>
-                <h3 className="text-xl md:text-2xl font-serif text-brand-primary mb-3">Entrainez-vous seule</h3>
+                <h3 className="text-xl md:text-2xl font-medium text-brand-primary mb-3">Entrainez-vous seule</h3>
                 <p className="text-brand-primary/60 text-sm md:text-base">
                   Selon les disponibilités de la salle de pole dance ou louez notre podium pour des shootings, clips, events...
                 </p>
@@ -84,8 +84,8 @@ export const PoleDance = () => {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6 md:gap-8">
             <div className="max-w-xl">
               <SectionTitle eyebrow="Événements" title="Nos Workshops" />
-              <p className="text-brand-primary/60 text-base md:text-lg">
-                Kompa, Kizomba, Heels et plus encore. Proposés de temps en temps. Pour connaître les dates et horaires, suivez-nous sur nos réseaux sociaux ou la communauté WhatsApp Studio Maheni pour rester informé de nos actualités.
+<p className="text-brand-primary/60 text-base md:text-lg">
+                Kompa, Kizomba, Heels et plus encore. Proposés de temps en temps. Pour connaître les dates et horaires, suivez-nos réseaux sociaux ou rejoignez notre <a href="https://chat.whatsapp.com/CUt3PyGxD4u3Fl293fJsIy" target="_blank" rel="noopener noreferrer" className="text-brand-secondary font-medium hover:underline">communauté WhatsApp</a> pour rester informé de nos actuelles.
               </p>
             </div>
             <div className="bg-white px-6 py-4 rounded-2xl border border-brand-primary/5 w-full md:w-auto">
@@ -106,7 +106,7 @@ export const PoleDance = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-transparent to-transparent" />
             <div className="relative z-10 p-6 md:p-10">
-              <h3 className="text-2xl md:text-3xl font-serif text-brand-bg mb-3">Des surprises toute l'année</h3>
+              <h3 className="text-2xl md:text-3xl font-medium text-brand-bg mb-3">Des surprises toute l'année</h3>
               <p className="text-brand-bg/70 max-w-lg mb-6 text-sm md:text-base">
                 Nous vous réservons plein de surprises tout au long de l'année !
               </p>
@@ -128,7 +128,7 @@ export const PoleDance = () => {
               <div className="w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center mb-4">
                 <Circle size={24} className="text-brand-primary" />
               </div>
-              <h3 className="text-lg md:text-xl font-serif text-brand-primary mb-2">Mariage</h3>
+              <h3 className="text-lg md:text-xl font-medium text-brand-primary mb-2">Mariage</h3>
               <p className="text-brand-primary/60 text-sm">
                 Chorégraphie personnalis��e pour votre ouverture de bal.
               </p>
@@ -141,7 +141,7 @@ export const PoleDance = () => {
               <div className="w-12 h-12 bg-brand-secondary/10 rounded-full flex items-center justify-center mb-4">
                 <Building2 size={24} className="text-brand-secondary" />
               </div>
-              <h3 className="text-lg md:text-xl font-serif text-brand-primary mb-2">Entreprises</h3>
+              <h3 className="text-lg md:text-xl font-medium text-brand-primary mb-2">Entreprises</h3>
               <p className="text-brand-primary/60 text-sm">
                 Activités originales pour vos équipes et team building.
               </p>
@@ -154,7 +154,7 @@ export const PoleDance = () => {
               <div className="w-12 h-12 bg-brand-muted/30 rounded-full flex items-center justify-center mb-4">
                 <PartyPopper size={24} className="text-brand-primary" />
               </div>
-              <h3 className="text-lg md:text-xl font-serif text-brand-primary mb-2">Anniversaire / EVJF</h3>
+              <h3 className="text-lg md:text-xl font-medium text-brand-primary mb-2">Anniversaire / EVJF</h3>
               <p className="text-brand-primary/60 text-sm">
                 Moment fun, entre amies, dans une ambiance inoubliable.
               </p>
@@ -167,7 +167,7 @@ export const PoleDance = () => {
               <div className="w-12 h-12 bg-brand-bg/20 rounded-full flex items-center justify-center mb-4">
                 <Sparkles size={24} className="text-brand-bg" />
               </div>
-              <h3 className="text-lg md:text-xl font-serif text-brand-bg mb-2">Cours Découverte</h3>
+              <h3 className="text-lg md:text-xl font-medium text-brand-bg mb-2">Cours Découverte</h3>
               <p className="text-brand-bg/70 text-sm">
                 Testez la pole dance avec un cours découverte !
               </p>
@@ -188,7 +188,7 @@ export const PoleDance = () => {
       {/* --- CTA Finale --- */}
       <section className="py-12 md:py-16 bg-brand-primary">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-serif text-brand-bg mb-4 md:mb-6">Tu veux tester la pole dance ?</h2>
+          <h2 className="text-3xl md:text-4xl font-medium text-brand-bg mb-4 md:mb-6">Tu veux tester la pole dance ?</h2>
           <p className="text-brand-bg/70 text-lg mb-8 md:mb-10">
             Commence par un cours découverte ✨
           </p>
