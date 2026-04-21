@@ -28,8 +28,8 @@ export const Contact = () => {
   };
 
   return (
-    <div className="pt-24 min-h-screen bg-brand-bg">
-      <section id="contact" className="py-12 md:py-16">
+    <div className="pt-24 min-h-screen">
+      <section id="contact" className="py-12 md:py-16 bg-brand-bg">
         <div className="max-w-[80%] mx-auto px-6">
           <SectionTitle title="Contact" centered />
 
