@@ -18,7 +18,7 @@ const getWhatsAppMessage = (service: string) => {
 
 export const Services = () => {
   return (
-    <div className="pt-24">
+    <div className="pt-24 bg-brand-bg">
       {/* --- Page Header --- */}
       <section className="py-12 md:py-16">
         <div className="max-w-[80%] mx-auto px-6 text-center">
@@ -207,17 +207,17 @@ export const Services = () => {
       </section>
 
       {/* --- Footer CTA Banner --- */}
-      <section className="py-12 md:py-16 bg-brand-primary">
+      <section className="py-12 md:py-16 bg-brand-bg border-t border-brand-primary/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6">Tu veux tester la pole dance ?</h2>
-          <p className="text-white/70 text-lg mb-8 md:mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-primary mb-4 md:mb-6">Tu veux tester la pole dance ?</h2>
+          <p className="text-brand-primary/70 text-lg mb-8 md:mb-10">
             Commence par un cours découverte ✨
           </p>
           <a 
             href={getWhatsAppMessage('pole-dance')}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-brand-tan text-brand-primary px-10 py-4 rounded-full font-semibold hover:opacity-85 hover:-translate-y-px transition-all"
+            className="inline-block bg-brand-primary text-white px-10 py-4 rounded-full font-semibold hover:opacity-85 hover:-translate-y-px transition-all"
           >
             Réserver
           </a>
