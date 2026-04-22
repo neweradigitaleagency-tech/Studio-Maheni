@@ -35,7 +35,7 @@ export const Services = () => {
       <section className="py-12 md:py-16 bg-brand-muted/20" id="pole-dance">
         <div className="max-w-[80%] mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-medium text-brand-primary mb-8">
-            POLE DANCE (COURS & LOCATION DE SALLE ET BARRE)
+            POLE DANCE
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
@@ -107,7 +107,7 @@ export const Services = () => {
       <section className="py-12 md:py-16" id="workshops">
         <div className="max-w-[80%] mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-medium text-brand-primary mb-8">
-            WORKSHOP (KOMPA, KIZOMBA, HEELS, ETC)
+            WORKSHOP
           </h2>
 
           <p className="text-brand-primary/70 max-w-2xl mb-12">
