@@ -1,5 +1,7 @@
+import React from 'react';
+import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Check, ChevronRight, CreditCard, Clock, Sparkles } from 'lucide-react';
+import { Check, CreditCard, Clock, Sparkles, Plus } from 'lucide-react';
 import { SectionTitle } from '../components/Shared';
 
 const WHATSAPP_NUMBER = '2250717616343';
@@ -11,11 +13,48 @@ const getWhatsAppMessage = (service: string, price: string) => {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
 };
 
+const InfoCard = ({ icon, title, items, isOpen, onToggle }: { icon: React.ReactNode, title: string, items: Array<string | { text: string, highlight?: boolean }>, isOpen: boolean, onToggle: () => void }) => {
+  return (
+    <div className="bg-white rounded-[24px] shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden self-start">
+      <button
+        className="w-full flex justify-between items-start p-8 text-left"
+        onClick={onToggle}
+      >
+        <div className="flex items-start gap-4 flex-1">
+          <div className="w-14 h-14 bg-brand-tan-light rounded-2xl flex items-center justify-center shrink-0">
+            {icon}
+          </div>
+          <h3 className="text-xl font-semibold text-brand-primary">{title}</h3>
+        </div>
+        <div className="shrink-0 ml-4">
+          <Plus size={20} className={`text-brand-primary transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`} />
+        </div>
+      </button>
+      <div className={`transition-all duration-300 ease-out overflow-hidden ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+        <ul className="space-y-4 px-8 pb-8">
+          {items.map((item, index) => (
+            <li key={index} className="flex items-start gap-3">
+              <span className="w-2 h-2 bg-brand-secondary rounded-full mt-2.5 shrink-0"></span>
+              <span className="leading-relaxed">
+                {typeof item === 'string' ? (
+                  <span className="text-brand-primary/70">{item}</span>
+                ) : (
+                  <span className={item.highlight ? 'text-brand-primary font-semibold' : 'text-brand-primary/70'}>{item.text}</span>
+                )}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
 const plans = [
   {
     id: 'starter',
     name: 'Starter',
-    tagline: 'Pour découvrir',
+    tagline: 'cours de découverte',
     price: '10 000',
     currency: 'CFA',
     badge: null,
@@ -60,7 +99,7 @@ const plans = [
   {
     id: 'performance',
     name: 'Performance',
-    tagline: 'Progression régulière',
+    tagline: 'abonnement',
     price: '50 000',
     currency: 'FCA',
     badge: 'Le + populaire',
@@ -74,9 +113,7 @@ const plans = [
     buttonText: 'text-brand-primary',
     buttonHoverBg: 'hover:opacity-85',
     buttonHoverText: '',
-    features: [
-      { label: '+2 Self Practice offerts', included: true, highlight: true },
-    ],
+features: [],
     options: [
       { sessions: '4 Séances', duration: '1 mois', price: '50 000 FCA' },
       { sessions: '8 Séances', duration: '2 mois', price: '80 000 FCA' },
@@ -111,6 +148,7 @@ const plans = [
 ];
 
 export const Pricing = () => {
+  const [openInfoCard, setOpenInfoCard] = useState<number | null>(null);
   return (
     <div className="pt-24 bg-brand-bg">
       {/* --- Infos Pratiques Section --- */}
@@ -118,69 +156,35 @@ export const Pricing = () => {
         <div className="max-w-[80%] mx-auto px-6">
           <SectionTitle title="Infos pratiques" centered />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 items-start">
             {/* Card 1: Paiements & Réservations */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              whileHover={{ y: -5 }}
-              className="bg-white rounded-[24px] p-8 shadow-sm hover:shadow-md transition-all duration-300"
-            >
-              <div className="w-14 h-14 bg-brand-tan-light rounded-2xl flex items-center justify-center mb-6">
-                <CreditCard size={24} className="text-brand-primary" />
-              </div>
-              <h3 className="text-xl font-semibold text-brand-primary mb-4">Paiements & réservations</h3>
-              <ul className="space-y-4">
-                {[
-                  'La réservation se fait directement en ligne sur le site, via la page Réservation.',
-                  'Un e-mail de confirmation vous sera envoyé avec tous les détails du cours (date, lieu, tenue conseillée, etc.).',
-                  'Les places sont uniquement confirmées après envoi de la preuve de paiement (capture d\'écran du dépôt Orange Money ou Wave) au +225 07 17 61 63 43.',
-                  'Si vous ne pouvez pas effectuer le paiement, envoyez un message au même numéro sur WhatsApp.',
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="w-2 h-2 bg-brand-secondary rounded-full mt-2.5 shrink-0"></span>
-                    <span className="text-brand-primary/70 leading-relaxed">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+            <InfoCard
+              icon={<CreditCard size={24} className="text-brand-primary" />}
+              title="Paiements & réservations"
+              items={[
+                'La réservation se fait directement en ligne sur le site, via la page Réservation.',
+                'Un e-mail de confirmation vous sera envoyé avec tous les détails du cours (date, lieu, tenue conseillée, etc.).',
+                'Les places sont uniquement confirmées après envoi de la preuve de paiement (capture d\'écran du dépôt Orange Money ou Wave) au +225 07 17 61 63 43.',
+                'Si vous ne pouvez pas effectuer le paiement, envoyez un message au même numéro sur WhatsApp.',
+              ]}
+              isOpen={openInfoCard === 0}
+              onToggle={() => setOpenInfoCard(openInfoCard === 0 ? null : 0)}
+            />
 
             {/* Card 2: Abonnements & Annulations */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              whileHover={{ y: -5 }}
-              className="bg-white rounded-[24px] p-8 shadow-sm hover:shadow-md transition-all duration-300"
-            >
-              <div className="w-14 h-14 bg-brand-tan-light rounded-2xl flex items-center justify-center mb-6">
-                <Clock size={24} className="text-brand-primary" />
-              </div>
-              <h3 className="text-xl font-semibold text-brand-primary mb-4">Abonnements & annulations</h3>
-              <ul className="space-y-4">
-                {[
-                  'Une fois votre abonnement activé, réservez vos séances à l\'avance sur le site. Les effectifs sont limités.',
-                  'Si vous ne pouvez pas assister à une séance, pensez à l\'annuler pour libérer la place.',
-                  { text: 'Abonnées : annulation au minimum 5 heures avant le début du cours.', highlight: true },
-                  { text: 'Nouvelles participantes : annulation au moins 24 heures à l\'avance.', highlight: true },
-                  'Report possible une seule fois en cas d\'urgence (via WhatsApp ou appel). Passé ces délais, la séance sera considérée comme due.',
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="w-2 h-2 bg-brand-secondary rounded-full mt-2.5 shrink-0"></span>
-                    <span className="leading-relaxed">
-                      {typeof item === 'string' ? (
-                        <span className="text-brand-primary/70">{item}</span>
-                      ) : (
-                        <span className="text-brand-primary font-semibold">{item.text}</span>
-                      )}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+            <InfoCard
+              icon={<Clock size={24} className="text-brand-primary" />}
+              title="Abonnements & annulations"
+              items={[
+                'Une fois votre abonnement activé, réservez vos séances à l\'avance sur le site. Les effectifs sont limités.',
+                'Si vous ne pouvez pas assister à une séance, pensez à l\'annuler pour libérer la place.',
+                { text: 'Abonnées : annulation au minimum 5 heures avant le début du cours.', highlight: true },
+                { text: 'Nouvelles participantes : annulation au moins 24 heures à l\'avance.', highlight: true },
+                'Report possible une seule fois en cas d\'urgence (via WhatsApp ou appel). Passé ces délais, la séance sera considérée comme due.',
+              ]}
+              isOpen={openInfoCard === 1}
+              onToggle={() => setOpenInfoCard(openInfoCard === 1 ? null : 1)}
+            />
           </div>
         </div>
       </section>
@@ -219,7 +223,7 @@ export const Pricing = () => {
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                     <span className={`
                       inline-flex items-center gap-1.5
-                      bg-brand-accent text-white
+                      bg-brand-secondary text-brand-primary
                       text-xs font-bold uppercase tracking-wider
                       px-4 py-2 rounded-full
                       shadow-lg
@@ -232,7 +236,7 @@ export const Pricing = () => {
 
                 {/* Header */}
                 <div className="mb-6 mt-2">
-                  <h3 className={`text-xl lg:text-2xl font-bold ${plan.textColor} mb-1`}>
+                  <h3 className={`text-xl lg:text-2xl font-medium ${plan.textColor} mb-1`}>
                     {plan.name}
                   </h3>
                   <p className={`text-sm ${plan.secondaryTextColor}`}>
@@ -244,7 +248,7 @@ export const Pricing = () => {
                 {plan.options ? (
                   <div className="space-y-3 mb-6">
                     {plan.options.map((option, idx) => (
-                      <div 
+                      <div
                         key={idx}
                         className="flex justify-between items-center p-3 rounded-xl bg-transparent"
                       >
@@ -265,7 +269,7 @@ export const Pricing = () => {
                 ) : (
                   <div className="mb-6">
                     <div className="flex items-baseline gap-2">
-                      <span className={`text-3xl lg:text-4xl font-bold ${plan.textColor}`}>
+                      <span className={`text-3xl lg:text-4xl font-medium ${plan.textColor}`}>
                         {plan.price}
                       </span>
                       <span className={`text-sm ${plan.secondaryTextColor}`}>
@@ -298,10 +302,13 @@ export const Pricing = () => {
                 {/* CTA Button */}
                 <div className="mt-auto pt-4">
                   <a
-                    href={getWhatsAppMessage(
-                      plan.name === 'Performance' ? 'Abonnement Performance' : `Plan ${plan.name}`,
-                      plan.options ? 'Selon formule' : `${plan.price} ${plan.currency}`
-                    )}
+                    href={plan.id === 'starter'
+                      ? 'https://calendly.com/reservations-cours/decouverte-pole-dance?back=1&month=2026-04'
+                      : getWhatsAppMessage(
+                        plan.name === 'Performance' ? 'Abonnement Performance' : `Plan ${plan.name}`,
+                        plan.options ? 'Selon formule' : `${plan.price} ${plan.currency}`
+                      )
+                    }
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`
@@ -330,7 +337,7 @@ export const Pricing = () => {
           >
             <div className="flex flex-col md:flex-row justify-between items-center gap-6">
               <div className="text-center md:text-left">
-                <h2 className="text-2xl md:text-3xl font-bold text-brand-primary mb-3">Cours privés</h2>
+                <h2 className="text-2xl md:text-3xl font-medium text-brand-primary mb-3">Cours privés</h2>
                 <p className="text-brand-primary/60 max-w-md">
                   Déjà fait ton cours de découverte ? On te guide sur WhatsApp pour tes prochaines séances.
                 </p>
@@ -339,7 +346,7 @@ export const Pricing = () => {
                 href={getWhatsAppMessage('Cours Privés', 'Sur demande')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-brand-accent text-white px-8 py-4 rounded-full font-semibold hover:opacity-85 transition-all shrink-0"
+                className="bg-brand-secondary text-brand-primary px-8 py-4 rounded-full font-semibold hover:opacity-85 transition-all shrink-0"
               >
                 Demander un devis
               </a>

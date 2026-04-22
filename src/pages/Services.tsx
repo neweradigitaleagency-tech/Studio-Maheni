@@ -25,7 +25,7 @@ export const Services = () => {
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-primary/50">
             NOS SERVICES
           </span>
-          <h1 className="text-2xl md:text-3xl font-bold text-brand-primary mt-4">
+          <h1 className="text-2xl md:text-3xl font-medium text-brand-primary mt-4">
             Découvrez toutes les activités proposées par Studio Maheni
           </h1>
         </div>
@@ -34,20 +34,19 @@ export const Services = () => {
       {/* --- Section 1: POLE DANCE --- */}
       <section className="py-12 md:py-16 bg-brand-muted/20" id="pole-dance">
         <div className="max-w-[80%] mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-brand-primary mb-8 flex items-center gap-3">
-            <div className="w-12 h-px bg-brand-secondary" />
+          <h2 className="text-2xl md:text-3xl font-medium text-brand-primary mb-8">
             POLE DANCE (COURS & LOCATION DE SALLE ET BARRE)
           </h2>
-          
+
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             {/* Left Column - 2 Stacked Cards */}
             <div className="flex flex-col gap-6">
               <div className="bg-brand-tan-light rounded-[16px] p-7">
-                <h3 className="text-xl md:text-2xl font-bold text-brand-primary mb-3">Cours collectif à Abidjan</h3>
+                <h3 className="text-xl md:text-2xl font-medium text-brand-primary mb-3">Cours collectif à Abidjan</h3>
                 <p className="text-brand-primary/70 text-sm md:text-base mb-4">
                   Des cours pour niveau débutant/inter à toutes pour développer force, confiance et féminité.
                 </p>
-                <a 
+                <a
                   href={getWhatsAppMessage('pole-dance')}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -56,13 +55,13 @@ export const Services = () => {
                   Réserver
                 </a>
               </div>
-              
+
               <div className="bg-brand-tan-light rounded-[16px] p-7">
-                <h3 className="text-xl md:text-2xl font-bold text-brand-primary mb-3">Self practice</h3>
+                <h3 className="text-xl md:text-2xl font-medium text-brand-primary mb-3">Self practice</h3>
                 <p className="text-brand-primary/70 text-sm md:text-base mb-4">
                   Entrainez-vous seule selon les disponibilités de la salle de pole dance ou louez notre podium pour des shootings, clips, events...
                 </p>
-                <a 
+                <a
                   href={getWhatsAppMessage('self-practice')}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -73,24 +72,24 @@ export const Services = () => {
               </div>
             </div>
 
-            {/* Right Column - Image Card */}
+            {/* Right Column - Video Card */}
             <motion.div
               whileHover={{ y: -5 }}
               className="bg-brand-primary rounded-[20px] overflow-hidden relative group min-h-[400px] md:min-h-[500px]"
             >
               <img
-                src="https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?auto=format&fit=crop&q=80&w=1000"
+                src="https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776893102/Galery-_1_icn9zx.png"
                 alt="Pole Dance"
                 className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 p-6 md:p-10">
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-3 md:mb-4">Location podium de pole dance</h3>
+                <h3 className="text-3xl md:text-4xl font-medium text-white mb-3 md:mb-4">Location podium de pole dance</h3>
                 <p className="text-white/70 max-w-sm mb-4 md:mb-6 text-sm md:text-base">
                   Clip, shooting, event, EVJF etc.
                 </p>
-                <a 
+                <a
                   href={getWhatsAppMessage('location')}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -107,15 +106,14 @@ export const Services = () => {
       {/* --- Section 2: WORKSHOP --- */}
       <section className="py-12 md:py-16" id="workshops">
         <div className="max-w-[80%] mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-brand-primary mb-8 flex items-center gap-3">
-            <div className="w-12 h-px bg-brand-secondary" />
+          <h2 className="text-2xl md:text-3xl font-medium text-brand-primary mb-8">
             WORKSHOP (KOMPA, KIZOMBA, HEELS, ETC)
           </h2>
-          
-<p className="text-brand-primary/70 max-w-2xl mb-12">
+
+          <p className="text-brand-primary/70 max-w-2xl mb-12">
             Nos workshops sont proposés de temps en temps. Pour connaître les dates et horaires, suivez-nous sur nos réseaux sociaux ou rejoignez notre <a href="https://chat.whatsapp.com/CUt3PyGxD4u3Fl293fJsIy" target="_blank" rel="noopener noreferrer" className="text-brand-secondary font-medium hover:underline">communauté WhatsApp</a> pour rester informée de nos actualités.
           </p>
-          
+
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             {[
               {
@@ -140,7 +138,7 @@ export const Services = () => {
                 whileHover={{ y: -5 }}
                 className="bg-white rounded-[12px] overflow-hidden shadow-sm border border-brand-primary/5 flex"
               >
-                <div className="w-1/3 h-32 md:h-auto relative">
+                <div className="w-full md:w-1/3 aspect-video md:aspect-auto relative">
                   <img src={workshop.img} alt={workshop.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                 </div>
                 <div className="p-4 md:p-6 flex flex-col justify-center">
@@ -149,7 +147,7 @@ export const Services = () => {
                     <span className="text-brand-primary/30">|</span>
                     <span className="text-brand-primary/50 text-xs">{workshop.time}</span>
                   </div>
-                  <h4 className="text-base md:text-lg font-bold text-brand-primary mb-1">{workshop.title}</h4>
+                  <h4 className="text-base md:text-lg font-medium text-brand-primary mb-1">{workshop.title}</h4>
                   <p className="text-brand-primary/50 text-xs md:text-sm">{workshop.desc}</p>
                   <span className="text-xs bg-brand-primary/5 text-brand-primary/60 px-2 py-1 rounded mt-2 inline-block w-fit">Événement terminé</span>
                 </div>
@@ -162,15 +160,14 @@ export const Services = () => {
       {/* --- Section 3: ÉVÉNEMENTS PRIVÉS --- */}
       <section className="py-12 md:py-16 bg-brand-muted/20" id="evenements">
         <div className="max-w-[80%] mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-brand-primary mb-8 flex items-center gap-3">
-            <div className="w-12 h-px bg-brand-secondary" />
-            ÉVÉNEMENTS PRIVÉS (MARIAGE / EVJF / ENTREPRISE)
+          <h2 className="text-2xl md:text-3xl font-medium text-brand-primary mb-8">
+            ÉVÉNEMENTS PRIVÉS
           </h2>
-          
+
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="text-center">
               <div className="text-4xl mb-4">💍</div>
-              <h3 className="text-lg md:text-xl font-bold text-brand-primary mb-2">Mariage</h3>
+              <h3 className="text-lg md:text-xl font-medium text-brand-primary mb-2">Mariage</h3>
               <p className="text-brand-primary/70 text-sm">
                 Chorégraphie personnalisée pour votre ouverture de bal.
               </p>
@@ -178,7 +175,7 @@ export const Services = () => {
 
             <div className="text-center">
               <div className="text-4xl mb-4">🎉</div>
-              <h3 className="text-lg md:text-xl font-bold text-brand-primary mb-2">Anniversaire / EVJF</h3>
+              <h3 className="text-lg md:text-xl font-medium text-brand-primary mb-2">Anniversaire / EVJF</h3>
               <p className="text-brand-primary/70 text-sm">
                 Moment fun, entre amies, dans une ambiance inoubliable.
               </p>
@@ -186,7 +183,7 @@ export const Services = () => {
 
             <div className="text-center">
               <div className="text-4xl mb-4">🏢</div>
-              <h3 className="text-lg md:text-xl font-bold text-brand-primary mb-2">Entreprises</h3>
+              <h3 className="text-lg md:text-xl font-medium text-brand-primary mb-2">Entreprises</h3>
               <p className="text-brand-primary/70 text-sm">
                 Activités originales pour vos équipes et team building.
               </p>
@@ -194,7 +191,7 @@ export const Services = () => {
           </div>
 
           <div className="text-center">
-            <a 
+            <a
               href={getWhatsAppMessage('evenement')}
               target="_blank"
               rel="noopener noreferrer"
@@ -209,11 +206,11 @@ export const Services = () => {
       {/* --- Footer CTA Banner --- */}
       <section className="py-12 md:py-16 bg-brand-bg border-t border-brand-primary/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-primary mb-4 md:mb-6">Tu veux tester la pole dance ?</h2>
+          <h2 className="text-3xl md:text-4xl font-medium text-brand-primary mb-4 md:mb-6">Tu veux tester la pole dance ?</h2>
           <p className="text-brand-primary/70 text-lg mb-8 md:mb-10">
             Commence par un cours découverte ✨
           </p>
-          <a 
+          <a
             href={getWhatsAppMessage('pole-dance')}
             target="_blank"
             rel="noopener noreferrer"

@@ -9,7 +9,7 @@ export const SectionTitle = ({ title, eyebrow, centered = false }: { title: stri
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-sm font-bold tracking-widest uppercase text-brand-primary/40 mb-3"
+        className="text-sm font-medium tracking-widest uppercase text-brand-primary/40 mb-3"
       >
         {eyebrow}
       </motion.div>

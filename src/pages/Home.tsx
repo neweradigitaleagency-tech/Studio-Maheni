@@ -1,38 +1,32 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronRight, Play, Calendar, Plus, Minus, Phone, Mail, MapPin, MessageSquare, CheckCircle, AlertCircle } from 'lucide-react';
+import { ChevronRight, Play, Calendar, Plus, Phone, Mail, MapPin, MessageSquare, CheckCircle, AlertCircle } from 'lucide-react';
 import { FaInstagram } from 'react-icons/fa';
 import { FaWhatsapp } from 'react-icons/fa';
 import { FaTiktok } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 import { SectionTitle } from '../components/Shared';
 
-const FAQCard = ({ question, answer, color }: { question: string, answer: string, color: string }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const FAQCard = ({ question, answer, color, isOpen, onToggle }: { question: string, answer: string, color: string, isOpen: boolean, onToggle: () => void }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className={`${color} rounded-[16px] p-6 cursor-pointer`}
-      onClick={() => setIsOpen(!isOpen)}
+      className={`${color} rounded-[16px] cursor-pointer self-start`}
+      onClick={onToggle}
     >
-      <div className="flex justify-between items-start">
-        <span className="text-base font-bold text-brand-primary block pr-4">{question}</span>
-        {isOpen ? <Minus size={20} className="text-brand-primary shrink-0" /> : <Plus size={20} className="text-brand-primary shrink-0" />}
+      <div className="p-6">
+        <div className="flex justify-between items-start">
+          <span className="text-base font-semibold text-brand-primary block pr-4">{question}</span>
+          <div className="shrink-0">
+            <Plus size={20} className={`text-brand-primary transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`} />
+          </div>
+        </div>
+        <div className={`transition-all duration-300 ease-out overflow-hidden ${isOpen ? 'max-h-48 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+          <p className="text-brand-primary/70 leading-relaxed">{answer}</p>
+        </div>
       </div>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden"
-          >
-            <p className="pt-4 text-brand-primary/70 leading-relaxed">{answer}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </motion.div>
   );
 };
@@ -40,6 +34,7 @@ const FAQCard = ({ question, answer, color }: { question: string, answer: string
 export const Home = () => {
   const [emailSent, setEmailSent] = useState(false);
   const [emailError, setEmailError] = useState(false);
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   return (
     <>
@@ -68,12 +63,14 @@ export const Home = () => {
               Découvre la pole dance à Abidjan
             </p>
             <div>
-              <Link
-                to="/services"
+              <a
+                href="https://calendly.com/reservations-cours/decouverte-pole-dance?back=1&month=2026-04"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block bg-brand-primary text-white px-8 md:px-10 py-4 rounded-full font-semibold hover:opacity-85 hover:-translate-y-px transition-all"
               >
                 Réserve ton premier cours
-              </Link>
+              </a>
             </div>
           </motion.div>
 
@@ -99,8 +96,8 @@ export const Home = () => {
       {/* --- Mon Premier Cours Section - 3 ETAPES --- */}
       <section className="py-12 md:py-16 bg-brand-muted/30">
         <div className="max-w-[80%] mx-auto px-6">
+          <p className="text-center text-brand-secondary/80 italic text-sm">Comment ça se passe ?</p>
           <SectionTitle title="Mon Premier Cours" centered />
-          <p className="text-center text-brand-secondary/80 italic text-sm mt-2">Comment ça se passe ?</p>
 
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-8 max-w-5xl mx-auto">
             {[
@@ -125,10 +122,18 @@ export const Home = () => {
             ))}
           </div>
 
-          <div className="text-center mt-8 bg-white rounded-[16px] py-5 px-6 shadow-sm border border-brand-primary/5 inline-block">
-            <p className="text-brand-primary/80 text-sm md:text-base">
-              Déjà fait ton premier cours ? <span className="font-medium">On te guide sur WhatsApp</span> pour tes prochaines séances.
-            </p>
+          <div className="text-center mt-8 inline-block">
+            <a
+              href="https://wa.me/2250717616343?text=Coucou%20!%20%F0%9F%91%8B%F0%9F%A4%BE%0A%0AJe%20suis%20int%C3%A9ress%C3%A9e%20par%20un%20cours%20de%20Pole%20Dance.%0A%0APouvez-vous%20me%20guider%20pour%20mes%20prochaines%20s%C3%A9ances%20%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-brand-secondary text-brand-primary px-8 py-4 rounded-[16px] shadow-sm hover:opacity-85 transition-opacity inline-flex items-center gap-3"
+            >
+              <FaWhatsapp size={20} />
+              <span className="text-sm md:text-base font-medium">
+                Déjà fait ton premier cours ? On te guide sur WhatsApp pour tes prochaines séances.
+              </span>
+            </a>
           </div>
         </div>
       </section>
@@ -138,7 +143,7 @@ export const Home = () => {
         <div className="max-w-[80%] mx-auto px-6">
           <SectionTitle title="Questions Fréquentes" centered />
 
-          <div className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 align-items-start">
             {[
               {
                 q: "À quoi ça sert ? C'est du strip-tease ?",
@@ -156,17 +161,14 @@ export const Home = () => {
                 color: "bg-brand-tan"
               }
             ].map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className={`${faq.color} rounded-[20px] p-6`}
-              >
-                <span className="text-base font-bold text-brand-primary block mb-3">{faq.q}</span>
-                <p className="text-brand-primary/70 text-sm leading-relaxed">{faq.a}</p>
-              </motion.div>
+              <FAQCard 
+                key={index} 
+                question={faq.q} 
+                answer={faq.a} 
+                color={faq.color}
+                isOpen={openFAQ === index}
+                onToggle={() => setOpenFAQ(openFAQ === index ? null : index)}
+              />
             ))}
           </div>
 
@@ -219,8 +221,7 @@ export const Home = () => {
 
           {/* Workshops Passés */}
           <div className="mt-16 md:mt-20">
-            <h3 className="text-xl md:text-2xl font-medium text-brand-primary mb-8 flex items-center gap-3">
-              <div className="w-8 h-px bg-brand-secondary" />
+            <h3 className="text-xl md:text-2xl font-medium text-brand-primary mb-8">
               Nos workshops passés
             </h3>
             <div className="grid md:grid-cols-2 gap-6">
@@ -261,7 +262,7 @@ export const Home = () => {
       {/* --- Contact Section --- */}
       <section className="py-12 md:py-16 bg-brand-bg border-y border-brand-primary/5">
         <div className="max-w-[80%] mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-brand-primary mb-2">
+          <h2 className="text-2xl md:text-3xl font-medium text-brand-primary mb-2">
             Vous n'avez pas trouvé la réponse sur notre site,<br />
             y compris dans les FAQ ?
           </h2>
@@ -297,7 +298,7 @@ export const Home = () => {
                 </div>
                 <div>
                   <span className="text-[10px] uppercase tracking-wider text-brand-primary/50 block mb-1">Localisation</span>
-                  <span className="font-medium">New Gym, Abidjan</span>
+                  <a href="https://maps.app.goo.gl/zFoEkActgKjpkRDj6" target="_blank" rel="noopener noreferrer" className="font-medium hover:text-brand-secondary transition-colors">New Gym, Abidjan</a>
                 </div>
               </div>
               <div className="flex gap-3 pl-14">

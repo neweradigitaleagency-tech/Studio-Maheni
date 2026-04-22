@@ -60,7 +60,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <span className="text-[10px] uppercase tracking-wider text-brand-primary/50 block mb-1">Localisation</span>
-                  <span className="font-medium">New Gym, Abidjan</span>
+                  <a href="https://maps.app.goo.gl/zFoEkActgKjpkRDj6" target="_blank" rel="noopener noreferrer" className="font-medium hover:text-brand-secondary transition-colors">New Gym, Abidjan</a>
                 </div>
               </div>
               <div className="flex gap-3 pl-14">

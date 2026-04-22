@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { SectionTitle } from '../components/Shared';
 
 const images = [
@@ -19,7 +19,18 @@ const images = [
 ];
 
 export const Gallery = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  const currentIndex = selectedIndex !== null ? selectedIndex : -1;
+  const selectedImage = currentIndex >= 0 ? images[currentIndex] : null;
+
+  const goToPrevious = () => {
+    setSelectedIndex((prev) => prev === null ? 0 : prev === 0 ? images.length - 1 : prev - 1);
+  };
+
+  const goToNext = () => {
+    setSelectedIndex((prev) => prev === null ? 0 : prev === images.length - 1 ? 0 : prev + 1);
+  };
 
   return (
     <div className="pt-24 min-h-screen bg-brand-bg text-brand-primary">
@@ -42,7 +53,7 @@ export const Gallery = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
                 className="aspect-[3/4] rounded-[24px] overflow-hidden cursor-pointer group shadow-sm border border-brand-primary/5"
-                onClick={() => setSelectedImage(img)}
+                onClick={() => setSelectedIndex(i)}
               >
                 <img 
                   src={img} 
@@ -64,25 +75,59 @@ export const Gallery = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
-            onClick={() => setSelectedImage(null)}
+            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex flex-col items-center justify-center p-4"
+            onClick={() => setSelectedIndex(null)}
           >
+            {/* Navigation buttons */}
             <button 
-              className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors"
-              onClick={() => setSelectedImage(null)}
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors p-2 z-10"
+              onClick={(e) => { e.stopPropagation(); goToPrevious(); }}
+            >
+              <ChevronLeft size={40} />
+            </button>
+            <button 
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors p-2 z-10"
+              onClick={(e) => { e.stopPropagation(); goToNext(); }}
+            >
+              <ChevronRight size={40} />
+            </button>
+            <button 
+              className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-10"
+              onClick={() => setSelectedIndex(null)}
             >
               <X size={32} />
             </button>
+
+            {/* Main image */}
             <motion.img 
+              key={currentIndex}
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               src={selectedImage} 
               alt="Selected" 
-              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+              className="max-w-full max-h-[60vh] md:max-h-[70vh] object-contain rounded-lg"
               referrerPolicy="no-referrer"
               onClick={(e) => e.stopPropagation()}
             />
+
+            {/* Thumbnails */}
+            <div 
+              className="mt-6 flex gap-2 overflow-x-auto max-w-full px-4 pb-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {images.map((img, i) => (
+                <button
+                  key={i}
+                  onClick={() => setSelectedIndex(i)}
+                  className={`shrink-0 w-16 h-20 rounded-lg overflow-hidden border-2 transition-all ${
+                    i === currentIndex ? 'border-brand-secondary scale-110' : 'border-transparent opacity-60 hover:opacity-100'
+                  }`}
+                >
+                  <img src={img} alt={`Thumb ${i}`} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                </button>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
