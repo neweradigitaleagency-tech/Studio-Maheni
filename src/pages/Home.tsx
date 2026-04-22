@@ -241,9 +241,9 @@ export const Home = () => {
                 <motion.div
                   key={i}
                   whileHover={{ y: -5 }}
-                  className="bg-white rounded-[20px] overflow-hidden shadow-sm border border-brand-primary/5 flex"
+                  className="bg-white rounded-[20px] overflow-hidden shadow-sm border border-brand-primary/5 flex flex-col md:flex-row"
                 >
-                  <div className="w-1/3 h-32 md:h-auto relative">
+                  <div className="w-full md:w-1/3 h-48 md:h-auto relative">
                     <img src={workshop.img} alt={workshop.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                   <div className="p-4 md:p-6 flex flex-col justify-center">
