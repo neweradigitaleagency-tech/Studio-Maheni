@@ -52,14 +52,6 @@ export const Services = () => {
                 >
                   Réserver
                 </a>
-                <a
-                  href={getWhatsAppMessage('pole-dance')}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="ml-3 text-brand-secondary text-sm font-medium hover:underline"
-                >
-                  Contact
-                </a>
               </div>
 
               <div className="bg-brand-tan-light rounded-[16px] p-7">
@@ -73,18 +65,10 @@ export const Services = () => {
                 >
                   Réserver
                 </a>
-                <a
-                  href={getWhatsAppMessage('self-practice')}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="ml-3 text-brand-secondary text-sm font-medium hover:underline"
-                >
-                  Contact
-                </a>
               </div>
             </div>
 
-            {/* Right Column - Video Card */}
+            {/* Right Column - image Card */}
             <motion.div
               whileHover={{ y: -5 }}
               className="bg-brand-primary rounded-[20px] overflow-hidden relative group min-h-[400px] md:min-h-[500px]"
@@ -228,20 +212,20 @@ export const Services = () => {
             rel="noopener noreferrer"
             className="inline-block bg-brand-primary text-white px-10 py-4 rounded-full font-semibold hover:opacity-85 hover:-translate-y-px transition-all"
           >
-Réserver
-                  </a>
-                  <a
-                    href="/pricing"
-                    className="ml-3 text-brand-secondary text-sm font-medium hover:underline"
-                  >
-                    Voir les tarifs
-                  </a>
-                  <a
-                    href="/pricing"
-                    className="ml-3 text-brand-secondary text-sm font-medium hover:underline"
-                  >
-                    Voir les tarifs
-                  </a>
+            Réserver
+          </a>
+          <a
+            href="/pricing"
+            className="ml-3 text-brand-secondary text-sm font-medium hover:underline"
+          >
+            Voir les tarifs
+          </a>
+          <a
+            href="/pricing"
+            className="ml-3 text-brand-secondary text-sm font-medium hover:underline"
+          >
+            Voir les tarifs
+          </a>
         </div>
       </section>
     </div>
