@@ -216,8 +216,20 @@ export const Services = () => {
             rel="noopener noreferrer"
             className="inline-block bg-brand-primary text-white px-10 py-4 rounded-full font-semibold hover:opacity-85 hover:-translate-y-px transition-all"
           >
-            Réserver
-          </a>
+Réserver
+                  </a>
+                  <a
+                    href="/pricing"
+                    className="ml-3 text-brand-secondary text-sm font-medium hover:underline"
+                  >
+                    Voir les tarifs
+                  </a>
+                  <a
+                    href="/pricing"
+                    className="ml-3 text-brand-secondary text-sm font-medium hover:underline"
+                  >
+                    Voir les tarifs
+                  </a>
         </div>
       </section>
     </div>
