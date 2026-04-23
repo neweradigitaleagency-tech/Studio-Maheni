@@ -47,12 +47,18 @@ export const Services = () => {
                   Des cours pour niveau débutant/inter à toutes pour développer force, confiance et féminité.
                 </p>
                 <a
-                  href={getWhatsAppMessage('pole-dance')}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/pricing"
                   className="inline-block border border-brand-primary text-brand-primary px-5 py-2 rounded-full text-sm font-medium hover:bg-brand-primary/5 transition-colors"
                 >
                   Réserver
+                </a>
+                <a
+                  href={getWhatsAppMessage('pole-dance')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-3 text-brand-secondary text-sm font-medium hover:underline"
+                >
+                  Contact
                 </a>
               </div>
 
@@ -62,12 +68,18 @@ export const Services = () => {
                   Entrainez-vous seule selon les disponibilités de la salle de pole dance ou louez notre podium pour des shootings, clips, events...
                 </p>
                 <a
-                  href={getWhatsAppMessage('self-practice')}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/pricing"
                   className="inline-block border border-brand-primary text-brand-primary px-5 py-2 rounded-full text-sm font-medium hover:bg-brand-primary/5 transition-colors"
                 >
                   Réserver
+                </a>
+                <a
+                  href={getWhatsAppMessage('self-practice')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-3 text-brand-secondary text-sm font-medium hover:underline"
+                >
+                  Contact
                 </a>
               </div>
             </div>
