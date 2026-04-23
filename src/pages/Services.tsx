@@ -21,27 +21,54 @@ export const Services = () => {
     <div className="pt-24 bg-brand-bg">
       {/* --- Page Header --- */}
       <section className="py-12 md:py-16">
-        <div className="max-w-[80%] mx-auto px-6 text-center">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-primary/50">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-[80%] mx-auto px-6 text-center"
+        >
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="text-xs font-bold uppercase tracking-[0.2em] text-brand-primary/50"
+          >
             NOS SERVICES
-          </span>
-          <h1 className="text-2xl md:text-3xl font-medium text-brand-primary mt-4">
-            Découvrez toutes les activités proposées par Studio Maheni
-          </h1>
-        </div>
+          </motion.span>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="text-2xl md:text-3xl font-medium text-brand-primary mt-4"
+          >
+Découvrez toutes les activités proposées par Studio Maheni
+          </motion.h1>
+        </motion.div>
       </section>
 
       {/* --- Section 1: POLE DANCE --- */}
       <section className="py-12 md:py-16 bg-brand-muted/20" id="pole-dance">
         <div className="max-w-[80%] mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-medium text-brand-primary mb-8">
+          <motion.h2 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl md:text-3xl font-medium text-brand-primary mb-8"
+          >
             POLE DANCE
-          </h2>
+          </motion.h2>
 
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             {/* Left Column - 2 Stacked Cards */}
             <div className="flex flex-col gap-6">
-              <div className="bg-brand-tan-light rounded-[16px] p-7">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="bg-brand-tan-light rounded-[16px] p-7"
+              >
                 <h3 className="text-xl md:text-2xl font-medium text-brand-primary mb-3">Cours collectif à Abidjan</h3>
                 <p className="text-brand-primary/70 text-sm md:text-base mb-4">
                   Des cours pour niveau débutant/inter à toutes pour développer force, confiance et féminité.
@@ -52,9 +79,15 @@ export const Services = () => {
                 >
                   Réserver
                 </a>
-              </div>
+              </motion.div>
 
-              <div className="bg-brand-tan-light rounded-[16px] p-7">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="bg-brand-tan-light rounded-[16px] p-7"
+              >
                 <h3 className="text-xl md:text-2xl font-medium text-brand-primary mb-3">Self practice</h3>
                 <p className="text-brand-primary/70 text-sm md:text-base mb-4">
                   Entrainez-vous seule selon les disponibilités de la salle de pole dance ou louez notre podium pour des shootings, clips, events...
@@ -67,7 +100,7 @@ export const Services = () => {
                 >
                   Réserver
                 </a>
-              </div>
+              </motion.div>
             </div>
 
             {/* Right Column - image Card */}
@@ -104,9 +137,15 @@ export const Services = () => {
       {/* --- Section 2: WORKSHOP --- */}
       <section className="py-12 md:py-16" id="workshops">
         <div className="max-w-[80%] mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-medium text-brand-primary mb-8">
+          <motion.h2 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl md:text-3xl font-medium text-brand-primary mb-8"
+          >
             WORKSHOP
-          </h2>
+          </motion.h2>
 
           <p className="text-brand-primary/70 max-w-2xl mb-12">
             Nos workshops sont proposés de temps en temps. Pour connaître les dates et horaires, suivez-nous sur nos réseaux sociaux ou rejoignez notre <a href="https://chat.whatsapp.com/CUt3PyGxD4u3Fl293fJsIy" target="_blank" rel="noopener noreferrer" className="text-brand-secondary font-medium hover:underline">communauté WhatsApp</a> pour rester informée de nos actualités.
@@ -158,35 +197,56 @@ export const Services = () => {
       {/* --- Section 3: ÉVÉNEMENTS PRIVÉS --- */}
       <section className="py-12 md:py-16 bg-brand-muted/20" id="evenements">
         <div className="max-w-[80%] mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-medium text-brand-primary mb-8">
+          <motion.h2 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-2xl md:text-3xl font-medium text-brand-primary mb-8"
+          >
             ÉVÉNEMENTS PRIVÉS
-          </h2>
+          </motion.h2>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="grid md:grid-cols-3 gap-8 mb-12"
+          >
+            <motion.div 
+              whileHover={{ scale: 1.03 }}
+              className="text-center"
+            >
               <div className="text-4xl mb-4">💍</div>
               <h3 className="text-lg md:text-xl font-medium text-brand-primary mb-2">Mariage</h3>
               <p className="text-brand-primary/70 text-sm">
                 Chorégraphie personnalisée pour votre ouverture de bal.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="text-center">
+            <motion.div 
+              whileHover={{ scale: 1.03 }}
+              className="text-center"
+            >
               <div className="text-4xl mb-4">🎉</div>
               <h3 className="text-lg md:text-xl font-medium text-brand-primary mb-2">Anniversaire / EVJF</h3>
               <p className="text-brand-primary/70 text-sm">
                 Moment fun, entre amies, dans une ambiance inoubliable.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="text-center">
+            <motion.div 
+              whileHover={{ scale: 1.03 }}
+              className="text-center"
+            >
               <div className="text-4xl mb-4">🏢</div>
               <h3 className="text-lg md:text-xl font-medium text-brand-primary mb-2">Entreprises</h3>
               <p className="text-brand-primary/70 text-sm">
                 Activités originales pour vos équipes et team building.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           <div className="text-center">
             <a
@@ -215,12 +275,6 @@ export const Services = () => {
             className="inline-block bg-brand-primary text-white px-10 py-4 rounded-full font-semibold hover:opacity-85 hover:-translate-y-px transition-all"
           >
             Réserver
-          </a>
-          <a
-            href="/pricing"
-            className="ml-3 text-brand-secondary text-sm font-medium hover:underline"
-          >
-            Voir les tarifs
           </a>
           <a
             href="/pricing"

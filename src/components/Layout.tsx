@@ -152,14 +152,19 @@ export const Layout = () => {
       <Footer />
       <Chatbot />
       {/* WhatsApp Float */}
-      <a
+      <motion.a
         href="https://wa.me/2250717616343"
         target="_blank"
         rel="noopener noreferrer"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ type: 'spring', stiffness: 260, damping: 20, delay: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
         className="fixed bottom-8 right-8 w-16 h-16 bg-[#25D430] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50"
       >
         <Phone size={28} />
-      </a>
+      </motion.a>
     </div>
   );
 };
