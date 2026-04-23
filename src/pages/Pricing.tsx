@@ -199,7 +199,7 @@ export const Pricing = () => {
 
 
           {/* Pricing Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {plans.map((plan, index) => (
               <motion.div
                 key={plan.id}
@@ -207,15 +207,15 @@ export const Pricing = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                whileHover={{ y: -4, transition: { duration: 0.3 } }}
                 className={`
                   ${plan.bgColor} ${plan.borderColor} 
-                  rounded-[24px] p-6 lg:p-8 
+                  rounded-2xl sm:rounded-[24px] p-5 sm:p-6 lg:p-8 
                   flex flex-col relative
                   border-2
                   shadow-lg hover:shadow-xl
                   transition-all duration-300
-                  ${plan.id === 'performance' ? 'lg:scale-105 lg:-translate-y-4' : ''}
+                  ${plan.id === 'performance' ? 'sm:scale-[1.02] sm:-translate-y-2' : ''}
                 `}
               >
                 {/* Badge */}

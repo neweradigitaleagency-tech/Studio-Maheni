@@ -242,15 +242,15 @@ export const Home = () => {
                 <motion.div
                   key={i}
                   whileHover={{ y: -5 }}
-                  className="bg-white rounded-[20px] overflow-hidden shadow-sm border border-brand-primary/5 flex flex-col md:flex-row"
+                  className="bg-white rounded-[16px] sm:rounded-[20px] overflow-hidden shadow-sm border border-brand-primary/5 flex flex-col sm:flex-row"
                 >
-                  <div className="w-full md:w-1/3 h-48 md:h-auto relative">
+                  <div className="w-full sm:w-1/3 min-h-[140px] sm:min-h-[100px] relative">
                     <img src={workshop.img} alt={workshop.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
-                  <div className="p-4 md:p-6 flex flex-col justify-center">
-                    <span className="text-brand-secondary text-[10px] font-bold uppercase tracking-widest mb-2">{workshop.date}</span>
-                    <h4 className="text-base md:text-lg font-medium text-brand-primary mb-1">{workshop.title}</h4>
-                    <p className="text-brand-primary/50 text-xs md:text-sm">{workshop.desc}</p>
+                  <div className="p-4 sm:p-5 flex flex-col justify-center flex-1">
+                    <span className="text-brand-secondary text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-1.5 sm:mb-2 block">{workshop.date}</span>
+                    <h4 className="text-base font-medium text-brand-primary mb-1 leading-tight">{workshop.title}</h4>
+                    <p className="text-brand-primary/50 text-xs sm:text-sm line-clamp-2 leading-snug">{workshop.desc}</p>
                   </div>
                 </motion.div>
               ))}

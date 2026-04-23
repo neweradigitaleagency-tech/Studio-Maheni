@@ -44,7 +44,7 @@ export const Gallery = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
             {images.map((img, i) => (
               <motion.div 
                 key={i} 
@@ -52,7 +52,7 @@ export const Gallery = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
-                className="aspect-[3/4] rounded-[24px] overflow-hidden cursor-pointer group shadow-sm border border-brand-primary/5"
+                className="aspect-square sm:aspect-[3/4] rounded-xl sm:rounded-2xl lg:rounded-[24px] overflow-hidden cursor-pointer group shadow-sm border border-brand-primary/5"
                 onClick={() => setSelectedIndex(i)}
               >
                 <img 
@@ -80,13 +80,13 @@ export const Gallery = () => {
           >
             {/* Navigation buttons */}
             <button 
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors p-2 z-10"
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors p-3 sm:p-2 z-10 min-w-[44px] min-h-[44px] flex items-center justify-center"
               onClick={(e) => { e.stopPropagation(); goToPrevious(); }}
             >
-              <ChevronLeft size={40} />
+              <ChevronLeft size={32} className="sm:w-10 sm:h-10" />
             </button>
             <button 
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors p-2 z-10"
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors p-3 sm:p-2 z-10 min-w-[44px] min-h-[44px] flex items-center justify-center"
               onClick={(e) => { e.stopPropagation(); goToNext(); }}
             >
               <ChevronRight size={40} />
