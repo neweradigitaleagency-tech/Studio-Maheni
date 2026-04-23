@@ -173,20 +173,20 @@ Découvrez toutes les activités proposées par Studio Maheni
               <motion.div
                 key={i}
                 whileHover={{ y: -5 }}
-                className="bg-white rounded-[12px] overflow-hidden shadow-sm border border-brand-primary/5 flex"
+                className="bg-white rounded-[12px] overflow-hidden shadow-sm border border-brand-primary/5 flex flex-col sm:flex-row"
               >
-                <div className="w-full md:w-1/3 aspect-video md:aspect-auto relative">
+                <div className="w-full sm:w-1/3 aspect-video sm:aspect-auto min-h-[140px] sm:min-h-[120px] relative">
                   <img src={workshop.img} alt={workshop.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                 </div>
-                <div className="p-4 md:p-6 flex flex-col justify-center">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-brand-secondary text-[10px] font-bold uppercase tracking-widest">{workshop.date}</span>
-                    <span className="text-brand-primary/30">|</span>
+                <div className="p-4 sm:p-5 flex flex-col justify-center flex-1">
+                  <div className="flex flex-wrap items-center gap-1.5 mb-2">
+                    <span className="text-brand-secondary text-[10px] font-bold uppercase tracking-wider">{workshop.date}</span>
+                    <span className="text-brand-primary/30">·</span>
                     <span className="text-brand-primary/50 text-xs">{workshop.time}</span>
                   </div>
-                  <h4 className="text-base md:text-lg font-medium text-brand-primary mb-1">{workshop.title}</h4>
-                  <p className="text-brand-primary/50 text-xs md:text-sm">{workshop.desc}</p>
-                  <span className="text-xs bg-brand-primary/5 text-brand-primary/60 px-2 py-1 rounded mt-2 inline-block w-fit">Événement terminé</span>
+                  <h4 className="text-base sm:text-base font-medium text-brand-primary mb-1 leading-tight">{workshop.title}</h4>
+                  <p className="text-brand-primary/50 text-xs sm:text-sm leading-snug line-clamp-2">{workshop.desc}</p>
+                  <span className="text-[10px] sm:text-xs bg-brand-primary/5 text-brand-primary/60 px-2 py-1 rounded mt-2.5 inline-block w-fit">Événement terminé</span>
                 </div>
               </motion.div>
             ))}
