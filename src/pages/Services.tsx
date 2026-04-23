@@ -60,7 +60,9 @@ export const Services = () => {
                   Entrainez-vous seule selon les disponibilités de la salle de pole dance ou louez notre podium pour des shootings, clips, events...
                 </p>
                 <a
-                  href="/pricing"
+                  href={getWhatsAppMessage('self-practice')}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block border border-brand-primary text-brand-primary px-5 py-2 rounded-full text-sm font-medium hover:bg-brand-primary/5 transition-colors"
                 >
                   Réserver
