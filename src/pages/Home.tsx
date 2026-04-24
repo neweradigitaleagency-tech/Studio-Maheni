@@ -122,16 +122,17 @@ export const Home = () => {
             ))}
           </div>
 
-          <div className="text-center mt-8 inline-block">
+          <div className="text-center mt-12">
             <a
               href="https://wa.me/2250717616343?text=Coucou%20!%20%F0%9F%91%8B%F0%9F%A4%BE%0A%0AJe%20suis%20int%C3%A9ress%C3%A9e%20par%20un%20cours%20de%20Pole%20Dance.%0A%0APouvez-vous%20me%20guider%20pour%20mes%20prochaines%20s%C3%A9ances%20%3F"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-brand-secondary text-brand-primary px-8 py-4 rounded-[16px] shadow-sm hover:opacity-85 transition-opacity inline-flex items-center gap-3"
+              className="bg-brand-secondary text-brand-primary px-6 md:px-8 py-3 md:py-4 rounded-[16px] shadow-sm hover:opacity-85 transition-opacity inline-flex items-center gap-2 md:gap-3"
             >
-              <FaWhatsapp size={20} />
-              <span className="text-sm md:text-base font-medium">
-                Déjà fait ton premier cours ? On te guide sur WhatsApp pour tes prochaines séances.
+              <FaWhatsapp size={18} className="shrink-0" />
+              <span className="text-sm font-medium text-left">
+                <span className="hidden sm:inline">Déjà fait ton premier cours ? </span>
+                On te guide sur WhatsApp
               </span>
             </a>
           </div>

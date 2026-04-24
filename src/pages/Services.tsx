@@ -151,7 +151,7 @@ Découvrez toutes les activités proposées par Studio Maheni
             Nos workshops sont proposés de temps en temps. Pour connaître les dates et horaires, suivez-nous sur nos réseaux sociaux ou rejoignez notre <a href="https://chat.whatsapp.com/CUt3PyGxD4u3Fl293fJsIy" target="_blank" rel="noopener noreferrer" className="text-brand-secondary font-medium hover:underline">communauté WhatsApp</a> pour rester informée de nos actualités.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
+<div className="grid md:grid-cols-2 gap-6 mb-8">
             {[
               {
                 title: "Heels & Pole Society - Avec Tracy",
@@ -173,9 +173,9 @@ Découvrez toutes les activités proposées par Studio Maheni
               <motion.div
                 key={i}
                 whileHover={{ y: -5 }}
-                className="bg-white rounded-[12px] overflow-hidden shadow-sm border border-brand-primary/5 flex flex-col sm:flex-row"
+                className="bg-white rounded-[12px] overflow-hidden shadow-sm border border-brand-primary/5 flex flex-col"
               >
-                <div className="w-full sm:w-1/3 aspect-video sm:aspect-auto min-h-[140px] sm:min-h-[120px] relative">
+                <div className="w-full aspect-[4/3] relative">
                   <img src={workshop.img} alt={workshop.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                 </div>
                 <div className="p-4 sm:p-5 flex flex-col justify-center flex-1">
@@ -188,7 +188,7 @@ Découvrez toutes les activités proposées par Studio Maheni
                   <p className="text-brand-primary/50 text-xs sm:text-sm leading-snug line-clamp-2">{workshop.desc}</p>
                   <span className="text-[10px] sm:text-xs bg-brand-primary/5 text-brand-primary/60 px-2 py-1 rounded mt-2.5 inline-block w-fit">Événement terminé</span>
                 </div>
-              </motion.div>
+</motion.div>
             ))}
           </div>
         </div>
