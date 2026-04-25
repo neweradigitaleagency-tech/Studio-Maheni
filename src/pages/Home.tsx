@@ -243,9 +243,9 @@ export const Home = () => {
                 <motion.div
                   key={i}
                   whileHover={{ y: -5 }}
-                  className="bg-white rounded-[16px] sm:rounded-[20px] overflow-hidden shadow-sm border border-brand-primary/5 flex flex-col sm:flex-row"
+                  className="bg-white rounded-[16px] sm:rounded-[20px] overflow-hidden shadow-sm border border-brand-primary/5 flex flex-col"
                 >
-                  <div className="w-full sm:w-1/3 min-h-[140px] sm:min-h-[100px] relative">
+                  <div className="w-full aspect-[4/3] relative">
                     <img src={workshop.img} alt={workshop.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                   <div className="p-4 sm:p-5 flex flex-col justify-center flex-1">
@@ -272,7 +272,7 @@ export const Home = () => {
             Réponse plus rapide via WhatsApp.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             {/* Left Column - Contact Info */}
             <div className="space-y-6">
               <div className="flex items-center gap-4 text-brand-primary">
@@ -317,7 +317,7 @@ export const Home = () => {
             </div>
 
             {/* Right Column - Email Box Redesigned (20% smaller) */}
-            <div className="bg-white rounded-[20px] p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-left flex flex-col justify-center min-h-[240px]">
+            <div className="bg-white rounded-[20px] p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-left flex flex-col justify-center">
               <div className="flex items-center gap-3 mb-6">
                 <MessageSquare className="text-brand-primary/80" size={20} strokeWidth={1.5} />
                 <h3 className="text-lg md:text-xl font-medium text-brand-primary">Envoyez-nous un message</h3>
