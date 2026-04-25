@@ -55,4 +55,10 @@
   .safe-top {
     padding-top: env(safe-area-inset-top);
   }
+
+  .workshop-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 }

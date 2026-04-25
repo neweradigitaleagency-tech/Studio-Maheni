@@ -243,9 +243,9 @@ export const Home = () => {
                 <motion.div
                   key={i}
                   whileHover={{ y: -5 }}
-                  className="bg-white rounded-[16px] sm:rounded-[20px] overflow-hidden shadow-sm border border-brand-primary/5 flex flex-col"
+                  className="workshop-card bg-white rounded-[16px] sm:rounded-[20px] overflow-hidden shadow-sm border border-brand-primary/5 flex flex-col"
                 >
-                  <div className="w-full aspect-[4/3] relative">
+                  <div className="workshop-card w-full aspect-[4/3] relative">
                     <img src={workshop.img} alt={workshop.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                   </div>
                   <div className="p-4 sm:p-5 flex flex-col justify-center flex-1">
