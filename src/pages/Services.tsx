@@ -21,7 +21,7 @@ export const Services = () => {
     <div className="pt-24 bg-brand-bg">
       {/* --- Page Header --- */}
       <section className="py-12 md:py-16">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -35,13 +35,13 @@ export const Services = () => {
           >
             NOS SERVICES
           </motion.span>
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
             className="text-2xl md:text-3xl font-medium text-brand-primary mt-4"
           >
-Découvrez toutes les activités proposées par Studio Maheni
+            Découvrez toutes les activités proposées par Studio Maheni
           </motion.h1>
         </motion.div>
       </section>
@@ -49,7 +49,7 @@ Découvrez toutes les activités proposées par Studio Maheni
       {/* --- Section 1: POLE DANCE --- */}
       <section className="py-12 md:py-16 bg-brand-muted/20" id="pole-dance">
         <div className="max-w-[80%] mx-auto px-6">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -62,7 +62,7 @@ Découvrez toutes les activités proposées par Studio Maheni
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             {/* Left Column - 2 Stacked Cards */}
             <div className="flex flex-col gap-6">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -81,7 +81,7 @@ Découvrez toutes les activités proposées par Studio Maheni
                 </a>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -109,7 +109,7 @@ Découvrez toutes les activités proposées par Studio Maheni
               className="bg-brand-primary rounded-[20px] overflow-hidden relative group min-h-[400px] md:min-h-[500px]"
             >
               <img
-                src="https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776893102/Galery-_1_icn9zx.png"
+                src="https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1777113971/Perlage_Grey_01_y4gyqa.jpg"
                 alt="Pole Dance"
                 className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
@@ -137,7 +137,7 @@ Découvrez toutes les activités proposées par Studio Maheni
       {/* --- Section 2: WORKSHOP --- */}
       <section className="py-12 md:py-16" id="workshops">
         <div className="max-w-[80%] mx-auto px-6">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -151,7 +151,7 @@ Découvrez toutes les activités proposées par Studio Maheni
             Nos workshops sont proposés de temps en temps. Pour connaître les dates et horaires, suivez-nous sur nos réseaux sociaux ou rejoignez notre <a href="https://chat.whatsapp.com/CUt3PyGxD4u3Fl293fJsIy" target="_blank" rel="noopener noreferrer" className="text-brand-secondary font-medium hover:underline">communauté WhatsApp</a> pour rester informée de nos actualités.
           </p>
 
-<div className="grid md:grid-cols-2 gap-6 mb-8">
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
             {[
               {
                 title: "Heels & Pole Society - Avec Tracy",
@@ -188,7 +188,7 @@ Découvrez toutes les activités proposées par Studio Maheni
                   <p className="text-brand-primary/50 text-xs sm:text-sm leading-snug line-clamp-2">{workshop.desc}</p>
                   <span className="text-[10px] sm:text-xs bg-brand-primary/5 text-brand-primary/60 px-2 py-1 rounded mt-2.5 inline-block w-fit">Événement terminé</span>
                 </div>
-</motion.div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -197,7 +197,7 @@ Découvrez toutes les activités proposées par Studio Maheni
       {/* --- Section 3: ÉVÉNEMENTS PRIVÉS --- */}
       <section className="py-12 md:py-16 bg-brand-muted/20" id="evenements">
         <div className="max-w-[80%] mx-auto px-6">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -207,14 +207,14 @@ Découvrez toutes les activités proposées par Studio Maheni
             ÉVÉNEMENTS PRIVÉS
           </motion.h2>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="grid md:grid-cols-3 gap-8 mb-12"
           >
-            <motion.div 
+            <motion.div
               whileHover={{ scale: 1.03 }}
               className="text-center"
             >
@@ -225,7 +225,7 @@ Découvrez toutes les activités proposées par Studio Maheni
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               whileHover={{ scale: 1.03 }}
               className="text-center"
             >
@@ -236,7 +236,7 @@ Découvrez toutes les activités proposées par Studio Maheni
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               whileHover={{ scale: 1.03 }}
               className="text-center"
             >
