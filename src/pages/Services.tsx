@@ -5,12 +5,12 @@ const WHATSAPP_NUMBER = '2250717616343';
 
 const getWhatsAppMessage = (service: string) => {
   const messages: Record<string, string> = {
-    'pole-dance': `Coucou ! 👋🏾\n\nJe suis intéressé(e) par un cours de Pole Dance.\n\nPouvez-vous me donner les disponibilités et tarifs ?`,
-    'self-practice': `Coucou ! 🏋🏾\n\nJe suis intéressé(e) par le self practice.\n\nQuelles sont les disponibilités ?`,
-    'location': `Coucou ! 📸\n\nJe voudrais louer votre salle pour :\n\n[Décrivez votre événement]\n\nMerci !`,
-    'workshop': `Coucou ! 💃🏾\n\nJe suis intéressé(e) par vos workshops.\n\nQuand sont les prochaines séances ?`,
-    'evenement': `Coucou ! 🎉\n\nJe voudrais organiser un événement privé :\n\n[Décrivez votre demande]\n\n\nMerci !`,
-    'default': `Coucou ! 👋🏾\n\nJe suis interested(e) par vos services.\n\nMerci de me donner plus d'informations !`,
+    'pole-dance': `Coucou !\n\nJe suis intéressé(e) par un cours de Pole Dance.\n\nPouvez-vous me donner les disponibilités et tarifs ?`,
+    'self-practice': `Coucou !\n\nJe suis intéressé(e) par le self practice.\n\nQuelles sont les disponibilités ?`,
+    'location': `Coucou !\n\nJe voudrais louer votre salle pour :\n\n[Décrivez votre événement]\n\nMerci !`,
+    'workshop': `Coucou !\n\nJe suis intéressé(e) par vos workshops.\n\nQuand sont les prochaines séances ?`,
+    'evenement': `Coucou !\n\nJe voudrais organiser un événement privé :\n\n[Décrivez votre demande]\n\n\nMerci !`,
+    'default': `Coucou !\n\nJe suis intéressé(e) par vos services.\n\nMerci de me donner plus d'informations !`,
   };
   const message = messages[service] || messages['default'];
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -43,6 +43,12 @@ export const Services = () => {
           >
             Découvrez toutes les activités proposées par Studio Maheni
           </motion.h1>
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="h-px bg-gradient-to-r from-brand-secondary to-transparent mx-auto w-24 mt-4"
+          />
         </motion.div>
       </section>
 
@@ -54,12 +60,19 @@ export const Services = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-2xl md:text-3xl font-medium text-brand-primary mb-8"
+            className="text-2xl md:text-3xl font-medium text-brand-primary mb-4"
           >
             POLE DANCE
           </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="h-px bg-gradient-to-r from-brand-secondary to-transparent w-16 mt-2 origin-left"
+          />
 
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 mt-8">
             {/* Left Column - 2 Stacked Cards */}
             <div className="flex flex-col gap-6">
               <motion.div
@@ -90,7 +103,7 @@ export const Services = () => {
               >
                 <h3 className="text-xl md:text-2xl font-medium text-brand-primary mb-3">Self practice</h3>
                 <p className="text-brand-primary/70 text-sm md:text-base mb-4">
-                  Entrainez-vous seule selon les disponibilités de la salle de pole dance ou louez notre podium pour des shootings, clips, events...
+                  Entraînez-vous seule selon les disponibilités de la salle de pole dance ou louez notre podium pour des shootings, clips, events...
                 </p>
                 <a
                   href={getWhatsAppMessage('self-practice')}
@@ -108,12 +121,13 @@ export const Services = () => {
               whileHover={{ y: -5 }}
               className="bg-brand-primary rounded-[20px] overflow-hidden relative group min-h-[400px] md:min-h-[500px]"
             >
-              <img
-                src="https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1777113971/Perlage_Grey_01_y4gyqa.jpg"
-                alt="Pole Dance"
-                className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700"
-                referrerPolicy="no-referrer"
-              />
+                <img
+                  src="https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1777113971/Perlage_Grey_01_y4gyqa.jpg"
+                  alt="Studio Maheni - Pole Dance"
+                  className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700"
+                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 p-6 md:p-10">
                 <h3 className="text-3xl md:text-4xl font-medium text-white mb-3 md:mb-4">Location podium de pole dance</h3>
@@ -142,20 +156,27 @@ export const Services = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-2xl md:text-3xl font-medium text-brand-primary mb-8"
+            className="text-2xl md:text-3xl font-medium text-brand-primary mb-4"
           >
             WORKSHOP
           </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="h-px bg-gradient-to-r from-brand-secondary to-transparent w-16 mt-2 origin-left"
+          />
 
-          <p className="text-brand-primary/70 max-w-2xl mb-12">
+          <p className="text-brand-primary/70 max-w-2xl mb-12 mt-8">
             Nos workshops sont proposés de temps en temps. Pour connaître les dates et horaires, suivez-nous sur nos réseaux sociaux ou rejoignez notre <a href="https://chat.whatsapp.com/CUt3PyGxD4u3Fl293fJsIy" target="_blank" rel="noopener noreferrer" className="text-brand-secondary font-medium hover:underline">communauté WhatsApp</a> pour rester informée de nos actualités.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
+          <div className="grid md:grid-cols-2 gap-6 mb-8 mt-8">
             {[
               {
                 title: "Heels & Pole Society - Avec Tracy",
-                date: "05 Oct 2025",
+                date: "À venir",
                 time: "19:00 - 20:30",
                 location: "New Gym",
                 desc: "Une expérience artistique intense alliant puissance, féminité et technique.",
@@ -163,7 +184,7 @@ export const Services = () => {
               },
               {
                 title: "Workshop Spécial Kompa",
-                date: "27 Sept 2025",
+                date: "À venir",
                 time: "16:00 - 18:00",
                 location: "New Gym",
                 desc: "Premier workshop de Kompa à Abidjan avec le coach Aquaman.",
@@ -176,12 +197,18 @@ export const Services = () => {
                 className="workshop-card bg-white rounded-[12px] overflow-hidden shadow-sm border border-brand-primary/5 flex flex-col"
               >
                 <div className="workshop-card w-full aspect-[4/3] relative">
-                  <img src={workshop.img} alt={workshop.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  <img
+                  src={workshop.img}
+                  alt={workshop.title}
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                />
                 </div>
                 <div className="p-4 sm:p-5 flex flex-col justify-center flex-1">
                   <div className="flex flex-wrap items-center gap-1.5 mb-2">
                     <span className="text-brand-secondary text-[10px] font-bold uppercase tracking-wider">{workshop.date}</span>
-                    <span className="text-brand-primary/30">·</span>
+                    <span className="text-brand-primary/30">•</span>
                     <span className="text-brand-primary/50 text-xs">{workshop.time}</span>
                   </div>
                   <h4 className="text-base sm:text-base font-medium text-brand-primary mb-1 leading-tight">{workshop.title}</h4>
@@ -194,7 +221,7 @@ export const Services = () => {
         </div>
       </section>
 
-      {/* --- Section 3: ÉVÉNEMENTS PRIVÉS --- */}
+      {/* --- Section 3: �V�NEMENTS PRIV�S --- */}
       <section className="py-12 md:py-16 bg-brand-muted/20" id="evenements">
         <div className="max-w-[80%] mx-auto px-6">
           <motion.h2
@@ -202,17 +229,24 @@ export const Services = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-2xl md:text-3xl font-medium text-brand-primary mb-8"
+            className="text-2xl md:text-3xl font-medium text-brand-primary mb-4"
           >
             ÉVÉNEMENTS PRIVÉS
           </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            whileInView={{ opacity: 1, scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="h-px bg-gradient-to-r from-brand-secondary to-transparent w-16 mt-2 origin-left"
+          />
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="grid md:grid-cols-3 gap-8 mb-12"
+            className="grid md:grid-cols-3 gap-8 mb-12 mt-8"
           >
             <motion.div
               whileHover={{ scale: 1.03 }}
@@ -242,9 +276,9 @@ export const Services = () => {
             >
               <div className="text-4xl mb-4">🏢</div>
               <h3 className="text-lg md:text-xl font-medium text-brand-primary mb-2">Entreprises</h3>
-              <p className="text-brand-primary/70 text-sm">
-                Activités originales pour vos équipes et team building.
-              </p>
+               <p className="text-brand-primary/70 text-sm">
+                 Activités originales pour vos équipes et team building.
+               </p>
             </motion.div>
           </motion.div>
 

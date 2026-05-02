@@ -18,9 +18,9 @@ INFORMATIONS COMPLETES SUR LE STUDIO MAHENI:
 - Un espace équipé pour votre confort
 - Une énergie unique et bienveillante
 
-=== COURS PROPOSÉS ===
+=== COURS PROPOSES ===
 1. POLE DANCE: Cours collectifs et privés pour tous niveaux (débutant à avancé)
-2. KOMBA: Danse latine交际
+2. KOMBA: Danse latine??
 3. KIZOMBA: Danse traditionnelle angolaise
 
 === TARIFS POLE DANCE ===
@@ -34,7 +34,7 @@ INFORMATIONS COMPLETES SUR LE STUDIO MAHENI:
 
 Note: Les tarifs s'appliquent uniquement aux cours de Pole Dance. Kompa et Kizomba sur demande.
 
-=== EVÉNEMENTS PRIVÉS ===
+=== ÉVÉNEMENTS PRIVÉS ===
 - Mariages: Chorégraphie personnalisée pour ouverture de bal
 - Entreprises: Activités team building
 - Anniversaire / EVJF: Moments fun entre amies
@@ -76,7 +76,7 @@ RÈGLES DE RÉPONSE:
 export const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { role: 'assistant', content: 'Bonjour ! Je suis l\'assistant du Studio Maheni. Comment puis-je vous aider aujourd\'hui ? 🌺' }
+    { role: 'assistant', content: 'Bonjour ! Je suis l\'assistant du Studio Maheni. Comment puis-je vous aider aujourd\'hui ? 💃' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -122,9 +122,9 @@ export const Chatbot = () => {
         setMessages(prev => [...prev, { role: 'assistant', content: data.candidates[0].content.parts[0].text }]);
       } else if (data.error) {
         console.error('API Error:', data.error);
-        setMessages(prev => [...prev, { role: 'assistant', content: 'Désolée, j\'ai eu un problème. N\'hésite pas à nous contacter sur WhatsApp !' }]);
+        setMessages(prev => [...prev, { role: 'assistant', content: 'Désolée, j\'ai eu un problème. N\'hésitez pas à nous contacter sur WhatsApp !' }]);
       } else {
-        setMessages(prev => [...prev, { role: 'assistant', content: 'Désolée, j\'ai eu un problème. N\'hésite pas à nous contacter sur WhatsApp !' }]);
+        setMessages(prev => [...prev, { role: 'assistant', content: 'Désolée, j\'ai eu un problème. N\'hésitez pas à nous contacter sur WhatsApp !' }]);
       }
     } catch (error) {
       console.error('Chatbot error:', error);
@@ -242,3 +242,4 @@ export const Chatbot = () => {
     </>
   );
 };
+

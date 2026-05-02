@@ -84,16 +84,17 @@ export const Home = () => {
             <div className="rounded-[24px] overflow-hidden shadow-2xl w-full max-w-[300px] md:max-w-[380px]">
               <img
                 src="https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776450703/IMG_7877_fv3mlh.heic"
-                alt="Pole Dance Studio"
+                alt="Studio Maheni - Cours de pole dance à Abidjan"
                 className="w-full h-auto object-cover aspect-[3/4]"
                 referrerPolicy="no-referrer"
+                loading="lazy"
               />
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* --- Mon Premier Cours Section - 3 ETAPES --- */}
+      {/* --- Mon Premier Cours Section - 3 ÉTAPES --- */}
       <section className="py-12 md:py-16 bg-brand-muted/30">
         <div className="max-w-[80%] mx-auto px-6">
           <p className="text-center text-brand-secondary/80 italic text-sm">Comment ça se passe ?</p>
@@ -229,13 +230,13 @@ export const Home = () => {
               {[
                 {
                   title: "Heels & Pole Society - Avec Tracy",
-                  date: "05 Oct 2025",
+                  date: "À venir",
                   desc: "Une expérience artistique intense alliant puissance, féminité et technique.",
                   img: "https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776025504/6443f4_cafe89a6fc5e4e059d44899fd92f8760_mv2_jtqs4v.avif"
                 },
                 {
                   title: "Workshop Spécial Kompa",
-                  date: "27 Sept 2025",
+                  date: "À venir",
                   desc: "Premier workshop de Kompa à Abidjan avec le coach Aquaman.",
                   img: "https://res.cloudinary.com/dhwo0kzbs/image/upload/q_auto/f_auto/v1776025504/6443f4_8af9396729bd4589894bb38389e8863d_mv2_zevt9a.avif"
                 }
@@ -303,13 +304,13 @@ export const Home = () => {
                 </div>
               </div>
               <div className="flex gap-3 pl-14">
-                <a href="https://chat.whatsapp.com/CUt3PyGxD4u3Fl293fJsIy" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full flex items-center justify-center bg-brand-primary/10 hover:opacity-70 transition-all">
+                <a href="https://chat.whatsapp.com/CUt3PyGxD4u3Fl293fJsIy" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full flex items-center justify-center bg-brand-primary/10 hover:opacity-70 transition-all" aria-label="Rejoindre la communauté WhatsApp">
                   <FaWhatsapp size={20} />
                 </a>
-                <a href="https://www.instagram.com/studio.maheni/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full flex items-center justify-center bg-brand-primary/10 hover:opacity-70 transition-all">
+                <a href="https://www.instagram.com/studio.maheni/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full flex items-center justify-center bg-brand-primary/10 hover:opacity-70 transition-all" aria-label="Suivre sur Instagram">
                   <FaInstagram size={20} />
                 </a>
-                <a href="https://www.tiktok.com/@studio.maheni?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full flex items-center justify-center bg-brand-primary/10 hover:opacity-70 transition-all">
+                <a href="https://www.tiktok.com/@studio.maheni?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full flex items-center justify-center bg-brand-primary/10 hover:opacity-70 transition-all" aria-label="Suivre sur TikTok">
                   <FaTiktok size={20} />
                 </a>
               </div>
@@ -337,10 +338,10 @@ export const Home = () => {
                 </div>
               )}
 
-              <form className="space-y-4" action="mailto:studio.maheni@gmail.com" method="post" encType="text/plain" onSubmit={(e) => {
+              <form className="space-y-4" onSubmit={(e) => {
                 const form = e.currentTarget;
                 const email = (form.elements.namedItem('email') as HTMLInputElement).value;
-                if (!email || !email.includes('@')) {
+                if (!email || !email.includes('@') || !email.includes('.')) {
                   e.preventDefault();
                   setEmailError(true);
                   setTimeout(() => setEmailError(false), 3000);
@@ -351,31 +352,36 @@ export const Home = () => {
               }}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-[10px] sm:text-xs font-bold text-brand-primary/40 uppercase tracking-widest pl-1 mb-1 block">Nom</label>
+                    <label className="text-[10px] sm:text-xs font-bold text-brand-primary/40 uppercase tracking-widest pl-1 mb-1 block" htmlFor="name">Nom</label>
                     <input
                       type="text"
+                      id="name"
                       name="name"
                       placeholder="Votre nom"
                       required
                       className="w-full px-4 py-3 rounded-[12px] bg-brand-bg/50 focus:border-brand-primary/30 focus:outline-none focus:ring-1 focus:ring-brand-primary/20 text-sm transition-colors border border-transparent placeholder:text-brand-primary/30 text-brand-primary font-medium"
+                      autoComplete="name"
                     />
                   </div>
                   <div>
-                    <label className="text-[10px] sm:text-xs font-bold text-brand-primary/40 uppercase tracking-widest pl-1 mb-1 block">Email *</label>
+                    <label className="text-[10px] sm:text-xs font-bold text-brand-primary/40 uppercase tracking-widest pl-1 mb-1 block" htmlFor="email">Email *</label>
                     <input
                       type="email"
+                      id="email"
                       name="email"
                       placeholder="votre@email.com"
                       required
                       className="w-full px-4 py-3 rounded-[12px] bg-brand-bg/50 focus:border-brand-primary/30 focus:outline-none focus:ring-1 focus:ring-brand-primary/20 text-sm transition-colors border border-transparent placeholder:text-brand-primary/30 text-brand-primary font-medium"
+                      autoComplete="email"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="text-[10px] sm:text-xs font-bold text-brand-primary/40 uppercase tracking-widest pl-1 mb-1 block">Sujet</label>
+                  <label className="text-[10px] sm:text-xs font-bold text-brand-primary/40 uppercase tracking-widest pl-1 mb-1 block" htmlFor="subject">Sujet</label>
                   <input
                     type="text"
+                    id="subject"
                     name="subject"
                     placeholder="Sujet"
                     required
@@ -384,8 +390,9 @@ export const Home = () => {
                 </div>
 
                 <div>
-                  <label className="text-[10px] sm:text-xs font-bold text-brand-primary/40 uppercase tracking-widest pl-1 mb-1 block">Message *</label>
+                  <label className="text-[10px] sm:text-xs font-bold text-brand-primary/40 uppercase tracking-widest pl-1 mb-1 block" htmlFor="message">Message *</label>
                   <textarea
+                    id="message"
                     name="message"
                     placeholder="Votre message..."
                     rows={3}
@@ -397,6 +404,7 @@ export const Home = () => {
                 <button
                   type="submit"
                   className="w-full bg-brand-primary text-white px-6 py-3 rounded-[12px] font-medium text-sm hover:bg-brand-secondary transition-colors mt-2"
+                  aria-label="Envoyer le message"
                 >
                   Envoyer
                 </button>
