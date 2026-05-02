@@ -214,7 +214,7 @@ export const Home = () => {
                   controls
                   preload="metadata"
                 >
-                  <source src="/videos/Instagram(4).mp4" type="video/mp4" />
+                  <source src="https://res.cloudinary.com/dhwo0kzbs/video/upload/q_auto/f_auto/v1777727642/snaptik.sc_2613b2c1_ef1e_47eb_9843_653e20d5ba66_khbfxn.mp4" type="video/mp4" />
                   Votre navigateur ne supporte pas la vidéo.
                 </video>
               </div>
